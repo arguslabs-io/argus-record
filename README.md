@@ -16,7 +16,7 @@ The published record of **ARGUS-PC-100M** (the Argus Prudent Carry
 Reference Portfolio) and its family — the two reference indices
 (ARGUS-BTC-100M, ARGUS-stETH-100M), the market-average comparator, the
 book's decision record, every detection episode, and the restatement
-ledger (every change to a published fix, with its reason) — exactly as
+ledger (freeze-era corrections plus one pre-freeze memorial, each with its reason) — exactly as
 fixed daily at [arguslabs.io](https://arguslabs.io).
 
 The full specification is the standard under
@@ -32,7 +32,7 @@ Operational failures are published on the
 | `data/reference_fixes.json` | daily fixes of the reference indices with the market average (rows for the pre-retirement ARGUS-ETH-100M era included, closed), the prudence premium, and the striking-solve binding |
 | `data/decisions.json` | the book's action record — every de-rate, revert, mandated walk, universe exit, impairment, and recovery, one row per action |
 | `data/episodes.json` | the observation record across three planes (market conditions per venue, book conditions, index-fixing conditions) — re-derived with the series, deliberately unfingerprinted |
-| `data/restatements.json` | the append-only restatement ledger — every change to a published fix after it was first struck (pre-freeze declared restatement waves, in-window corrections): table and key, fingerprint before and after, reason, time |
+| `data/restatements.json` | the append-only restatement ledger from the freeze (2026-09-01) onward, plus the one pre-freeze memorial row (the 2026-08-21 in-window correction) — the 761-row development-era ledger was deliberately cleared at the freeze: table and key, fingerprint before and after, reason, time |
 | `verify.py` | stdlib-only consistency verifier (Python 3.8+) |
 
 ## Fingerprints
@@ -53,9 +53,11 @@ arithmetic identities (`NAV = capital + settled carry − modeled costs
 monotone cumulatives), the record's structural rule (episodes are
 observations, decisions are actions, and no action name ever appears
 in the observation record), and the restatement ledger's **last
-word**: for every fix the ledger has touched, its newest entry's
-resulting fingerprint must be the fingerprint this archive publishes
-— a fix cannot have moved without the ledger saying so.
+word** from the freeze (2026-09-01) onward: for every fix the
+freeze-era ledger has touched, its newest entry's resulting
+fingerprint must be the fingerprint this archive publishes — a fix
+cannot have moved without the ledger saying so (the single pre-freeze
+memorial row documents; it does not bind).
 
 ```
 python3 verify.py
@@ -90,7 +92,7 @@ restates — but this archive's own entry never does, so its expected
 root stays publicly retrievable no matter how far the record has
 moved on. To verify an archive, find its root entry in the feed (or
 match this manifest's `record_root` against the ledger) and run
-`python3 verify.py <that root>`. All five data families are exported
+`python3 verify.py <that root>`. All six data families are exported
 from a single database snapshot, so the root always describes one
 moment of the record.
 
