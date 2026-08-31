@@ -1,0 +1,13 @@
+[
+ {
+  "seq": 74,
+  "table_name": "index_series",
+  "index_name": null,
+  "fix_date": "2026-08-21",
+  "op": "update",
+  "old_row_sha256": "h2:e283f5bd17b2de314020cb3f9b1b0417c05e8055c4e5d8c9c5ee323e1207dfff",
+  "new_row_sha256": "h2:71957b70a0ffe708c8208cd34298405907b140916994b0354517c18abdd160de",
+  "reason": "in-window correction: fields ['basis_usd', 'carry_usd_cum', 'full_nav_usd', 'naive_carry_usd_cum', 'naive_nav_usd', 'nav_usd', 'ret_1d']",
+  "restated_at": "2026-08-21T13:05:55Z"
+ }
+]

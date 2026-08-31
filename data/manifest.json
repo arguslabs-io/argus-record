@@ -1,0 +1,37 @@
+{
+ "schema": "argus-record-manifest-h6",
+ "as_of": "2026-08-31",
+ "files": {
+  "portfolio_fixes.json": {
+   "rows": 28,
+   "sha256": "7350c7ce64104b229e0531551726158c15a7c0b67ffc68baaa9808f269d5ea1c",
+   "root": "4a17b690c8371c62192a3cff11945c2278f79ff8c43f52d1bce068bf6e5594d4"
+  },
+  "reference_fixes.json": {
+   "rows": 62,
+   "sha256": "bf60eb0fb4ca087de8ac38084415a97b45fa290958bef48fd50e3026008f7334",
+   "root": "95f18ebd17ac82bd8eba50592ea02a70caa245565c4e853af430cd2b13cca887"
+  },
+  "decisions.json": {
+   "rows": 14,
+   "sha256": "55ce9547fb72ff06bce876e2bebdde34169f6939c5d28d27ab9e3b4dfc9a2c88",
+   "root": "e4e453f6e8ad3dc252fd1144e6a9cc6e2405d9e87a1e8400e326f29640633b5e"
+  },
+  "episodes.json": {
+   "rows": 66,
+   "sha256": "4b98412d5af741e4e5bb1367e918679ba2fd00d1bcb33d75569b37758f5c6b9f",
+   "root": "c65047d4519e76157aa670b02884ebecff7e12acfec2fecffe532078ae7332f3"
+  },
+  "restatements.json": {
+   "rows": 1,
+   "sha256": "0da9f10bf583e9b11a72362fe07d4a88b3aba40a4d302f3e8dc65f1a56359897",
+   "root": "eae93070cd9aa22f17fd4e9ddbc18f750a44e8dd87bbe443e9e7e01371cd8fea"
+  },
+  "envelopes.json": {
+   "rows": 28,
+   "sha256": "87bade4347b99274c1804d3d78571705cbc99c7d6a6b08bcf3962def8c2001c6",
+   "root": "203b907f5afb80b0dcf578152b23b7a57eda655fbfe5c7b93c793a668283625f"
+  }
+ },
+ "record_root": "fee49316a2780c76a3b1e4af58ccd724ef0edcbe2fd0a948501117525e9b429e"
+}

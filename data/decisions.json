@@ -1,0 +1,194 @@
+[
+ {
+  "decided_at": "2026-08-06T00:00:00Z",
+  "action": "walk",
+  "venue": null,
+  "evidence": {
+   "cost_usd": 33.57,
+   "mandated": true,
+   "turnover_usd": 19125.82
+  },
+  "methodology_version": "v1.0",
+  "row_sha256": "h2:90a5e25255389be9d6a68ab96adbe218c21045b86750f8639232752a74343ba6",
+  "published_at": "2026-08-30T14:37:14Z",
+  "h2_preimage": "{\"venue\": null, \"action\": \"walk\", \"schema\": \"argus-book-decision-h1\", \"evidence\": {\"cost_usd\": 33.57, \"mandated\": true, \"turnover_usd\": 19125.82}, \"decided_at\": \"2026-08-06T00:00:00Z\", \"methodology_version\": \"v1.0\"}"
+ },
+ {
+  "decided_at": "2026-08-12T01:00:00Z",
+  "action": "de-rate",
+  "venue": "Deribit",
+  "evidence": {
+   "cap_pct": 10.0,
+   "families": [
+    "funding",
+    "mark"
+   ]
+  },
+  "methodology_version": "v1.0",
+  "row_sha256": "h2:0bdde451be45d4be1952adf57091576c6da5a7260ac5b6efe4d0aac0ea9572c2",
+  "published_at": "2026-08-22T22:58:15Z",
+  "h2_preimage": "{\"venue\": \"Deribit\", \"action\": \"de-rate\", \"schema\": \"argus-book-decision-h1\", \"evidence\": {\"cap_pct\": 10.0, \"families\": [\"funding\", \"mark\"]}, \"decided_at\": \"2026-08-12T01:00:00Z\", \"methodology_version\": \"v1.0\"}"
+ },
+ {
+  "decided_at": "2026-08-12T01:00:00Z",
+  "action": "walk",
+  "venue": null,
+  "evidence": {
+   "cost_usd": 621.02,
+   "mandated": true,
+   "turnover_usd": 351818.02
+  },
+  "methodology_version": "v1.0",
+  "row_sha256": "h2:7a0ee8eea5058b78b905886d3efc3353663773e1cfbb3f9797134bbadddee839",
+  "published_at": "2026-08-22T22:58:15Z",
+  "h2_preimage": "{\"venue\": null, \"action\": \"walk\", \"schema\": \"argus-book-decision-h1\", \"evidence\": {\"cost_usd\": 621.02, \"mandated\": true, \"turnover_usd\": 351818.02}, \"decided_at\": \"2026-08-12T01:00:00Z\", \"methodology_version\": \"v1.0\"}"
+ },
+ {
+  "decided_at": "2026-08-12T05:00:00Z",
+  "action": "walk",
+  "venue": null,
+  "evidence": {
+   "cost_usd": 0.65,
+   "mandated": true,
+   "turnover_usd": 366.64
+  },
+  "methodology_version": "v1.0",
+  "row_sha256": "h2:ee4b735cb399e8e00494147547e5006ff4682a6a8a0b0f0247709c296ee9fae2",
+  "published_at": "2026-08-29T21:04:47Z",
+  "h2_preimage": "{\"venue\": null, \"action\": \"walk\", \"schema\": \"argus-book-decision-h1\", \"evidence\": {\"cost_usd\": 0.65, \"mandated\": true, \"turnover_usd\": 366.64}, \"decided_at\": \"2026-08-12T05:00:00Z\", \"methodology_version\": \"v1.0\"}"
+ },
+ {
+  "decided_at": "2026-08-18T11:00:00Z",
+  "action": "walk",
+  "venue": null,
+  "evidence": {
+   "cost_usd": 3.67,
+   "mandated": true,
+   "turnover_usd": 2115.24
+  },
+  "methodology_version": "v1.0",
+  "row_sha256": "h2:3d0b8551ad42ec2f527b62868bba486aab9305ae583527dd9c5f1b02f7b5382f",
+  "published_at": "2026-08-29T21:04:47Z",
+  "h2_preimage": "{\"venue\": null, \"action\": \"walk\", \"schema\": \"argus-book-decision-h1\", \"evidence\": {\"cost_usd\": 3.67, \"mandated\": true, \"turnover_usd\": 2115.24}, \"decided_at\": \"2026-08-18T11:00:00Z\", \"methodology_version\": \"v1.0\"}"
+ },
+ {
+  "decided_at": "2026-08-19T01:00:00Z",
+  "action": "revert",
+  "venue": "Deribit",
+  "evidence": {},
+  "methodology_version": "v1.0",
+  "row_sha256": "h2:d1182fd895b659c491f41c9bd3e3a43a40c1dcf5e54cca257def34fbcd1cc9c7",
+  "published_at": "2026-08-22T22:58:15Z",
+  "h2_preimage": "{\"venue\": \"Deribit\", \"action\": \"revert\", \"schema\": \"argus-book-decision-h1\", \"evidence\": {}, \"decided_at\": \"2026-08-19T01:00:00Z\", \"methodology_version\": \"v1.0\"}"
+ },
+ {
+  "decided_at": "2026-08-19T02:00:00Z",
+  "action": "walk",
+  "venue": null,
+  "evidence": {
+   "cost_usd": 657.95,
+   "mandated": true,
+   "turnover_usd": 371434.51
+  },
+  "methodology_version": "v1.0",
+  "row_sha256": "h2:c96ffd103d5fb7604ff8436f3d9ae50c3c15f6bd697c581c0d7807aacb5f4e20",
+  "published_at": "2026-08-22T22:58:15Z",
+  "h2_preimage": "{\"venue\": null, \"action\": \"walk\", \"schema\": \"argus-book-decision-h1\", \"evidence\": {\"cost_usd\": 657.95, \"mandated\": true, \"turnover_usd\": 371434.51}, \"decided_at\": \"2026-08-19T02:00:00Z\", \"methodology_version\": \"v1.0\"}"
+ },
+ {
+  "decided_at": "2026-08-19T15:00:00Z",
+  "action": "de-rate",
+  "venue": "Bitget",
+  "evidence": {
+   "cap_pct": 10.0,
+   "families": [
+    "funding",
+    "mark"
+   ]
+  },
+  "methodology_version": "v1.0",
+  "row_sha256": "h2:3f506bdd4bc1d2eb911edbd2c98e9a3f83dc971884d5d245b13d30986bb2476c",
+  "published_at": "2026-08-22T22:58:15Z",
+  "h2_preimage": "{\"venue\": \"Bitget\", \"action\": \"de-rate\", \"schema\": \"argus-book-decision-h1\", \"evidence\": {\"cap_pct\": 10.0, \"families\": [\"funding\", \"mark\"]}, \"decided_at\": \"2026-08-19T15:00:00Z\", \"methodology_version\": \"v1.0\"}"
+ },
+ {
+  "decided_at": "2026-08-19T15:00:00Z",
+  "action": "walk",
+  "venue": null,
+  "evidence": {
+   "cost_usd": 29.76,
+   "mandated": true,
+   "turnover_usd": 16206.49
+  },
+  "methodology_version": "v1.0",
+  "row_sha256": "h2:8e501ae64b558232b56f63eabff8b4af609503c8e76877e7dfd420a79380ff27",
+  "published_at": "2026-08-22T22:58:15Z",
+  "h2_preimage": "{\"venue\": null, \"action\": \"walk\", \"schema\": \"argus-book-decision-h1\", \"evidence\": {\"cost_usd\": 29.76, \"mandated\": true, \"turnover_usd\": 16206.49}, \"decided_at\": \"2026-08-19T15:00:00Z\", \"methodology_version\": \"v1.0\"}"
+ },
+ {
+  "decided_at": "2026-08-19T16:00:00Z",
+  "action": "walk",
+  "venue": null,
+  "evidence": {
+   "cost_usd": 81.22,
+   "mandated": true,
+   "turnover_usd": 28355.6
+  },
+  "methodology_version": "v1.0",
+  "row_sha256": "h2:2ef514822b592355f0c2e0b2df456c73b9936af234e92874a348174ce5636b7a",
+  "published_at": "2026-08-29T21:04:47Z",
+  "h2_preimage": "{\"venue\": null, \"action\": \"walk\", \"schema\": \"argus-book-decision-h1\", \"evidence\": {\"cost_usd\": 81.22, \"mandated\": true, \"turnover_usd\": 28355.6}, \"decided_at\": \"2026-08-19T16:00:00Z\", \"methodology_version\": \"v1.0\"}"
+ },
+ {
+  "decided_at": "2026-08-19T20:00:00Z",
+  "action": "walk",
+  "venue": null,
+  "evidence": {
+   "cost_usd": 14.28,
+   "mandated": true,
+   "turnover_usd": 8368.24
+  },
+  "methodology_version": "v1.0",
+  "row_sha256": "h2:24798d0d208aa3fc49ee1f12229069e98f4eeab80288d363ab73e48d5577eb91",
+  "published_at": "2026-08-24T10:45:15Z",
+  "h2_preimage": "{\"venue\": null, \"action\": \"walk\", \"schema\": \"argus-book-decision-h1\", \"evidence\": {\"cost_usd\": 14.28, \"mandated\": true, \"turnover_usd\": 8368.24}, \"decided_at\": \"2026-08-19T20:00:00Z\", \"methodology_version\": \"v1.0\"}"
+ },
+ {
+  "decided_at": "2026-08-19T21:00:00Z",
+  "action": "walk",
+  "venue": null,
+  "evidence": {
+   "cost_usd": 1.78,
+   "mandated": true,
+   "turnover_usd": 920.0
+  },
+  "methodology_version": "v1.0",
+  "row_sha256": "h2:869ea4f714aa0fa013be2683ebe73f1f4cff20103c7b636fecc98a3f8aa8e49c",
+  "published_at": "2026-08-29T21:04:47Z",
+  "h2_preimage": "{\"venue\": null, \"action\": \"walk\", \"schema\": \"argus-book-decision-h1\", \"evidence\": {\"cost_usd\": 1.78, \"mandated\": true, \"turnover_usd\": 920.0}, \"decided_at\": \"2026-08-19T21:00:00Z\", \"methodology_version\": \"v1.0\"}"
+ },
+ {
+  "decided_at": "2026-08-26T15:00:00Z",
+  "action": "revert",
+  "venue": "Bitget",
+  "evidence": {},
+  "methodology_version": "v1.0",
+  "row_sha256": "h2:4cebd75cb31e0b935d17f8ba3b7d8312f761a7ecb4f5d44ac8ef54682b9233eb",
+  "published_at": "2026-08-26T15:06:58Z",
+  "h2_preimage": "{\"venue\": \"Bitget\", \"action\": \"revert\", \"schema\": \"argus-book-decision-h1\", \"evidence\": {}, \"decided_at\": \"2026-08-26T15:00:00Z\", \"methodology_version\": \"v1.0\"}"
+ },
+ {
+  "decided_at": "2026-08-26T16:00:00Z",
+  "action": "walk",
+  "venue": null,
+  "evidence": {
+   "cost_usd": 49.91,
+   "mandated": true,
+   "turnover_usd": 28287.38
+  },
+  "methodology_version": "v1.0",
+  "row_sha256": "h2:63f637adce73206a42dfbcf3415580c970d6f78dc42806c79d0f4fc53440cb73",
+  "published_at": "2026-08-26T16:06:55Z",
+  "h2_preimage": "{\"venue\": null, \"action\": \"walk\", \"schema\": \"argus-book-decision-h1\", \"evidence\": {\"cost_usd\": 49.91, \"mandated\": true, \"turnover_usd\": 28287.38}, \"decided_at\": \"2026-08-26T16:00:00Z\", \"methodology_version\": \"v1.0\"}"
+ }
+]
