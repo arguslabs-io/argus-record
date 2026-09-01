@@ -742,19 +742,6 @@
  },
  {
   "plane": "market",
-  "subject": "dYdX",
-  "asset": null,
-  "kind": "door",
-  "signal": "door_queue_depth",
-  "severity": "info",
-  "opened_at": "2026-08-23T20:03:22Z",
-  "closed_at": "2026-08-23T21:03:54Z",
-  "peak_stress": "0.99094",
-  "methodology_version": "v1.0",
-  "evidence": "{}"
- },
- {
-  "plane": "market",
   "subject": "edgeX",
   "asset": "BTC",
   "kind": "mark",
@@ -828,19 +815,6 @@
   "opened_at": "2026-08-28T15:00:00Z",
   "closed_at": "2026-08-28T16:00:00Z",
   "peak_stress": null,
-  "methodology_version": "v1.0",
-  "evidence": "{}"
- },
- {
-  "plane": "market",
-  "subject": "dYdX",
-  "asset": null,
-  "kind": "door",
-  "signal": "door_queue_depth",
-  "severity": "info",
-  "opened_at": "2026-08-28T15:03:36Z",
-  "closed_at": "2026-08-28T16:03:41Z",
-  "peak_stress": "0.99396",
   "methodology_version": "v1.0",
   "evidence": "{}"
  },

@@ -67,14 +67,15 @@ Layers:
    book-level; every other decision names a venue token.
 
 6. RESTATEMENT LEDGER — append-only, `seq` unique and positive,
-   timestamps non-decreasing in seq; fixes: from the freeze
-   (2026-09-01) the ledger's last word is the published fingerprint
-   (or absence after a delete) and consecutive entries chain; the
-   development-era ledger was cleared at the freeze, and its sole
-   surviving memorial row (the 2026-08-21 in-window correction)
-   documents rather than binds; decisions: a fingerprint the ledger
-   retired is not published, a fingerprint the ledger produced and
-   never retired is.
+   timestamps non-decreasing in seq; fixes: for every row stamped
+   after the pre-freeze memorial (the 2026-08-21 in-window
+   correction — the ONLY row the cleared development ledger left,
+   identified by its exact tuple, never by claimed time) the
+   ledger's last word is the published fingerprint (or absence after
+   a delete) and consecutive entries chain; the memorial documents
+   rather than binds; decisions: a fingerprint the ledger retired is
+   not published, a fingerprint the ledger produced and never
+   retired is.
 
 Requires Python 3.8 or newer.
 """
@@ -124,11 +125,30 @@ LEDGER_CHAIN_FROM = "2026-08-23T13:00:00Z"
 # in-window correction: the fingerprints it names predate later
 # development restatements whose chain went with the cleared rows, so
 # the binding last-word and pair-chain rules apply to rows stamped
-# from the freeze on. Post-freeze tampering cannot hide behind a
-# backdated stamp: storage stamps restated_at itself, and the public
-# archive's commit-to-commit diffs expose any fingerprint move that
-# lacks a ledger row regardless of its claimed date.
-LEDGER_FREEZE = "2026-09-01T00:00:00Z"
+# from the freeze on.
+# F-150 (Sol 2026-09-02): the memorial is identified by its EXACT
+# immutable tuple, never by claimed time alone — ANY other row
+# claiming a stamp at or before the memorial is refused outright, and
+# EVERY row stamped after it binds. The binding boundary is therefore
+# the instant after the memorial itself (the cleardown left nothing
+# between it and the freeze; publicly, "the ledger binds from the
+# freeze" and this boundary agree on every real row). Storage refuses
+# writer-supplied stamps (187: the ledger stamps its own clock), and
+# the public archive's commit-to-commit diffs expose unledgered
+# fingerprint moves.
+LEDGER_FREEZE = "2026-08-21T13:06:00Z"
+LEDGER_MEMORIAL = {
+    "seq": 74, "table_name": "index_series", "index_name": None,
+    "fix_date": "2026-08-21", "op": "update",
+    "old_row_sha256": "h2:e283f5bd17b2de314020cb3f9b1b0417c05e8055"
+                      "c4e5d8c9c5ee323e1207dfff",
+    "new_row_sha256": "h2:71957b70a0ffe708c8208cd34298405907b14091"
+                      "6994b0354517c18abdd160de",
+    "reason": "in-window correction: fields ['basis_usd', "
+              "'carry_usd_cum', 'full_nav_usd', 'naive_carry_usd_cum',"
+              " 'naive_nav_usd', 'nav_usd', 'ret_1d']",
+    "restated_at": "2026-08-21T13:05:55Z",
+}
 MANIFEST_SCHEMA = "argus-record-manifest-h6"
 PREIMAGE_SCHEMA = {"portfolio_fixes.json": "argus-portfolio-fix-h5",
                    "reference_fixes.json": "argus-reference-fix-h2",
@@ -733,6 +753,97 @@ PREMISE_VALUE_DOMAINS = {
     "sygnum_weekend_h": _dom_num(0.0, 168.0, lo_open=True),
 }
 
+# ---------------------------------------------------------------------
+# THE PREMISE SPECIFICATION — a BYTE-EQUAL transcription of
+# engine/kernel.PREMISE_SPEC (0G, Sol 2026-09-03: the verifier's policy
+# is GENERATED from a shared declarative spec and parity-tested —
+# tests/test_record_export.py asserts the two literals are identical,
+# so a kernel domain change that misses this file fails the gate). The
+# verifier stays standalone: data transcribed, interpreter its own.
+PREMISE_SPEC = {
+    "scalars": {
+        "capital0": {"lo": 1.0, "hi": 1e12, "desc": "USD in [1, 1e12]"},
+        "price_stress": {"lo": 0.0, "hi": 1.0, "lo_open": True,
+                         "desc": "fraction in (0, 1]"},
+        "im_fallback_frac": {"lo": 0.0, "hi": 1.0, "lo_open": True,
+                             "desc": "fraction in (0, 1]"},
+        "mm_of_im": {"lo": 0.0, "hi": 1.0, "lo_open": True,
+                     "desc": "fraction in (0, 1]"},
+        "margin_clock_k": {"lo": 0.0, "hi": 10.0, "lo_open": True,
+                           "desc": "multiplier in (0, 10]"},
+        "parked_share": {"lo": 0.0, "hi": 1.0, "hi_open": True,
+                         "desc": "fraction of week in [0, 1)"},
+        "spot_leg_cost_bp": {"lo": 0.0, "hi": 1000.0,
+                             "desc": "bp in [0, 1000]"},
+        "sygnum_intra_h": {"lo": 0.0, "hi": 168.0, "lo_open": True,
+                           "desc": "hours in (0, 168]"},
+        "sygnum_weekend_h": {"lo": 0.0, "hi": 168.0, "lo_open": True,
+                             "desc": "hours in (0, 168]"},
+    },
+    "maps": {
+        "clock_h": {"row_keys": ["Copper", "Fireblocks", "Komainu",
+                                 "on_venue"],
+                    "envelope_keys": ["Copper", "Fireblocks", "Komainu",
+                                      "none", "Sygnum"],
+                    "null_only": ["Sygnum"],
+                    "lo": 0.0, "hi": 168.0, "lo_open": True,
+                    "desc": "hours in (0, 168]"},
+        "mm_of_im_venue": {"row_keys": ["Deribit"],
+                           "envelope_keys": ["Deribit"],
+                           "null_only": [],
+                           "lo": 0.0, "hi": 1.0, "lo_open": True,
+                           "desc": "fraction in (0, 1]"},
+        "basis_addon": {"row_keys": [], "envelope_keys": ["BTC", "ETH"],
+                        "null_only": [],
+                        "lo": 0.0, "hi": 1.0, "hi_open": True,
+                        "desc": "fraction in [0, 1)"},
+    },
+    "ladder": {
+        "deribit_ladder": {"pos": ["C1", "C2", "C4"],
+                           "c3": {"lo": 0.0, "hi": 1.0, "hi_open": True},
+                           "nmax_keys": ["BTC", "ETH"],
+                           "nmax_lo": 0.0, "nmax_hi": 1e12,
+                           "desc": "ladder: C1>0, C2>0, 0<=C3<1, C4>0, "
+                                   "nmax_usd per asset in (0, 1e12]"},
+    },
+    "pairs": {
+        "basis_addon_fallback_bp": {"keys": ["BTC", "ETH"],
+                                    "lo": 0.0, "hi": 10000.0,
+                                    "desc": "bp per asset in [0, 10000]"},
+    },
+}
+
+
+def _map_dom(s9):
+    keys9 = set(s9["envelope_keys"])
+    nul9 = set(s9["null_only"])
+    inner9 = _dom_num(s9["lo"], s9["hi"],
+                      lo_open=s9.get("lo_open", False),
+                      hi_open=s9.get("hi_open", False))
+    return lambda v: (isinstance(v, dict) and set(v) == keys9
+                      and all((x9 is None if k9 in nul9 else inner9(x9))
+                              for k9, x9 in v.items()))
+
+
+def _ladder_dom(s9):
+    nm9 = _dom_num(s9["nmax_lo"], s9["nmax_hi"], lo_open=True)
+    c39 = _dom_num(s9["c3"]["lo"], s9["c3"]["hi"],
+                   hi_open=s9["c3"].get("hi_open", False))
+    return lambda v: (
+        isinstance(v, dict)
+        and set(v) == set(s9["pos"]) | {"C3", "nmax_usd"}
+        and all(_num(v[c9]) and _fnum(v[c9]) > 0 for c9 in s9["pos"])
+        and c39(v["C3"])
+        and isinstance(v["nmax_usd"], dict)
+        and set(v["nmax_usd"]) == set(s9["nmax_keys"])
+        and all(nm9(x9) for x9 in v["nmax_usd"].values()))
+
+
+for _f9, _s9 in PREMISE_SPEC["maps"].items():
+    PREMISE_VALUE_DOMAINS[_f9] = _map_dom(_s9)
+for _f9, _s9 in PREMISE_SPEC["ladder"].items():
+    PREMISE_VALUE_DOMAINS[_f9] = _ladder_dom(_s9)
+
 
 def record_root(roots: dict) -> str:
     """portfolio, reference, decisions, episodes, restatements,
@@ -1286,21 +1397,28 @@ def _run(base: str, expected_root, fails: list) -> None:
                 check(wfN9 <= _tzn(x["t"]) <= wtN9,
                       f"{tag}: execution.events[{j9}] at {x.get('t')} "
                       f"outside the fix's window")
-            # F-142: the rebalance event's closed magnitude shape
+            # F-142/F-151: the rebalance event's closed magnitude
+            # shape — cost NON-NEGATIVE (a fill always pays), the
+            # post-fill weights a NORMALIZED book (Σ = 1, the market
+            # book allocates fully)
             if isinstance(x, dict) and x.get("event") == "rebalance":
                 w9r = x.get("weights")
                 check(set(x) == {"t", "event", "cost_usd",
                                  "turnover_usd", "weights"}
                       and _num(x.get("cost_usd"))
+                      and _fnum(x.get("cost_usd", -1)) >= 0
                       and _num(x.get("turnover_usd"))
                       and _fnum(x.get("turnover_usd", 0)) > 0
                       and isinstance(w9r, dict) and len(w9r) > 0
                       and all(isinstance(k9, str)
                               and _LEG.fullmatch(k9) is not None
                               and _num(v9) and 0 <= _fnum(v9) <= 1
-                              for k9, v9 in w9r.items()),
+                              for k9, v9 in w9r.items())
+                      and abs(sum(_fnum(v9) for v9 in w9r.values())
+                              - 1.0) < 1e-3,
                       f"{tag}: execution.events[{j9}] rebalance "
-                      f"outside its magnitude-bearing shape")
+                      f"outside its magnitude-bearing shape (cost >= "
+                      f"0, weights normalized)")
         oas9 = e["execution"].get("open_at_strike")
         check(isinstance(oas9, list)
               and all(isinstance(x, dict) for x in oas9),
@@ -1338,6 +1456,7 @@ def _run(base: str, expected_root, fails: list) -> None:
             def __missing__(self, k9c):
                 return 0
         exec_walk_c9, exec_month_c9 = _Cnt(), _Cnt()
+        month_adm9: list = []
         for j9, x in enumerate(adm9 if isinstance(adm9, list) else []):
             ok9 = (isinstance(x, dict) and set(x) == ADMISSION_KEYS
                    and isinstance(x.get("t"), str)
@@ -1398,6 +1517,14 @@ def _run(base: str, expected_root, fails: list) -> None:
                       f"admitted legs")
                 if x["origin"] == "monthly-rebalance":
                     exec_month_c9[_tzn(x["t"])] += 1
+                    # F-156 (Sol 2026-09-03): only BID/opening legs
+                    # must appear in the post-fill book — an ask leg
+                    # that CLOSED its position is correctly absent
+                    # (its pre-fill linkage is the 0G execution
+                    # object's job)
+                    month_adm9.append((_tzn(x["t"]),
+                                       [i9 for i9 in admi9
+                                        if i9[2] == "bid"]))
                 else:
                     # compliance/cross/within AND reserve resyncs all
                     # apply through walks
@@ -1414,11 +1541,15 @@ def _run(base: str, expected_root, fails: list) -> None:
         # events; executed monthly rebalances bind to `rebalance`
         # events (the market book's fill record).
         walkev_c9, rebev_c9 = _Cnt(), _Cnt()
+        rebw9: dict = {}
         for x in (ev9 if isinstance(ev9, list) else []):
             if isinstance(x, dict) and x.get("event") == "walk":
                 walkev_c9[_tzn(x.get("t"))] += 1
             if isinstance(x, dict) and x.get("event") == "rebalance":
                 rebev_c9[_tzn(x.get("t"))] += 1
+                if isinstance(x.get("weights"), dict):
+                    rebw9.setdefault(_tzn(x.get("t")), set()).update(
+                        x["weights"])
         check(dict(exec_walk_c9) == dict(walkev_c9),
               f"{tag}: executed walk-applying admissions and walk "
               f"events disagree as multisets "
@@ -1427,6 +1558,16 @@ def _run(base: str, expected_root, fails: list) -> None:
               f"{tag}: executed monthly rebalances and rebalance "
               f"events disagree as multisets "
               f"({dict(exec_month_c9)} vs {dict(rebev_c9)})")
+        # F-151: every ADMITTED monthly leg appears in the post-fill
+        # book its same-hour rebalance event records — a ghost book
+        # that omits what was just filled is refused
+        for t9m, ids9m in month_adm9:
+            w9m = rebw9.get(t9m, set())
+            missing9 = [f"{v9}/{a9}" for v9, a9, _s9 in ids9m
+                        if f"{v9}/{a9}" not in w9m]
+            check(not missing9,
+                  f"{tag}: rebalance at {t9m} omits admitted legs "
+                  f"{missing9} from its post-fill weights")
         # premises: every one declares its kind AND its citation (v1.0
         # wave 1: source / observed_on join the block); a named
         # premise's value sits in its closed domain.
@@ -1480,13 +1621,24 @@ def _run(base: str, expected_root, fails: list) -> None:
                       and (un9 is None or isinstance(un9, str)),
                       f"{tag}: premise `{k}` citation metadata outside "
                       f"its classes")
-                # F-147: a map premise's citation maps cover EXACTLY
-                # the value's sub-keys — a cited sub-key cannot
-                # disappear (or appear) without refusal
+                # F-147/F-152: a PER-SUBKEY premise's citation maps
+                # are REQUIRED to be maps covering exactly the value's
+                # sub-keys — scalar text cannot replace keyed
+                # provenance. (basis_addon and deribit_ladder carry
+                # ONE citation for a structured value — a single
+                # measured source / one published ladder — so their
+                # scalar citations stand; a dict there still aligns.)
                 if isinstance(p.get("value"), dict):
+                    keyed9 = k in ("clock_h", "mm_of_im_venue")
                     for f9 in ("source", "observed_on", "note"):
                         v9f = p.get(f9)
-                        if isinstance(v9f, dict):
+                        if keyed9:
+                            check(isinstance(v9f, dict)
+                                  and set(v9f) == set(p["value"]),
+                                  f"{tag}: premise `{k}` {f9} must be "
+                                  f"a map covering exactly the "
+                                  f"value's sub-keys (F-152)")
+                        elif isinstance(v9f, dict):
                             check(set(v9f) == set(p["value"]),
                                   f"{tag}: premise `{k}` {f9} sub-keys "
                                   f"differ from the value's")
@@ -1580,6 +1732,16 @@ def _run(base: str, expected_root, fails: list) -> None:
     check(all(a["restated_at"] <= b["restated_at"]
               for a, b in zip(ordered, ordered[1:])),
           "restatements: timestamps are not non-decreasing in sequence")
+    # F-150: the ONLY admissible pre-freeze row is the exact memorial
+    # tuple — a new claim cannot select non-binding semantics by
+    # stamping itself before the freeze
+    for e in ordered:
+        if e["restated_at"] < LEDGER_FREEZE:
+            check(all(e.get(k9) == v9 for k9, v9
+                      in LEDGER_MEMORIAL.items()),
+                  f"restatements: seq {e['seq']} claims a pre-freeze "
+                  f"stamp but is not the recorded memorial — the "
+                  f"freeze exception is an exact identity, not a time")
     last: dict = {}
     by_key: dict = {}
     for e in ordered:
