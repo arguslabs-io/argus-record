@@ -134,6 +134,16 @@ measurements. Two levels of verification:
 Refreshed daily by the record export; the site is the live record
 between refreshes.
 
+## Notes
+
+Dated notes on the record's conventions, newest last.
+
+- **2026-09-02 — settlement order.** From the 2 September 2026 fixing,
+  each envelope lists its settlement rows sorted by `settled_at, venue,
+  asset`, and its settlements block says `order: canonical`. Earlier
+  envelopes list their rows in the order the record loaded them; they
+  are final and verify as published.
+
 ---
 
 © Argus Labs · published for verification and research · informational

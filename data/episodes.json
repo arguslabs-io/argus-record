@@ -830,5 +830,18 @@
   "peak_stress": null,
   "methodology_version": "v1.0",
   "evidence": "{}"
+ },
+ {
+  "plane": "market",
+  "subject": "Paradex",
+  "asset": "ETH",
+  "kind": "spread",
+  "signal": "spread_bp_max",
+  "severity": "info",
+  "opened_at": "2026-09-02T04:31:02Z",
+  "closed_at": "2026-09-02T06:17:02Z",
+  "peak_stress": "0.99917",
+  "methodology_version": "v1.0",
+  "evidence": "{}"
  }
 ]

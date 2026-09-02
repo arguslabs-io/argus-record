@@ -1,37 +1,37 @@
 {
  "schema": "argus-record-manifest-h6",
- "as_of": "2026-09-01",
+ "as_of": "2026-09-02",
  "files": {
   "portfolio_fixes.json": {
-   "rows": 29,
-   "sha256": "47907ea808d6837c221cce7311c009d58935d280d1721d4ada90a8f8a44b802e",
-   "root": "cd9110823bf9a532d5593c85b60b3e452defd559210d435b656c99c05e0a98a4"
+   "rows": 30,
+   "sha256": "e0cfe56d691383c8e3bebf6b8b47f6979b1cd07862a1af7d6c04c9600ee33181",
+   "root": "aac28e3ee44b8a10887455a6f73bb0515c3e81ed13bfef8d3c1f0d05b44b1ccb"
   },
   "reference_fixes.json": {
-   "rows": 64,
-   "sha256": "83725038eb5b471c235df4fac0bbbc1ff13387009778360945e0fb9d9db9ef7b",
-   "root": "a3f24e5ff8e4286c474aaa5345c69daad9e99163c5226f40017f673bead2c4e0"
+   "rows": 66,
+   "sha256": "15de70d5f2a2f489b47780469d9f88b31ff53406c001b02e4af6353092c41cd3",
+   "root": "8fa253b7a82341d03586e7551ba3b140e9f17299e6e6c10028aa4b2b0e186d60"
   },
   "decisions.json": {
-   "rows": 14,
-   "sha256": "55ce9547fb72ff06bce876e2bebdde34169f6939c5d28d27ab9e3b4dfc9a2c88",
-   "root": "e4e453f6e8ad3dc252fd1144e6a9cc6e2405d9e87a1e8400e326f29640633b5e"
+   "rows": 20,
+   "sha256": "aef721e125e2adb75d78e0d7616488d999aacdb8aa6a066a034d4aacd1b9965d",
+   "root": "a18b9f46677f2a4f4cd992eb76817d6306006598075c3c32e2b121648fe07ee9"
   },
   "episodes.json": {
-   "rows": 64,
-   "sha256": "05bb7a0e309c3db7821dad56cef7a78f323b2c282c354d1b4803ed80a2e25d02",
-   "root": "f88cf13208d1dbdf95514c5f19ae47881f06994fcca00e8c45df713bf4254f01"
+   "rows": 65,
+   "sha256": "480f902d1fb6cf29eff0738c1548911b1dc32d09d2dd266c678730dfbdf441b1",
+   "root": "5c27f6bf38ddb83fa7cf362a30fad389e36c649e051c8f0e1e62301adf938466"
   },
   "restatements.json": {
-   "rows": 1,
-   "sha256": "0da9f10bf583e9b11a72362fe07d4a88b3aba40a4d302f3e8dc65f1a56359897",
-   "root": "eae93070cd9aa22f17fd4e9ddbc18f750a44e8dd87bbe443e9e7e01371cd8fea"
+   "rows": 4,
+   "sha256": "6ecfd6b4298f73578d1a620d123be9118f8a005210dbee96009ffe817cad0601",
+   "root": "65d6c0e12158a03d20733e4bd334e8a8e93931dbd641d3da4d46c6ca170e9c7f"
   },
   "envelopes.json": {
-   "rows": 29,
-   "sha256": "22aa0213948793952f7de55af1bfea2e8bc58443e2466e0cf1047904f8f46ef3",
-   "root": "423673c9d9c58641b677aa7bfd73e7b68fdb0a50e7f0a173c4287832ffc33076"
+   "rows": 30,
+   "sha256": "d7a1f2d3dd35cfc0affd26fd73d5bb15f7c061221d524c7a323046c0557b82c6",
+   "root": "7fbe1b335d2a20fab24c2040a546b48a33c96971ba8d932409de8cea1d97acc4"
   }
  },
- "record_root": "5b11b82d358a2ce8e990128f1d0617d0c806c8f868c296d6c26031e6d6a77fd5"
+ "record_root": "891b7906de98ef3ac1351fbe629ce9fb99b5a4e2cad7540dc5d2123c5d5b194d"
 }

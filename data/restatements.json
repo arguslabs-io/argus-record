@@ -8,6 +8,43 @@
   "old_row_sha256": "h2:e283f5bd17b2de314020cb3f9b1b0417c05e8055c4e5d8c9c5ee323e1207dfff",
   "new_row_sha256": "h2:71957b70a0ffe708c8208cd34298405907b140916994b0354517c18abdd160de",
   "reason": "in-window correction: fields ['basis_usd', 'carry_usd_cum', 'full_nav_usd', 'naive_carry_usd_cum', 'naive_nav_usd', 'nav_usd', 'ret_1d']",
+  "key_seq": null,
   "restated_at": "2026-08-21T13:05:55Z"
+ },
+ {
+  "seq": 763,
+  "table_name": "fix_envelope",
+  "index_name": null,
+  "fix_date": "2026-09-01",
+  "op": "update",
+  "old_row_sha256": "h2:6130bd9cb4d65d0c98ed664e79e1775ccd64a2fe842068276bd8049372ce90af",
+  "new_row_sha256": "h2:b012d25ebd4b5dd635939912aa5916c9ec17954819eba647af5bcf6b2538de84",
+  "reason": "in-window correction: envelope parts ['execution']",
+  "key_seq": null,
+  "restated_at": "2026-09-01T20:30:01Z"
+ },
+ {
+  "seq": 764,
+  "table_name": "fix_envelope",
+  "index_name": null,
+  "fix_date": "2026-09-01",
+  "op": "update",
+  "old_row_sha256": "h2:b012d25ebd4b5dd635939912aa5916c9ec17954819eba647af5bcf6b2538de84",
+  "new_row_sha256": "h2:6dfa538c9f0601fd4b234ce1da0452520449e2f0101773ced5c0f07e16e05a45",
+  "reason": "in-window correction: envelope parts ['execution']",
+  "key_seq": null,
+  "restated_at": "2026-09-01T21:02:24Z"
+ },
+ {
+  "seq": 765,
+  "table_name": "fix_envelope",
+  "index_name": null,
+  "fix_date": "2026-09-02",
+  "op": "update",
+  "old_row_sha256": "h2:a5a8081f908f3ab5623adf34936afe6dab78bb94f4742e62d655551c02ffb2e4",
+  "new_row_sha256": "h2:8c4af69c903976d9687e2b6679aa9a6afb409238bfcd99be9284c498bba157a6",
+  "reason": "in-window correction: envelope parts ['settlements']",
+  "key_seq": null,
+  "restated_at": "2026-09-02T13:53:39Z"
  }
 ]

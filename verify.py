@@ -154,6 +154,10 @@ PREIMAGE_SCHEMA = {"portfolio_fixes.json": "argus-portfolio-fix-h5",
                    "reference_fixes.json": "argus-reference-fix-h2",
                    "decisions.json": "argus-book-decision-h1",
                    "envelopes.json": "argus-fix-envelope-h1"}
+# F-161: the first book fixing whose envelope settlement rows are in
+# canonical (settled_at, venue, asset) order and say so; earlier
+# envelopes are archive-ordered and FINAL (README)
+SETTLEMENT_ORDER_ERA = "2026-09-02"
 ENVELOPE_PARTS = ("headline", "positions", "workings", "settlements",
                   "execution", "premises", "rules", "provenance")
 PREMISE_KINDS = {"sourced", "assumed", "fallback"}
@@ -480,6 +484,9 @@ SCHEMA = {
         "decided_at": _is_ts,
         "action": lambda v: isinstance(v, str) and v in ACTIONS,
         "venue": _opt(_tok(_TOKEN_VENUE)), "evidence": _is_object,
+        # F-198 (193): the occurrence among same-instant same-action
+        # same-venue decisions — a KEY field, outside the fingerprint
+        "seq": lambda v: type(v) is int and v >= 0,
         "methodology_version": _is_stamp, "row_sha256": _tok(_H2),
         "published_at": _is_ts, "h2_preimage": _is_text},
     "episodes.json": {
@@ -498,7 +505,10 @@ SCHEMA = {
         "op": lambda v: isinstance(v, str) and v in RESTATEMENT_OPS,
         "old_row_sha256": _opt(_tok(_H2)),
         "new_row_sha256": _opt(_tok(_H2)), "reason": _is_reason,
-        "restated_at": _is_ts},
+        "restated_at": _is_ts,
+        # F-198: the decision occurrence a ledger row retired (null for
+        # every other table and for rows before 193)
+        "key_seq": _opt(lambda v: type(v) is int and v >= 0)},
     # the fix envelope (181): every part a JSON object; the parts'
     # inner identities are held in the ARITHMETIC layer below
     "envelopes.json": {
@@ -511,6 +521,10 @@ SCHEMA = {
         "h2_preimage": _is_text},
 }
 REQUIRED_KEYS = {name: frozenset(spec) for name, spec in SCHEMA.items()}
+# keys a row MAY omit (they joined the record on 2026-09-02, 193, and
+# every archive since carries them; an omitted key reads as absent)
+OPTIONAL_KEYS = {"decisions.json": frozenset({"seq"}),
+                 "restatements.json": frozenset({"key_seq"})}
 # the h2 field list per fingerprinted family — the preimage's keys
 # beside its schema tag; the exporter spells these public fields FROM
 # the preimage (F-092)
@@ -541,7 +555,7 @@ ROOT_EXTRAS = {"portfolio_fixes.json": ("published_at",),
 # TOTAL order (F-072/F-076/F-077)
 ORDER_KEYS = {"portfolio_fixes.json": ("fix_date",),
               "reference_fixes.json": ("index_name", "fix_date"),
-              "decisions.json": ("decided_at", "action", "venue",
+              "decisions.json": ("decided_at", "action", "venue", "seq",
                                  "row_sha256"),
               "episodes.json": ("opened_at", "plane", "subject", "asset",
                                 "kind", "signal", "closed_at", "severity",
@@ -1015,7 +1029,12 @@ def _run(base: str, expected_root, fails: list) -> None:
                 ("positions", {"hedge", "legs", "unallocated_usd",
                                "spot_lots", "ref_px"}),
                 ("workings", {"sleeves", "legs"}),
-                ("settlements", {"rows", "funding_usd", "staking_usd"}),
+                # F-161: from the canonical-order era the settlements
+                # part STATES its order rule; before it the rows are
+                # archive-ordered (FINAL, disclosed in the README)
+                ("settlements", {"rows", "funding_usd", "staking_usd"}
+                 | ({"order"} if e["fix_date"] >= SETTLEMENT_ORDER_ERA
+                    else set())),
                 ("execution", {"events", "admissions", "open_at_strike"}),
                 ("rules", {"methodology_version", "ruleset_sha256"}),
                 ("provenance", {"window_from", "window_to",
@@ -1287,6 +1306,18 @@ def _run(base: str, expected_root, fails: list) -> None:
                           for k9p in posN9),
                   f"{tag}: workings.legs do not partition the "
                   f"positions' legs exactly")
+        # F-161: canonical (settled_at, venue, asset) order from the era
+        if e["fix_date"] >= SETTLEMENT_ORDER_ERA and isinstance(st, list):
+            check(e["settlements"].get("order") == "canonical",
+                  f"{tag}: settlements.order is not 'canonical' in the "
+                  f"canonical-order era (F-161)")
+            keys11 = [(str(x.get("settled_at")), str(x.get("venue")),
+                       str(x.get("asset")))
+                      for x in st if isinstance(x, dict)]
+            check(all(a11 <= b11
+                      for a11, b11 in zip(keys11, keys11[1:])),
+                  f"{tag}: settlements.rows are not in canonical "
+                  f"(settled_at, venue, asset) order (F-161)")
         # settlements: every row's USD is its own notional x rate
         # (nothing through a halt), the domains closed, the funding and
         # staking sums the rows'
@@ -1651,6 +1682,45 @@ def _run(base: str, expected_root, fails: list) -> None:
               f"{tag}: methodology stamp differs between the envelope, its "
               f"rules and the portfolio row")
 
+    # ---- F-173 (K-02, Fable review 2026-09-01): EVENTS BIND DECISIONS.
+    # Every action-kind event in an envelope (de-rate / revert / walk /
+    # universe-exit / impairment / recovery) IS a decision row — same
+    # instant, same venue, evidence equal to the event body on the
+    # exact view — and every decision row is such an event. Bound as
+    # MULTISETS so two walks in one hour need two rows (189) and one
+    # event never authenticates two rows. The live record had 16 walk
+    # events against 10 walk rows and both families verified.
+    def _canon(v) -> str:
+        if isinstance(v, bool) or v is None:
+            return json.dumps(v)
+        if isinstance(v, Decimal):
+            return _spelling(v)
+        if isinstance(v, dict):
+            return "{" + ",".join(json.dumps(k) + ":" + _canon(v[k])
+                                  for k in sorted(v)) + "}"
+        if isinstance(v, list):
+            return "[" + ",".join(_canon(x) for x in v) + "]"
+        return json.dumps(v)
+    evd_c, dec_c = _Cnt(), _Cnt()
+    for e in envelopes:
+        ex10 = e.get("execution")
+        evs10 = ex10.get("events") if isinstance(ex10, dict) else None
+        for x in (evs10 if isinstance(evs10, list) else []):
+            if isinstance(x, dict) and x.get("event") in ACTIONS:
+                body10 = {k: v for k, v in x.items()
+                          if k not in ("t", "event", "venue")}
+                evd_c[(_tzn(x.get("t")), x.get("event"), x.get("venue"),
+                       _canon(body10))] += 1
+    for d in decisions:
+        dec_c[(_tzn(d.get("decided_at")), d.get("action"), d.get("venue"),
+               _canon(d.get("evidence")))] += 1
+    for k10 in sorted(set(evd_c) | set(dec_c), key=str):
+        check(evd_c[k10] == dec_c[k10],
+              f"decisions: {k10[1]} at {k10[0]} ({k10[2] or 'book'}) — "
+              f"{evd_c[k10]} envelope event(s) vs {dec_c[k10]} decision "
+              f"row(s) with evidence {k10[3]}; the action record and the "
+              f"envelopes state different facts (F-173)")
+
     # ---- 4. ARITHMETIC IDENTITIES (never skipped) -----------------------
     def _amount(d: dict, key: str) -> float:
         v = d["evidence"].get(key)
@@ -1783,21 +1853,37 @@ def _run(base: str, expected_root, fails: list) -> None:
             check(key not in current,
                   f"restatements: {label} was deleted per the ledger but "
                   f"is still published")
-    published_decisions = {d["row_sha256"] for d in decisions}
+    # F-198 (193): identity is the (fingerprint, occurrence) PAIR — two
+    # byte-identical decisions keep separate identities through a
+    # correction; a ledger row with no occurrence (before 193) binds
+    # every occurrence of its fingerprint
+    published_decisions = {(d["row_sha256"], d.get("seq", 0)) for d in decisions}
+    keys12 = [(d["decided_at"], d["action"], d["venue"], d.get("seq", 0))
+              for d in decisions]
+    check(len(set(keys12)) == len(keys12),
+          "decisions: two rows share (decided_at, action, venue, seq) — "
+          "the occurrence key is not unique (F-198)")
+    def _ids12(sha, kseq):
+        if kseq is None:
+            return {p for p in published_decisions if p[0] == sha} or {(sha, None)}
+        return {(sha, kseq)}
     retired: set = set()
     produced: set = set()
     for e in ordered:
         if e["table_name"] != "book_decisions":
             continue
-        retired.add(e["old_row_sha256"])
-        produced.discard(e["old_row_sha256"])
+        kseq = e.get("key_seq")
+        for p in _ids12(e["old_row_sha256"], kseq):
+            retired.add(p)
+            produced.discard(p)
         if e["op"] == "update":
-            produced.add(e["new_row_sha256"])
-            retired.discard(e["new_row_sha256"])
-    for sha in sorted(retired & published_decisions):
-        check(False, f"restatements: decision {sha} was retired by the "
-                     f"ledger but is still published")
-    for sha in sorted(produced - published_decisions):
+            for p in _ids12(e["new_row_sha256"], kseq):
+                produced.add(p)
+                retired.discard(p)
+    for sha, kseq in sorted(retired & published_decisions, key=str):
+        check(False, f"restatements: decision {sha} (occurrence {kseq}) was "
+                     f"retired by the ledger but is still published")
+    for sha, kseq in sorted(produced - published_decisions, key=str):
         check(False, f"restatements: decision entry results in {sha} "
                      f"which is not a published decision and no later "
                      f"entry supersedes it")
@@ -1819,7 +1905,7 @@ def _row_shape(name: str, i: int, r: dict) -> list:
     with any defect is excluded from the cross-row layers."""
     out: list = []
     tag = f"{_LABEL[name]}[{i}]"
-    missing = REQUIRED_KEYS[name] - set(r)
+    missing = REQUIRED_KEYS[name] - set(r) - OPTIONAL_KEYS.get(name, frozenset())
     extra = set(r) - REQUIRED_KEYS[name]
     if missing or extra:
         out.append(f"{name}[{i}]: row key set differs from the record's "
