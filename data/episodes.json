@@ -843,5 +843,70 @@
   "peak_stress": "0.99917",
   "methodology_version": "v1.0",
   "evidence": "{}"
+ },
+ {
+  "plane": "market",
+  "subject": "Paradex",
+  "asset": "BTC",
+  "kind": "spread",
+  "signal": "spread_bp_max",
+  "severity": "info",
+  "opened_at": "2026-09-03T04:41:03Z",
+  "closed_at": "2026-09-03T05:44:03Z",
+  "peak_stress": "0.99937",
+  "methodology_version": "v1.0",
+  "evidence": "{}"
+ },
+ {
+  "plane": "market",
+  "subject": "Aster",
+  "asset": "ETH",
+  "kind": "depth",
+  "signal": "depth10_total_min",
+  "severity": "info",
+  "opened_at": "2026-09-03T08:39:02Z",
+  "closed_at": "2026-09-03T09:41:02Z",
+  "peak_stress": "0.99914",
+  "methodology_version": "v1.0",
+  "evidence": "{}"
+ },
+ {
+  "plane": "market",
+  "subject": "Gate.io",
+  "asset": "BTC",
+  "kind": "depth",
+  "signal": "depth10_total_min",
+  "severity": "info",
+  "opened_at": "2026-09-03T08:39:02Z",
+  "closed_at": "2026-09-03T09:50:02Z",
+  "peak_stress": "0.99988",
+  "methodology_version": "v1.0",
+  "evidence": "{}"
+ },
+ {
+  "plane": "market",
+  "subject": "Bybit",
+  "asset": "ETH",
+  "kind": "depth",
+  "signal": "depth10_total_min",
+  "severity": "info",
+  "opened_at": "2026-09-03T08:40:02Z",
+  "closed_at": "2026-09-03T09:49:02Z",
+  "peak_stress": "0.99926",
+  "methodology_version": "v1.0",
+  "evidence": "{}"
+ },
+ {
+  "plane": "market",
+  "subject": "KuCoin",
+  "asset": "BTC",
+  "kind": "depth",
+  "signal": "depth10_total_min",
+  "severity": "info",
+  "opened_at": "2026-09-03T08:40:02Z",
+  "closed_at": "2026-09-03T09:50:03Z",
+  "peak_stress": "0.99975",
+  "methodology_version": "v1.0",
+  "evidence": "{}"
  }
 ]

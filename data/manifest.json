@@ -1,16 +1,16 @@
 {
  "schema": "argus-record-manifest-h6",
- "as_of": "2026-09-02",
+ "as_of": "2026-09-03",
  "files": {
   "portfolio_fixes.json": {
-   "rows": 30,
-   "sha256": "e0cfe56d691383c8e3bebf6b8b47f6979b1cd07862a1af7d6c04c9600ee33181",
-   "root": "aac28e3ee44b8a10887455a6f73bb0515c3e81ed13bfef8d3c1f0d05b44b1ccb"
+   "rows": 31,
+   "sha256": "fe25c47dfcbf4fe2d1dfbf38da29857355fd3a28bf174121cc63091603d3ff18",
+   "root": "3c682cbedcd063b5d2b822b31d6e5feb480ac82d62c6bc511f6ac13b6f007317"
   },
   "reference_fixes.json": {
-   "rows": 66,
-   "sha256": "15de70d5f2a2f489b47780469d9f88b31ff53406c001b02e4af6353092c41cd3",
-   "root": "8fa253b7a82341d03586e7551ba3b140e9f17299e6e6c10028aa4b2b0e186d60"
+   "rows": 68,
+   "sha256": "31c7ecfb56a4614a57a99cd5ac9abc144a0d752e9be9cb4a3ade33eefc9fa241",
+   "root": "2895028e23f23ac202af0f0592a5d2fea576020ed09c1f87525afe8e5a5469e4"
   },
   "decisions.json": {
    "rows": 20,
@@ -18,9 +18,9 @@
    "root": "a18b9f46677f2a4f4cd992eb76817d6306006598075c3c32e2b121648fe07ee9"
   },
   "episodes.json": {
-   "rows": 65,
-   "sha256": "480f902d1fb6cf29eff0738c1548911b1dc32d09d2dd266c678730dfbdf441b1",
-   "root": "5c27f6bf38ddb83fa7cf362a30fad389e36c649e051c8f0e1e62301adf938466"
+   "rows": 70,
+   "sha256": "6dc31e4ae1cb2667ebdfc7a2268deef5fac780edcd995e617ce0dd41ffeae7ef",
+   "root": "1f39821eab87c0c39090be8f5bc79d584d9da0ea82f8f8ec2d2c71c9fd1c1173"
   },
   "restatements.json": {
    "rows": 4,
@@ -28,10 +28,10 @@
    "root": "65d6c0e12158a03d20733e4bd334e8a8e93931dbd641d3da4d46c6ca170e9c7f"
   },
   "envelopes.json": {
-   "rows": 30,
-   "sha256": "d7a1f2d3dd35cfc0affd26fd73d5bb15f7c061221d524c7a323046c0557b82c6",
-   "root": "7fbe1b335d2a20fab24c2040a546b48a33c96971ba8d932409de8cea1d97acc4"
+   "rows": 31,
+   "sha256": "fd0cd434820231be1d7dafacfda37eec9057de2100e0d70561eafbe57c8ea117",
+   "root": "6532aec7d749a69aeaf918ab3bcd2346aa6577553775ad64c3d27181754f5dea"
   }
  },
- "record_root": "891b7906de98ef3ac1351fbe629ce9fb99b5a4e2cad7540dc5d2123c5d5b194d"
+ "record_root": "ce35f206c35e4fc6966a2473b33a48e399cd7100d4f8088391190b196f9b62a0"
 }

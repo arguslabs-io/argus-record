@@ -143,6 +143,16 @@ Dated notes on the record's conventions, newest last.
   asset`, and its settlements block says `order: canonical`. Earlier
   envelopes list their rows in the order the record loaded them; they
   are final and verify as published.
+- **2026-09-03 — methodology v1.1.** From the first hour after the 3
+  September 2026 12:00 UTC fixing, fixes, envelopes and decisions
+  carry methodology_version v1.1. Two changes: every cross-venue
+  condition and reference value the book reads (the breadth of
+  stress, the spot reference price, the funding regime anchor, the
+  basis add-on) is taken over the venues the book holds; and the
+  averages the book reads are computed with exact arithmetic, so a
+  replay of the record from its inputs no longer depends on the order
+  in which a database happens to sum. Fixes up to and including 3
+  September remain v1.0 and unchanged.
 
 ---
 
