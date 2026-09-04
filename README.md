@@ -1,7 +1,7 @@
 # The Argus record — machine-readable
 
-[Argus Labs](https://arguslabs.io) publishes a daily benchmark for
-prudent crypto carry: a simulated $100M BTC/ETH portfolio run
+[Argus Labs](https://arguslabs.io) publishes a daily book fixing for
+prudent crypto carry: a simulated $100M BTC/ETH carry book run
 mechanically under a published venue-risk rulebook, shown beside the
 market average — the gap between the two being the price of prudence.
 Named for the hundred-eyed sentinel of Greek mythology, Argus keeps an
@@ -13,7 +13,7 @@ verifiable.
 
 
 The published record of **ARGUS-PC-100M** (the Argus Prudent Carry
-Reference Portfolio) and its family — the two reference indices
+book) and its family — the two reference rates
 (ARGUS-BTC-100M, ARGUS-stETH-100M), the market-average comparator, the
 book's decision record, every detection episode, the per-fix envelope,
 and the restatement ledger (freeze-era corrections plus one pre-freeze
@@ -30,16 +30,16 @@ Operational failures are published on the
 | file | contents |
 |---|---|
 | `data/portfolio_fixes.json` | one row per daily fix: carry-accounting NAV, full-marks NAV, basis, cumulative carry and costs, mix, active de-rates, methodology version |
-| `data/reference_fixes.json` | daily fixes of the reference indices with the market average (rows for the pre-retirement ARGUS-ETH-100M era included, closed), the prudence premium, and the striking-solve binding |
+| `data/reference_fixes.json` | daily fixes of the reference rates with the market average (rows for the pre-retirement ARGUS-ETH-100M era included, closed), the prudence premium, and the striking-solve binding |
 | `data/decisions.json` | the book's action record — every de-rate, revert, mandated walk, universe exit, impairment, and recovery, one row per action |
-| `data/episodes.json` | the observation record across three planes (market conditions per venue, book conditions, index-fixing conditions) — re-derived with the series, deliberately unfingerprinted |
+| `data/episodes.json` | the observation record across three planes (market conditions per venue, book conditions, index-fixing conditions) — derived detector output, re-derived hourly, rooted, not under the finality clock |
 | `data/envelopes.json` | one fingerprinted ENVELOPE per fix — the receipt's object: positions, per-leg workings, the window's settlement rows, execution (events and admissions with final outcomes), the premises in force with their citations, the ruleset hash, the inputs' provenance |
 | `data/restatements.json` | the append-only restatement ledger from the freeze (2026-09-01) onward, plus the one pre-freeze memorial row (the 2026-08-21 in-window correction) — the 761-row development-era ledger was deliberately cleared at the freeze: table and key, fingerprint before and after, reason, time |
 | `verify.py` | stdlib-only consistency verifier (Python 3.8+) |
 
 ## Fingerprints
 
-Every portfolio fix, reference fix, decision, and envelope carries:
+Every book fix, reference fix, decision, and envelope carries:
 
 - `row_sha256` — its citable `h2:` fingerprint, computed by the
   database at write time over every published field;
@@ -70,7 +70,7 @@ python3 verify.py
 
 `data/manifest.json` binds each release: exact file digests, row
 counts, per-file roots, coverage, and the **record root** — the
-digest of the four fingerprint roots (portfolio fixes, reference
+digest of the four fingerprint roots (book fixes, reference
 fixes, decisions, envelopes) plus the episodes' and the restatement
 ledger's canonical field-line digests, in manifest order, so every
 published family is under the anchor (episodes carry no per-row

@@ -294,5 +294,20 @@
   "row_sha256": "h2:63f637adce73206a42dfbcf3415580c970d6f78dc42806c79d0f4fc53440cb73",
   "published_at": "2026-08-26T16:06:55Z",
   "h2_preimage": "{\"venue\": null, \"action\": \"walk\", \"schema\": \"argus-book-decision-h1\", \"evidence\": {\"cost_usd\": 49.91, \"mandated\": true, \"turnover_usd\": 28287.38}, \"decided_at\": \"2026-08-26T16:00:00Z\", \"methodology_version\": \"v1.0\"}"
+ },
+ {
+  "decided_at": "2026-09-03T13:00:00Z",
+  "action": "walk",
+  "venue": null,
+  "seq": 0,
+  "evidence": {
+   "cost_usd": 28.31,
+   "mandated": true,
+   "turnover_usd": 16042.94
+  },
+  "methodology_version": "v1.1",
+  "row_sha256": "h2:5f47330e5e3da2c2a12438f5622b7e55ab92151680a283a302743ea6330bbf84",
+  "published_at": "2026-09-03T13:09:41Z",
+  "h2_preimage": "{\"venue\": null, \"action\": \"walk\", \"schema\": \"argus-book-decision-h1\", \"evidence\": {\"cost_usd\": 28.31, \"mandated\": true, \"turnover_usd\": 16042.94}, \"decided_at\": \"2026-09-03T13:00:00Z\", \"methodology_version\": \"v1.1\"}"
  }
 ]
