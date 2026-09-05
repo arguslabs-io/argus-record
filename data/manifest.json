@@ -1,16 +1,16 @@
 {
  "schema": "argus-record-manifest-h6",
- "as_of": "2026-09-04",
+ "as_of": "2026-09-05",
  "files": {
   "portfolio_fixes.json": {
-   "rows": 32,
-   "sha256": "48ffce236c94e37b8d74526405c5713dfac1dd7ba6cb75e06e774eb345643fea",
-   "root": "73d3261e1b1185cde8d0dc0bbd53d7b29ba5f11794f704191df095292bd605eb"
+   "rows": 33,
+   "sha256": "4620a803bbdd899439d97c45c9ef9195235129f429248c62e7cc67c46f9180ee",
+   "root": "332ccf7769e26636e27504995c84baa8984ad887f70223878a1437c5ee53bd21"
   },
   "reference_fixes.json": {
-   "rows": 70,
-   "sha256": "ebaf576134e92d66f923d4029f997e566d5494e826194d77361df54ad1babcb1",
-   "root": "825c1fc375cb587e220dc7c04b3d383874ca1e6f6e39a95be47c575ae0557517"
+   "rows": 72,
+   "sha256": "e6ee1ab5dd3c169ba6cd9af633c1ccd7b3790c2d3cc034a6fe3d96bdd782c322",
+   "root": "1784c569d5fcbb9b93ac5c3c31aa749c15f4f5d3112284151fb9b4253dcc75c6"
   },
   "decisions.json": {
    "rows": 21,
@@ -18,20 +18,20 @@
    "root": "680e7f446f6f2ec91b8edf2ac55da06c30d461da23fbb72bff741b5e96fdad1b"
   },
   "episodes.json": {
-   "rows": 78,
-   "sha256": "c693a7d27a43bb00dc7a50e2b1d675732204189399d47e35424f4c4a3d1816e6",
-   "root": "df49e6b75be06acf00e7dd6d8459934c7d5bc016aa5d70af406e48f75d22fcbb"
+   "rows": 3984,
+   "sha256": "009ef57a05d9de27cfdceb1b5b689e4449ac7ac7d6ce794e2f6004300c5553f3",
+   "root": "788498d31bd8206333d4b712a0d2dd17eba16987a45d999d554509d8bb6646f8"
   },
   "restatements.json": {
-   "rows": 7,
-   "sha256": "ac5ae09a0db47ca0918753797e068b05310b8ce428cb885f15c963396bb9191b",
-   "root": "af159d68484de0eca13ba33de3d11c60e64603c18d2281ceb289e84e2b190166"
+   "rows": 10,
+   "sha256": "8bcbc413c24217c2f8098b7d5f416cbaa606b8e7b162919d1249962fcf880921",
+   "root": "02d9eda03f56c6db5ff8715d7f9c2a8ba1add226dbfdf2714cf2eef54805404c"
   },
   "envelopes.json": {
-   "rows": 32,
-   "sha256": "45bf21716546151c106e3c4c9e4cb50bfa78c17684ed70a1470532ac18fc9533",
-   "root": "36e3e3c2f113cac6f011ba074e51484eb4b1197576599e6135d170c13adbe0de"
+   "rows": 33,
+   "sha256": "45ab0eecc8b02434fa2cebfa1a89610f3fc5acac3b9c05b86719ed7689f9c057",
+   "root": "e91509d6bf23bdf2c5c40c478da3e41bc9f029dad26ea0c0e83f8b46f8c93910"
   }
  },
- "record_root": "a2337d6562187e190ce312506c08710533b2aa1650e5bb26a2cb12d0a976b1c7"
+ "record_root": "0742ecc53d7fcacc4dca468e4ccae17a807c280ab0b3fc68a785c9f04b3ec67a"
 }

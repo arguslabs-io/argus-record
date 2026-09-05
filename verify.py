@@ -447,9 +447,35 @@ PUBLIC_EVIDENCE = {
 # the closed PUBLIC evidence schema per EPISODE plane (F-078/F-080;
 # migration 151): venue and line are tokens, missed_fixes a positive
 # JSON integer AS SPELLED
+# 211 (2026-09-05): the market plane also carries WHAT WAS MEASURED —
+# unit (a bounded token class), n_obs and peak_stress (JSON numbers),
+# open/peak/close (a triple [iso-second UTC, number|null, number|null])
+# and hourly (at most 400 triples). Mirrors migration 211 exactly.
+_TOKEN_UNIT = re.compile(r"^[A-Za-z0-9 ,./%=()\[\]|-]{0,64}$")
+_ISO_SECOND = re.compile(r"^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z$")
+
+
+def _json_number(v) -> bool:
+    return isinstance(v, (int, float, Decimal)) and not isinstance(v, bool)
+
+
+def _triple(v) -> bool:
+    return (isinstance(v, list) and len(v) == 3
+            and isinstance(v[0], str) and _ISO_SECOND.match(v[0]) is not None
+            and (v[1] is None or _json_number(v[1]))
+            and (v[2] is None or _json_number(v[2])))
+
+
+def _hourly(v) -> bool:
+    return isinstance(v, list) and len(v) <= 400 and all(_triple(e) for e in v)
+
+
 EPISODE_EVIDENCE = {
     "book": {"venue": _tok(_TOKEN_VENUE)},
-    "market": {"line": _tok(_TOKEN_LINE)},
+    "market": {"line": _tok(_TOKEN_LINE), "unit": _tok(_TOKEN_UNIT),
+               "n_obs": _json_number, "peak_stress": _json_number,
+               "open": _triple, "peak": _triple, "close": _triple,
+               "hourly": _hourly},
     "index": {"missed_fixes": _count},
 }
 

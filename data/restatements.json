@@ -82,5 +82,41 @@
   "reason": "in-window correction: envelope parts ['positions']",
   "key_seq": null,
   "restated_at": "2026-09-04T13:51:24Z"
+ },
+ {
+  "seq": 771,
+  "table_name": "fix_envelope",
+  "index_name": null,
+  "fix_date": "2026-09-04",
+  "op": "update",
+  "old_row_sha256": "h2:09f4bb671a841b611924f4e274e7347a0b156bc3f3df21ef304f2b89ad951651",
+  "new_row_sha256": "h2:828b2e9db3f2127ee8a31f5077496e24849c7674559995a8681e8d4e24020dab",
+  "reason": "in-window correction: envelope parts ['positions']",
+  "key_seq": null,
+  "restated_at": "2026-09-04T14:04:44Z"
+ },
+ {
+  "seq": 772,
+  "table_name": "fix_envelope",
+  "index_name": null,
+  "fix_date": "2026-09-04",
+  "op": "update",
+  "old_row_sha256": "h2:828b2e9db3f2127ee8a31f5077496e24849c7674559995a8681e8d4e24020dab",
+  "new_row_sha256": "h2:09f4bb671a841b611924f4e274e7347a0b156bc3f3df21ef304f2b89ad951651",
+  "reason": "in-window correction: envelope parts ['positions']",
+  "key_seq": null,
+  "restated_at": "2026-09-05T10:39:02Z"
+ },
+ {
+  "seq": 773,
+  "table_name": "fix_envelope",
+  "index_name": null,
+  "fix_date": "2026-09-04",
+  "op": "update",
+  "old_row_sha256": "h2:09f4bb671a841b611924f4e274e7347a0b156bc3f3df21ef304f2b89ad951651",
+  "new_row_sha256": "h2:828b2e9db3f2127ee8a31f5077496e24849c7674559995a8681e8d4e24020dab",
+  "reason": "in-window correction: envelope parts ['positions']",
+  "key_seq": null,
+  "restated_at": "2026-09-05T11:10:45Z"
  }
 ]

@@ -1,6 +1,6 @@
 # The Argus record — machine-readable
 
-[Argus Labs](https://arguslabs.io) publishes a daily book fixing for
+[Argus Labs](https://arguslabs.io) publishes a daily book fix for
 prudent crypto carry: a simulated $100M BTC/ETH carry book run
 mechanically under a published venue-risk rulebook, shown beside the
 market average — the gap between the two being the price of prudence.
@@ -32,7 +32,7 @@ Operational failures are published on the
 | `data/portfolio_fixes.json` | one row per daily fix: carry-accounting NAV, full-marks NAV, basis, cumulative carry and costs, mix, active de-rates, methodology version |
 | `data/reference_fixes.json` | daily fixes of the reference rates with the market average (rows for the pre-retirement ARGUS-ETH-100M era included, closed), the prudence premium, and the striking-solve binding |
 | `data/decisions.json` | the book's action record — every de-rate, revert, mandated walk, universe exit, impairment, and recovery, one row per action |
-| `data/episodes.json` | the observation record across three planes (market conditions per venue, book conditions, index-fixing conditions) — derived detector output, re-derived hourly, rooted, not under the finality clock |
+| `data/episodes.json` | the observation record across three planes (market episodes per venue, book episodes, reference-fix episodes) — derived detector output, re-derived hourly, rooted, not under the finality clock; each market row carries its signal and its family (`kind`); the family's role — confirms a de-rate, gates breadth, or observes — is published on the methodology page's family table and at arguslabs.io/api/families |
 | `data/envelopes.json` | one fingerprinted ENVELOPE per fix — the receipt's object: positions, per-leg workings, the window's settlement rows, execution (events and admissions with final outcomes), the premises in force with their citations, the ruleset hash, the inputs' provenance |
 | `data/restatements.json` | the append-only restatement ledger from the freeze (2026-09-01) onward, plus the one pre-freeze memorial row (the 2026-08-21 in-window correction) — the 761-row development-era ledger was deliberately cleared at the freeze: table and key, fingerprint before and after, reason, time |
 | `verify.py` | stdlib-only consistency verifier (Python 3.8+) |
@@ -138,13 +138,13 @@ between refreshes.
 
 Dated notes on the record's conventions, newest last.
 
-- **2026-09-02 — settlement order.** From the 2 September 2026 fixing,
+- **2026-09-02 — settlement order.** From the 2 September 2026 fix,
   each envelope lists its settlement rows sorted by `settled_at, venue,
   asset`, and its settlements block says `order: canonical`. Earlier
   envelopes list their rows in the order the record loaded them; they
   are final and verify as published.
 - **2026-09-03 — methodology v1.1.** From the first hour after the 3
-  September 2026 12:00 UTC fixing, fixes, envelopes and decisions
+  September 2026 12:00 UTC fix, fixes, envelopes and decisions
   carry methodology_version v1.1. Two changes: every cross-venue
   condition and reference value the book reads (the breadth of
   stress, the spot reference price, the funding regime anchor, the
@@ -153,6 +153,21 @@ Dated notes on the record's conventions, newest last.
   replay of the record from its inputs no longer depends on the order
   in which a database happens to sum. Fixes up to and including 3
   September remain v1.0 and unchanged.
+
+- **2026-09-05 — signal families.** Every venue signal the record
+  measures belongs to a family with one role: mark, door, funding and
+  withdrawal notice CONFIRM a de-rate (two on one venue inside 24 hours);
+  depth and spread GATE market-wide breadth; the rest OBSERVE. From this
+  date the funding streak and material withdrawal notices are episode
+  rows like the others (the rule read them before as a streak and a
+  notice list — same rule, same hours; every published decision
+  re-derives unchanged), and the observing families (availability, open
+  interest migration and crowding, liquidation stress, collateral, venue
+  notices, chain health, carry) are re-derived hourly from the stored
+  tape with authored thresholds, stated as such on the methodology
+  page's family table. Decisions from 5 September 12:00 UTC record the
+  episodes that confirmed them (`confirmed_by`). The episodes root moves
+  with the new rows; no fix, decision or premium moved.
 
 ---
 
