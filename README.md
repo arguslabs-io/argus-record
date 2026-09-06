@@ -154,6 +154,21 @@ Dated notes on the record's conventions, newest last.
   in which a database happens to sum. Fixes up to and including 3
   September remain v1.0 and unchanged.
 
+- **2026-09-06 — methodology v1.2.** From the first hour after the 6
+  September 2026 12:00 UTC fix, fixes, envelopes and decisions carry
+  methodology_version v1.2. Policy rules come in two kinds: rebalance
+  rules must clear the cost-aware return test; de-risk rules change a
+  venue's cap and mandate the walk. The binary de-rate and the
+  seven-day revert are replaced by a cap ladder set by the number of
+  confirming families with an episode open on the venue at the pass
+  (two → 0.75 of the bound, three → 0.5, four → 0.25, five or more → 0);
+  a step down is immediate, a step up comes one rung per two quiet days
+  and raises the cap only. Each rung is a `cap-step` decision row. The
+  funding family confirms through the eight-hour accrual gap (a new
+  observing signal in every era, `funding_accrual_gap`); the mark family
+  confirms only past 25 bp. Fixes up to and including 6 September remain
+  v1.1 and unchanged; no earlier decision moves.
+
 - **2026-09-05 — signal families.** Every venue signal the record
   measures belongs to a family with one role: mark, door, funding and
   withdrawal notice CONFIRM a de-rate (two on one venue inside 24 hours);

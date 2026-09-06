@@ -92,7 +92,7 @@ import sys
 
 CAPITAL0 = 100e6
 INCEPTION = "2026-08-04"        # public rulebook fact (v1.8)
-ACTIONS = {"de-rate", "revert", "walk", "universe-exit",
+ACTIONS = {"de-rate", "revert", "cap-step", "walk", "universe-exit",
            "impairment", "recovery"}
 PLANES = {"market", "book", "index"}
 SEVERITIES = {"info", "warn", "crit"}
@@ -251,6 +251,11 @@ def _num(v) -> bool:
     if isinstance(v, int):
         return abs(v) <= _MAX_FINITE
     return math.isfinite(v)
+
+
+def _count_or_zero(v) -> bool:
+    """A non-negative JSON integer as spelled (a step UP carries count 0)."""
+    return type(v) is int and 0 <= v <= 999
 
 
 def _count(v) -> bool:
@@ -426,10 +431,35 @@ def _is_object(v) -> bool:
 
 # the closed PUBLIC evidence schema per action (migrations 134/135/152/
 # 155): key -> value-class check
+# ARG-132 Phase B / v1.2 (213): the episodes that confirmed a decision —
+# an array of {family, subject, opened_at} (never ids)
+_ISO_SECOND_Z = re.compile(r"^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z$")
+
+
+def _confirmed_by(v) -> bool:
+    return (isinstance(v, list) and len(v) <= 64 and all(
+        isinstance(e, dict) and set(e) <= {"family", "subject", "opened_at"}
+        and isinstance(e.get("family"), str) and e["family"] in FAMILIES
+        and isinstance(e.get("subject"), str) and _TOKEN_VENUE.fullmatch(e["subject"]) is not None
+        and isinstance(e.get("opened_at"), str) and _ISO_SECOND_Z.match(e["opened_at"]) is not None
+        for e in v))
+
+
+def _unit_interval(v) -> bool:
+    return _num(v) and Decimal(0) <= v <= Decimal(1)
+
+
 PUBLIC_EVIDENCE = {
     "de-rate": {"families": lambda v: isinstance(v, list)
                 and all(isinstance(x, str) and x in FAMILIES for x in v),
-                "cap_pct": _num},
+                "cap_pct": _num, "confirmed_by": _confirmed_by},
+    # v1.2 (213): one rung of the de-risk ladder — the count of concurrent
+    # confirming families, the cap factor it sets, the cap in force
+    "cap-step": {"families": lambda v: isinstance(v, list)
+                 and all(isinstance(x, str) and x in FAMILIES for x in v),
+                 "count": _count_or_zero, "factor": _unit_interval, "cap_pct": _num,
+                 "direction": lambda v: v in ("down", "up"),
+                 "confirmed_by": _confirmed_by},
     "revert": {},
     "walk": {"cost_usd": _num,
              "turnover_usd": _num,
@@ -729,7 +759,7 @@ EXECUTION_EVENTS = {
     "halt", "halt-end", "impairment", "recovery",
     "staking-unavailable", "staking-resumed",
     "solve-infeasible-hold", "solve-resumed",
-    "de-rate", "revert", "universe-exit", "walk",
+    "de-rate", "revert", "cap-step", "universe-exit", "walk",
     "resync-deferred", "resync-resumed",
     "rebalance-deferred", "rebalance-resumed",
     # F-142 (Sol 2026-09-01): the market book's executed monthly
