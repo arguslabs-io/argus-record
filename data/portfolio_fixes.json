@@ -1153,5 +1153,39 @@
   "row_sha256": "h2:5d2749ed3319f787adbcd9f8dcc4976762864e9b782d8ee84fa09ce9d917fce5",
   "published_at": "2026-09-07T12:05:22Z",
   "h2_preimage": "{\"ret_1d\": 0.00012914782485351495, \"schema\": \"argus-portfolio-fix-h5\", \"shares\": {\"OKX/BTC\": 0.3447, \"Bybit/BTC\": 0.0, \"Bybit/ETH\": 0.449, \"Bitget/BTC\": 0.063, \"Bitget/ETH\": 0.367, \"Binance/BTC\": 0.3447, \"Binance/ETH\": 0.0, \"Deribit/BTC\": 0.2476, \"Deribit/ETH\": 0.0936, \"Hyperliquid/BTC\": 0.0, \"Hyperliquid/ETH\": 0.0905}, \"derated\": [], \"mix_btc\": 0.565689, \"nav_usd\": 100391193.11, \"fix_date\": \"2026-09-07\", \"basis_usd\": -4915.43, \"capital_usd\": 98242798.31, \"cost_usd_cum\": 256173.6, \"full_nav_usd\": 100386277.68, \"carry_usd_cum\": 647366.71, \"naive_nav_usd\": 100631540.67, \"naive_capital_usd\": 98051159.08, \"stable_margin_usd\": 1757201.69, \"stable_reserve_usd\": 1757201.69, \"methodology_version\": \"v1.2\", \"naive_carry_usd_cum\": 633636.72}"
+ },
+ {
+  "fix_date": "2026-09-08",
+  "nav_usd": 100405961.08,
+  "ret_1d": 0.0001471042383549559,
+  "carry_usd_cum": 662134.68,
+  "cost_usd_cum": 256173.6,
+  "mix_btc": 0.565689,
+  "shares": {
+   "OKX/BTC": 0.3447,
+   "Bybit/BTC": 0.0,
+   "Bybit/ETH": 0.449,
+   "Bitget/BTC": 0.063,
+   "Bitget/ETH": 0.367,
+   "Binance/BTC": 0.3447,
+   "Binance/ETH": 0.0,
+   "Deribit/BTC": 0.2476,
+   "Deribit/ETH": 0.0936,
+   "Hyperliquid/BTC": 0.0,
+   "Hyperliquid/ETH": 0.0905
+  },
+  "derated": [],
+  "methodology_version": "v1.2",
+  "full_nav_usd": 100399784.74,
+  "basis_usd": -6176.34,
+  "naive_nav_usd": 100645875.19,
+  "naive_carry_usd_cum": 647971.24,
+  "capital_usd": 98242798.31,
+  "stable_reserve_usd": 1757201.69,
+  "stable_margin_usd": 1757201.69,
+  "naive_capital_usd": 98051159.08,
+  "row_sha256": "h2:df37fd00811cbe3eea59635a2e4ef605d9f347f18fd01fc0f751c3840c8dbe36",
+  "published_at": "2026-09-08T12:05:32Z",
+  "h2_preimage": "{\"ret_1d\": 0.0001471042383549559, \"schema\": \"argus-portfolio-fix-h5\", \"shares\": {\"OKX/BTC\": 0.3447, \"Bybit/BTC\": 0.0, \"Bybit/ETH\": 0.449, \"Bitget/BTC\": 0.063, \"Bitget/ETH\": 0.367, \"Binance/BTC\": 0.3447, \"Binance/ETH\": 0.0, \"Deribit/BTC\": 0.2476, \"Deribit/ETH\": 0.0936, \"Hyperliquid/BTC\": 0.0, \"Hyperliquid/ETH\": 0.0905}, \"derated\": [], \"mix_btc\": 0.565689, \"nav_usd\": 100405961.08, \"fix_date\": \"2026-09-08\", \"basis_usd\": -6176.34, \"capital_usd\": 98242798.31, \"cost_usd_cum\": 256173.6, \"full_nav_usd\": 100399784.74, \"carry_usd_cum\": 662134.68, \"naive_nav_usd\": 100645875.19, \"naive_capital_usd\": 98051159.08, \"stable_margin_usd\": 1757201.69, \"stable_reserve_usd\": 1757201.69, \"methodology_version\": \"v1.2\", \"naive_carry_usd_cum\": 647971.24}"
  }
 ]

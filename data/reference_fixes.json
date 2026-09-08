@@ -1280,6 +1280,44 @@
   "h2_preimage": "{\"schema\": \"argus-reference-fix-h2\", \"weights\": {\"OKX\": 0.195, \"Bybit\": 0.195, \"Bitget\": 0.195, \"Binance\": 0.195, \"Deribit\": 0.1807, \"Hyperliquid\": 0.0393}, \"fix_date\": \"2026-09-07\", \"naive_bp\": 653.2, \"value_bp\": 584.2, \"index_name\": \"ARGUS-BTC-100M\", \"staking_bp\": null, \"naive_venue\": null, \"unwind_days\": null, \"constituents\": [\"Binance\", \"Bitget\", \"Bybit\", \"Deribit\", \"Hyperliquid\", \"OKX\"], \"naive_weights\": {\"OKX\": 0.1215, \"Bybit\": 0.2192, \"Bitget\": 0.1473, \"Binance\": 0.4636, \"Deribit\": 0.0484}, \"methodology_version\": \"v1.2\", \"prudence_premium_bp\": 69}"
  },
  {
+  "index_name": "ARGUS-BTC-100M",
+  "fix_date": "2026-09-08",
+  "value_bp": 591.7,
+  "prudence_premium_bp": 68.1,
+  "naive_bp": 659.8,
+  "naive_venue": null,
+  "naive_weights": {
+   "OKX": 0.1207,
+   "Bybit": 0.2192,
+   "Bitget": 0.147,
+   "Binance": 0.4651,
+   "Deribit": 0.0479
+  },
+  "weights": {
+   "OKX": 0.195,
+   "Bybit": 0.195,
+   "Bitget": 0.195,
+   "Binance": 0.195,
+   "Deribit": 0.1807,
+   "Hyperliquid": 0.0393
+  },
+  "constituents": [
+   "Binance",
+   "Bitget",
+   "Bybit",
+   "Deribit",
+   "Hyperliquid",
+   "OKX"
+  ],
+  "methodology_version": "v1.2",
+  "staking_bp": null,
+  "unwind_days": null,
+  "row_sha256": "h2:1ee7a2fb2bf8ba42d98d8ca1a295197d60febee91436aeaac3ad066d959e7eec",
+  "solve_sha256": "h2:e19cfe1bee29745d2ebabce5e8b1b784ebeb1727d75acb97f6c7d10ce37bd36f",
+  "published_at": "2026-09-08T12:03:52Z",
+  "h2_preimage": "{\"schema\": \"argus-reference-fix-h2\", \"weights\": {\"OKX\": 0.195, \"Bybit\": 0.195, \"Bitget\": 0.195, \"Binance\": 0.195, \"Deribit\": 0.1807, \"Hyperliquid\": 0.0393}, \"fix_date\": \"2026-09-08\", \"naive_bp\": 659.8, \"value_bp\": 591.7, \"index_name\": \"ARGUS-BTC-100M\", \"staking_bp\": null, \"naive_venue\": null, \"unwind_days\": null, \"constituents\": [\"Binance\", \"Bitget\", \"Bybit\", \"Deribit\", \"Hyperliquid\", \"OKX\"], \"naive_weights\": {\"OKX\": 0.1207, \"Bybit\": 0.2192, \"Bitget\": 0.147, \"Binance\": 0.4651, \"Deribit\": 0.0479}, \"methodology_version\": \"v1.2\", \"prudence_premium_bp\": 68.1}"
+ },
+ {
   "index_name": "ARGUS-ETH-100M",
   "fix_date": "2026-08-05",
   "value_bp": 275.7,
@@ -2865,5 +2903,43 @@
   "solve_sha256": "h2:cf808dd603ce30e6b321251d336c36cb5621aabb31952be0d9087c4e0f05aac2",
   "published_at": "2026-09-07T12:03:42Z",
   "h2_preimage": "{\"schema\": \"argus-reference-fix-h2\", \"weights\": {\"OKX\": 0.195, \"Bybit\": 0.195, \"Bitget\": 0.195, \"Binance\": 0.195, \"Deribit\": 0.1807, \"Hyperliquid\": 0.0393}, \"fix_date\": \"2026-09-07\", \"naive_bp\": 846.9, \"value_bp\": 820.2, \"index_name\": \"ARGUS-stETH-100M\", \"staking_bp\": 222.2, \"naive_venue\": null, \"unwind_days\": 5.02, \"constituents\": [\"Binance\", \"Bitget\", \"Bybit\", \"Deribit\", \"Hyperliquid\", \"OKX\"], \"naive_weights\": {\"OKX\": 0.1312, \"Bybit\": 0.165, \"Bitget\": 0.1701, \"Binance\": 0.509, \"Deribit\": 0.0246}, \"methodology_version\": \"v1.2\", \"prudence_premium_bp\": 26.7}"
+ },
+ {
+  "index_name": "ARGUS-stETH-100M",
+  "fix_date": "2026-09-08",
+  "value_bp": 820.6,
+  "prudence_premium_bp": 23.7,
+  "naive_bp": 844.3,
+  "naive_venue": null,
+  "naive_weights": {
+   "OKX": 0.1314,
+   "Bybit": 0.1646,
+   "Bitget": 0.1692,
+   "Binance": 0.5104,
+   "Deribit": 0.0244
+  },
+  "weights": {
+   "OKX": 0.195,
+   "Bybit": 0.195,
+   "Bitget": 0.195,
+   "Binance": 0.195,
+   "Deribit": 0.1807,
+   "Hyperliquid": 0.0393
+  },
+  "constituents": [
+   "Binance",
+   "Bitget",
+   "Bybit",
+   "Deribit",
+   "Hyperliquid",
+   "OKX"
+  ],
+  "methodology_version": "v1.2",
+  "staking_bp": 221.9,
+  "unwind_days": 5.02,
+  "row_sha256": "h2:e038cce074c0adb50fe381d85db71160e327c98820223db6bf2fbf564068327f",
+  "solve_sha256": "h2:b6dfd618022879b933f71b8e6200f93d44898de4c264b297b32620043f773d31",
+  "published_at": "2026-09-08T12:03:52Z",
+  "h2_preimage": "{\"schema\": \"argus-reference-fix-h2\", \"weights\": {\"OKX\": 0.195, \"Bybit\": 0.195, \"Bitget\": 0.195, \"Binance\": 0.195, \"Deribit\": 0.1807, \"Hyperliquid\": 0.0393}, \"fix_date\": \"2026-09-08\", \"naive_bp\": 844.3, \"value_bp\": 820.6, \"index_name\": \"ARGUS-stETH-100M\", \"staking_bp\": 221.9, \"naive_venue\": null, \"unwind_days\": 5.02, \"constituents\": [\"Binance\", \"Bitget\", \"Bybit\", \"Deribit\", \"Hyperliquid\", \"OKX\"], \"naive_weights\": {\"OKX\": 0.1314, \"Bybit\": 0.1646, \"Bitget\": 0.1692, \"Binance\": 0.5104, \"Deribit\": 0.0244}, \"methodology_version\": \"v1.2\", \"prudence_premium_bp\": 23.7}"
  }
 ]

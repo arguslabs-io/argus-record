@@ -1,16 +1,16 @@
 {
  "schema": "argus-record-manifest-h6",
- "as_of": "2026-09-07",
+ "as_of": "2026-09-08",
  "files": {
   "portfolio_fixes.json": {
-   "rows": 35,
-   "sha256": "29112865939b4d7a90764e7969579f90f604f1194428bc396a97d23c7a819584",
-   "root": "1ceb228591566f523601e5f8f37d035b75ef08fdf3be2a4951a29d93de929e79"
+   "rows": 36,
+   "sha256": "83c5a4eaba45d75892c0e00a5c08844a92c7cb16a2a14759df1882bdb7305f33",
+   "root": "d058ee40daa5b9b513144e9afa5849aed47341b7c3ec3b69d29933266e506421"
   },
   "reference_fixes.json": {
-   "rows": 76,
-   "sha256": "5da655ccb4ae4b7f06b8e4e49614198051c38aaa719092e3aaf69a581711516e",
-   "root": "6cfc38fa3f481519f2027199e25a09c1a69c98bd952e1dce8c2a61af9a8fedf0"
+   "rows": 78,
+   "sha256": "81cffb2308b3da0d5d3b1eec7c0b3fe8f84822033849a37e48785a04b71c859e",
+   "root": "892620ceb23a937c4d17cd1886519b1b0896870d583d77575570ae74af0c762e"
   },
   "decisions.json": {
    "rows": 21,
@@ -18,9 +18,9 @@
    "root": "680e7f446f6f2ec91b8edf2ac55da06c30d461da23fbb72bff741b5e96fdad1b"
   },
   "episodes.json": {
-   "rows": 5208,
-   "sha256": "e94edcd428950257244f5763c481d8c5987c7842ff17ca3cf66b6d95505cbabf",
-   "root": "f0b572ce8171a6ec3f3370c50fda1f6e3190646fa668bbf7024af23e032ec559"
+   "rows": 5268,
+   "sha256": "890593d2599807b6f9046108f1e3524bd85df16f88f5f90aa80c9001435dcb0a",
+   "root": "1855551c97834f83f11938d67e845419057b58ea6ef232cdacccfbf8b4d3b410"
   },
   "restatements.json": {
    "rows": 10,
@@ -28,10 +28,10 @@
    "root": "02d9eda03f56c6db5ff8715d7f9c2a8ba1add226dbfdf2714cf2eef54805404c"
   },
   "envelopes.json": {
-   "rows": 35,
-   "sha256": "875b8d730e3dc5638b26cc0c342414aa61de16b0e0b04299c4126ba1adc41957",
-   "root": "0dd21a5b934a57f3c04f928d8428ef46738b1116cd01f44846ae37b51d29ec2f"
+   "rows": 36,
+   "sha256": "ad27b1c645eaed78626e376aedd92de025f42eb14e6f572dc952c81b0dac2c59",
+   "root": "195c8b95bac00397d5f36c6269c03b54440a494a46b6e44972eb17a7be580cc6"
   }
  },
- "record_root": "4bb703b3538f2005bf6ede42e79f905148c456df93b5b5348a5e8c7aabcd736b"
+ "record_root": "bc82b227a84a6262f478710ef637ef3ab30d0004407728b69bacfca467a8f800"
 }
