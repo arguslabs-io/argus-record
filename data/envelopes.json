@@ -74671,5 +74671,2004 @@
   "row_sha256": "h2:a80ee21144cdd834e9dac5be0a428450e63718930a272381209f5f93fbf80201",
   "published_at": "2026-09-08T12:05:32Z",
   "h2_preimage": "{\"rules\": {\"ruleset_sha256\": \"7303a0ae9cf2bdc13407634ebf9d4cc47744cc92a9b1fc487623414d0de259a8\", \"methodology_version\": \"v1.2\"}, \"schema\": \"argus-fix-envelope-h1\", \"fix_date\": \"2026-09-08\", \"headline\": {\"ret_1d\": 0.0001471042383549559, \"shares\": {\"OKX/BTC\": 0.3447, \"Bybit/BTC\": 0.0, \"Bybit/ETH\": 0.449, \"Bitget/BTC\": 0.063, \"Bitget/ETH\": 0.367, \"Binance/BTC\": 0.3447, \"Binance/ETH\": 0.0, \"Deribit/BTC\": 0.2476, \"Deribit/ETH\": 0.0936, \"Hyperliquid/BTC\": 0.0, \"Hyperliquid/ETH\": 0.0905}, \"derated\": [], \"mix_btc\": 0.565689, \"nav_usd\": 100405961.08, \"fix_date\": \"2026-09-08\", \"basis_usd\": -6176.34, \"capital_usd\": 98242798.31, \"cost_usd_cum\": 256173.6, \"full_nav_usd\": 100399784.74, \"carry_usd_cum\": 662134.68, \"naive_nav_usd\": 100645875.19, \"naive_capital_usd\": 98051159.08, \"stable_margin_usd\": 1757201.69, \"stable_reserve_usd\": 1757201.69, \"methodology_version\": \"v1.2\", \"naive_carry_usd_cum\": 647971.24}, \"premises\": {\"clock_h\": {\"kind\": \"assumed\", \"note\": {\"none\": \"weekday mobilisation clock without a provider\", \"Copper\": \"weekday mobilisation clock\", \"Sygnum\": \"Sygnum's weekday clock\", \"Komainu\": \"weekday mobilisation clock\", \"Fireblocks\": \"weekday mobilisation clock\"}, \"unit\": \"h\", \"value\": {\"none\": 1.0, \"Copper\": 1.0, \"Sygnum\": null, \"Komainu\": 4.0, \"Fireblocks\": 1.0}, \"source\": {\"none\": \"no OES: on-chain USDC top-up\", \"Copper\": \"ops clock on a documented-continuous network (deferred-asks register)\", \"Sygnum\": \"Sygnum Protect ops clock, weekday (deferred-asks register; a written provider confirmation still requested)\", \"Komainu\": \"cadence premise, unpublished (deferred-asks register)\", \"Fireblocks\": \"threshold-triggered on-chain, documented (deferred-asks register)\"}, \"observed_on\": {\"none\": \"2026-08-02\", \"Copper\": \"2026-08-02\", \"Sygnum\": \"2026-08-02\", \"Komainu\": \"2026-08-02\", \"Fireblocks\": \"2026-08-02\"}}, \"capital0\": {\"kind\": \"assumed\", \"note\": \"the $100M book every surface derives from\", \"unit\": \"USD\", \"value\": 100000000.0, \"source\": \"authored \u2014 the reference portfolio's capital (DECISIONS 2026-08-11)\", \"observed_on\": \"2026-08-11\"}, \"mm_of_im\": {\"kind\": \"assumed\", \"note\": \"maintenance margin as a ratio of IM\", \"unit\": \"fraction of IM\", \"value\": 0.5, \"source\": \"documented for Hyperliquid ('MM = half of initial at max leverage'); premise elsewhere\", \"observed_on\": \"2026-08-02\"}, \"basis_addon\": {\"kind\": \"sourced\", \"note\": \"read as-of the strike; the record refuses without the tape (F-123)\", \"unit\": \"fraction\", \"value\": {\"BTC\": 0.003713025420611693, \"ETH\": 0.0037805923245406436}, \"source\": \"measured: the expanding full-history maximum of perp basis (mark vs venue index) per asset (v1.7, promoted 2026-08-22)\", \"observed_on\": null}, \"parked_share\": {\"kind\": \"assumed\", \"note\": \"the pre-funding drag's parked share\", \"unit\": \"fraction of week\", \"value\": 0.3392857142857143, \"source\": \"authored \u2014 Friday 22:00 UTC \u2192 Monday ~07:00 = 57/168 of the week (deployment-drag premise, Reference Policy \u00a77)\", \"observed_on\": \"2026-08-02\"}, \"price_stress\": {\"kind\": \"assumed\", \"note\": \"the linear 24h stress draw on price\", \"unit\": \"fraction\", \"value\": 0.2, \"source\": \"authored \u2014 P1's 20%/24h crash primitive reused symmetrically for the boom draw (Reference Policy \u00a77 signed 2026-08-02; own 24-day window maxes at +4.6%/+6.8% per 24h, too short to author a measured boom)\", \"observed_on\": \"2026-08-02\"}, \"deribit_ladder\": {\"kind\": \"sourced\", \"note\": \"IM = 1/L(N); products.max_leverage serves C1\", \"unit\": \"ladder\", \"value\": {\"C1\": 50.0, \"C2\": 4.0, \"C3\": 0.05, \"C4\": 0.4, \"nmax_usd\": {\"BTC\": 160000000.0, \"ETH\": 75000000.0}}, \"source\": \"Deribit support article 25944811528477 (re-edited 2026-08-11 09:22Z) and announcement 1785922800243, verified live 2026-08-11: L(N) = C1\u00b7(C1/C2)^(\u2212max(0,(N/NMax\u2212C3)/(1\u2212C3))^C4), Tier 1 perps\", \"observed_on\": \"2026-08-11\"}, \"margin_clock_k\": {\"kind\": \"assumed\", \"note\": \"the sleeve's slack\", \"unit\": \"x\", \"value\": 1.5, \"source\": \"authored \u2014 half a clock of slack (DECISIONS D8 closed 2026-08-29): sleeve = max(IM, MM + draw \u00d7 k \u00d7 clock/24)\", \"observed_on\": \"2026-08-29\"}, \"mm_of_im_venue\": {\"kind\": \"sourced\", \"note\": {\"Deribit\": \"Deribit's documented ratio\"}, \"unit\": \"fraction of IM\", \"value\": {\"Deribit\": 0.6666666666666666}, \"source\": {\"Deribit\": \"Deribit notice #281 (announced 2026-08-05, effective 2026-08-11 09:00 UTC, Coinbase-integration margin model): MM = 2/3 of IM; adopted immediately per the worst-case phase policy\"}, \"observed_on\": {\"Deribit\": \"2026-08-11\"}}, \"sygnum_intra_h\": {\"kind\": \"assumed\", \"note\": \"Sygnum's weekday clock\", \"unit\": \"h\", \"value\": 4.0, \"source\": \"Sygnum Protect ops clock, weekday (deferred-asks register; a written provider confirmation still requested)\", \"observed_on\": \"2026-08-02\"}, \"im_fallback_frac\": {\"kind\": \"fallback\", \"note\": \"IM where max_leverage is unserved\", \"unit\": \"fraction\", \"value\": 0.02, \"source\": \"authored \u2014 DRAFT 2% where products.max_leverage is unserved (conservative-high vs the 125x venues)\", \"observed_on\": \"2026-08-02\"}, \"spot_leg_cost_bp\": {\"kind\": \"assumed\", \"note\": \"the coin mirror's round trip\", \"unit\": \"bp\", \"value\": 10.0, \"source\": \"authored \u2014 unknown-venue taker fee 6.0bp + the 4bp half-spread fallback; no spot depth is measured (v1.8, 2026-08-23)\", \"observed_on\": \"2026-08-23\"}, \"sygnum_weekend_h\": {\"kind\": \"assumed\", \"note\": \"Sygnum's weekend clock (the pre-funding line)\", \"unit\": \"h\", \"value\": 4.0, \"source\": \"v1.12 (2026-08-29): equals the ops clock \u2014 Protect 'instantly mirrored', 'P&L settled automatically every eight hours' (Bybit/Sygnum release 2025-09-09; sygnum.com/sygnum-protect); banking hours govern brokerage conversions only; residual: no explicit weekend statement\", \"observed_on\": \"2026-08-29\"}}, \"workings\": {\"legs\": [{\"g\": 0.06092826, \"imf\": 0.02, \"asset\": \"BTC\", \"venue\": \"Binance\", \"draw_f\": 0.20371303, \"binding\": \"clock\", \"clock_h\": 4.0, \"mm_of_im\": 0.5, \"notional_usd\": 19157345.67459888}, {\"g\": 0.06094515, \"imf\": 0.02, \"asset\": \"ETH\", \"venue\": \"Binance\", \"draw_f\": 0.20378059, \"binding\": \"clock\", \"clock_h\": 4.0, \"mm_of_im\": 0.5, \"notional_usd\": 0.00000444}, {\"g\": 0.02273206, \"imf\": 0.02, \"asset\": \"BTC\", \"venue\": \"Bitget\", \"draw_f\": 0.20371303, \"binding\": \"clock\", \"clock_h\": 1.0, \"mm_of_im\": 0.5, \"notional_usd\": 3499113.7430399}, {\"g\": 0.02273629, \"imf\": 0.02, \"asset\": \"ETH\", \"venue\": \"Bitget\", \"draw_f\": 0.20378059, \"binding\": \"clock\", \"clock_h\": 1.0, \"mm_of_im\": 0.5, \"notional_usd\": 15658231.92701097}, {\"g\": 0.0160654, \"imf\": 0.00666667, \"asset\": \"BTC\", \"venue\": \"Bybit\", \"draw_f\": 0.20371303, \"binding\": \"clock\", \"clock_h\": 1.0, \"mm_of_im\": 0.5, \"notional_usd\": 0.00197685}, {\"g\": 0.01606962, \"imf\": 0.00666667, \"asset\": \"ETH\", \"venue\": \"Bybit\", \"draw_f\": 0.20378059, \"binding\": \"clock\", \"clock_h\": 1.0, \"mm_of_im\": 0.5, \"notional_usd\": 19157345.67096745}, {\"g\": 0.03956069, \"imf\": 0.03956069, \"asset\": \"BTC\", \"venue\": \"Deribit\", \"draw_f\": 0.20371303, \"binding\": \"im\", \"clock_h\": 1.0, \"mm_of_im\": 0.66666667, \"notional_usd\": 13761065.24707678}, {\"g\": 0.03002468, \"imf\": 0.02593258, \"asset\": \"ETH\", \"venue\": \"Deribit\", \"draw_f\": 0.20378059, \"binding\": \"clock\", \"clock_h\": 1.0, \"mm_of_im\": 0.66666667, \"notional_usd\": 3991703.13360283}, {\"g\": 0.02523206, \"imf\": 0.025, \"asset\": \"BTC\", \"venue\": \"Hyperliquid\", \"draw_f\": 0.20371303, \"binding\": \"clock\", \"clock_h\": 1.0, \"mm_of_im\": 0.5, \"notional_usd\": 0.00198354}, {\"g\": 0.04, \"imf\": 0.04, \"asset\": \"ETH\", \"venue\": \"Hyperliquid\", \"draw_f\": 0.20378059, \"binding\": \"im\", \"clock_h\": 1.0, \"mm_of_im\": 0.5, \"notional_usd\": 3860647.24064968}, {\"g\": 0.05592826, \"imf\": 0.01, \"asset\": \"BTC\", \"venue\": \"OKX\", \"draw_f\": 0.20371303, \"binding\": \"clock\", \"clock_h\": 4.0, \"mm_of_im\": 0.5, \"notional_usd\": 19157345.66788268}], \"sleeves\": [{\"k\": 1.5, \"kind\": \"stable\", \"ttb_h\": 6.0, \"venue\": \"Binance\", \"im_usd\": 383146.913492, \"mm_usd\": 191573.456746, \"binding\": \"clock\", \"clock_h\": 4.0, \"im_frac\": 0.02, \"posting\": \"USDT\", \"draw_usd\": 3902600.846402, \"provider\": \"Sygnum\", \"sleeve_usd\": 1167223.668347, \"notional_usd\": 19157345.674603}, {\"k\": 1.5, \"kind\": \"stable\", \"ttb_h\": 1.5, \"venue\": \"Bitget\", \"im_usd\": 383146.913401, \"mm_usd\": 191573.456701, \"binding\": \"clock\", \"clock_h\": 1.0, \"im_frac\": 0.02, \"posting\": \"USDT\", \"draw_usd\": 3903658.823727, \"provider\": \"Copper\", \"sleeve_usd\": 435552.133183, \"notional_usd\": 19157345.670051}, {\"k\": 1.5, \"kind\": \"lst\", \"ttb_h\": 1.5, \"venue\": \"Bybit\", \"im_usd\": 127715.63782, \"mm_usd\": 63857.81891, \"binding\": \"clock\", \"clock_h\": 1.0, \"im_frac\": 0.006667, \"posting\": \"stETH\", \"draw_usd\": 3903895.248598, \"provider\": \"Copper\", \"sleeve_usd\": 307851.271947, \"notional_usd\": 19157345.672944}, {\"k\": 1.5, \"kind\": \"lst\", \"ttb_h\": 1.541533, \"venue\": \"Deribit\", \"im_usd\": 647912.401204, \"mm_usd\": 431941.600803, \"binding\": \"clock\", \"clock_h\": 1.0, \"im_frac\": 0.036496, \"posting\": \"stETH\", \"draw_usd\": 3616739.863442, \"provider\": \"Fireblocks\", \"sleeve_usd\": 664246.818097, \"notional_usd\": 17752768.38068}, {\"k\": 1.5, \"kind\": \"stable\", \"ttb_h\": 2.355475, \"venue\": \"Hyperliquid\", \"im_usd\": 154425.889676, \"mm_usd\": 77212.944838, \"binding\": \"im\", \"clock_h\": 1.0, \"im_frac\": 0.04, \"posting\": \"USDC\", \"draw_usd\": 786724.98186, \"provider\": null, \"sleeve_usd\": 154425.889676, \"notional_usd\": 3860647.242633}, {\"k\": 1.5, \"kind\": \"lst\", \"ttb_h\": 6.0, \"venue\": \"OKX\", \"im_usd\": 191573.456679, \"mm_usd\": 95786.728339, \"binding\": \"clock\", \"clock_h\": 4.0, \"im_frac\": 0.01, \"posting\": \"stETH\", \"draw_usd\": 3902600.845033, \"provider\": \"Komainu\", \"sleeve_usd\": 1071436.939598, \"notional_usd\": 19157345.667883}]}, \"execution\": {\"events\": [], \"admissions\": [], \"open_at_strike\": []}, \"positions\": {\"legs\": [{\"asset\": \"BTC\", \"share\": 0.344712, \"venue\": \"Binance\", \"notional_usd\": 19157345.674599}, {\"asset\": \"ETH\", \"share\": 0.0, \"venue\": \"Binance\", \"notional_usd\": 0.000004}, {\"asset\": \"BTC\", \"share\": 0.062962, \"venue\": \"Bitget\", \"notional_usd\": 3499113.74304}, {\"asset\": \"ETH\", \"share\": 0.366979, \"venue\": \"Bitget\", \"notional_usd\": 15658231.927011}, {\"asset\": \"BTC\", \"share\": 0.0, \"venue\": \"Bybit\", \"notional_usd\": 0.001977}, {\"asset\": \"ETH\", \"share\": 0.448987, \"venue\": \"Bybit\", \"notional_usd\": 19157345.670967}, {\"asset\": \"BTC\", \"share\": 0.247613, \"venue\": \"Deribit\", \"notional_usd\": 13761065.247077}, {\"asset\": \"ETH\", \"share\": 0.093553, \"venue\": \"Deribit\", \"notional_usd\": 3991703.133603}, {\"asset\": \"BTC\", \"share\": 0.0, \"venue\": \"Hyperliquid\", \"notional_usd\": 0.001984}, {\"asset\": \"ETH\", \"share\": 0.090481, \"venue\": \"Hyperliquid\", \"notional_usd\": 3860647.24065}, {\"asset\": \"BTC\", \"share\": 0.344712, \"venue\": \"OKX\", \"notional_usd\": 19157345.667883}], \"hedge\": {\"BTC\": 55574870.336559, \"ETH\": 42667927.972235}, \"ref_px\": {\"BTC\": 78401.376509291, \"ETH\": 2474.655}, \"spot_lots\": {\"BTC\": {\"qty\": 856.0500186203471, \"entry\": 63420.5820687296}, \"ETH\": {\"qty\": 21242.182150136985, \"entry\": 1859.5298809017452}}, \"unallocated_usd\": {\"BTC\": 0.0, \"ETH\": 0.0}}, \"provenance\": {\"window_to\": \"2026-09-08T12:00:00+00:00\", \"window_from\": \"2026-09-07T12:00:00+00:00\", \"funding_prints\": 408, \"funding_sha256\": \"bbe8fd8936115e1a05a7bc75d739c39079a27880199246f1e43baefc6d69806a\", \"marks_at_strike\": {\"OKX/BTC\": 78399.92, \"Bybit/BTC\": 78397.0325, \"Bybit/ETH\": 2474.4146666666666, \"Bitget/BTC\": 78406.755, \"Bitget/ETH\": 2474.684, \"Binance/BTC\": 78402.833018582, \"Binance/ETH\": 2474.4766751758334, \"Deribit/BTC\": 78431.84666666666, \"Deribit/ETH\": 2475.459, \"Hyperliquid/BTC\": 78397.68166666667, \"Hyperliquid/ETH\": 2475.1318333333334}}, \"settlements\": {\"rows\": [{\"usd\": 0.0, \"rate\": 0.0, \"asset\": \"BTC\", \"venue\": \"Deribit\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-07T12:00:00Z\", \"notional_usd\": 13761065.247077}, {\"usd\": 0.088448, \"rate\": 0.000000022157981442687224, \"asset\": \"ETH\", \"venue\": \"Deribit\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-07T12:00:00Z\", \"notional_usd\": 3991703.133603}, {\"usd\": 0.0, \"rate\": 0.0000125, \"asset\": \"BTC\", \"venue\": \"Hyperliquid\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-07T12:00:00Z\", \"notional_usd\": 0.001984}, {\"usd\": 48.258091, \"rate\": 0.0000125, \"asset\": \"ETH\", \"venue\": \"Hyperliquid\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-07T12:00:00Z\", \"notional_usd\": 3860647.24065}, {\"usd\": 0.0, \"rate\": 0.0, \"asset\": \"BTC\", \"venue\": \"Deribit\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-07T13:00:00Z\", \"notional_usd\": 13761065.247077}, {\"usd\": 0.0, \"rate\": 0.0, \"asset\": \"ETH\", \"venue\": \"Deribit\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-07T13:00:00Z\", \"notional_usd\": 3991703.133603}, {\"usd\": 0.0, \"rate\": 0.0000125, \"asset\": \"BTC\", \"venue\": \"Hyperliquid\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-07T13:00:00Z\", \"notional_usd\": 0.001984}, {\"usd\": 48.258091, \"rate\": 0.0000125, \"asset\": \"ETH\", \"venue\": \"Hyperliquid\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-07T13:00:00Z\", \"notional_usd\": 3860647.24065}, {\"usd\": 108.221507, \"rate\": 0.0000025363666014350953, \"asset\": \"ETH\", \"venue\": \"pool\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-07T13:00:00Z\", \"notional_usd\": 42667927.972235}, {\"usd\": 0.0, \"rate\": 0.0, \"asset\": \"BTC\", \"venue\": \"Deribit\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-07T14:00:00Z\", \"notional_usd\": 13761065.247077}, {\"usd\": 0.343852, \"rate\": 0.00000008614159893626206, \"asset\": \"ETH\", \"venue\": \"Deribit\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-07T14:00:00Z\", \"notional_usd\": 3991703.133603}, {\"usd\": 0.0, \"rate\": 0.0000125, \"asset\": \"BTC\", \"venue\": \"Hyperliquid\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-07T14:00:00Z\", \"notional_usd\": 0.001984}, {\"usd\": 48.258091, \"rate\": 0.0000125, \"asset\": \"ETH\", \"venue\": \"Hyperliquid\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-07T14:00:00Z\", \"notional_usd\": 3860647.24065}, {\"usd\": 108.075384, \"rate\": 0.000002532941943900848, \"asset\": \"ETH\", \"venue\": \"pool\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-07T14:00:00Z\", \"notional_usd\": 42667927.972235}, {\"usd\": 0.0, \"rate\": 0.0, \"asset\": \"BTC\", \"venue\": \"Deribit\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-07T15:00:00Z\", \"notional_usd\": 13761065.247077}, {\"usd\": 15.955731, \"rate\": 0.000003997223838409654, \"asset\": \"ETH\", \"venue\": \"Deribit\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-07T15:00:00Z\", \"notional_usd\": 3991703.133603}, {\"usd\": 0.0, \"rate\": 0.0000017795, \"asset\": \"BTC\", \"venue\": \"Hyperliquid\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-07T15:00:00Z\", \"notional_usd\": 0.001984}, {\"usd\": 48.258091, \"rate\": 0.0000125, \"asset\": \"ETH\", \"venue\": \"Hyperliquid\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-07T15:00:00Z\", \"notional_usd\": 3860647.24065}, {\"usd\": 108.075384, \"rate\": 0.000002532941943900848, \"asset\": \"ETH\", \"venue\": \"pool\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-07T15:00:00Z\", \"notional_usd\": 42667927.972235}, {\"usd\": 418.588003, \"rate\": 0.00002185, \"asset\": \"BTC\", \"venue\": \"Binance\", \"halted\": false, \"interval_h\": 8.0, \"settled_at\": \"2026-09-07T16:00:00Z\", \"notional_usd\": 19157345.674599}, {\"usd\": 0.0, \"rate\": 0.00002859, \"asset\": \"ETH\", \"venue\": \"Binance\", \"halted\": false, \"interval_h\": 8.0, \"settled_at\": \"2026-09-07T16:00:00Z\", \"notional_usd\": 0.000004}, {\"usd\": 304.422896, \"rate\": 0.000087, \"asset\": \"BTC\", \"venue\": \"Bitget\", \"halted\": false, \"interval_h\": 8.0, \"settled_at\": \"2026-09-07T16:00:00Z\", \"notional_usd\": 3499113.74304}, {\"usd\": 1080.418003, \"rate\": 0.000069, \"asset\": \"ETH\", \"venue\": \"Bitget\", \"halted\": false, \"interval_h\": 8.0, \"settled_at\": \"2026-09-07T16:00:00Z\", \"notional_usd\": 15658231.927011}, {\"usd\": 0.0, \"rate\": 0.00001982, \"asset\": \"BTC\", \"venue\": \"Bybit\", \"halted\": false, \"interval_h\": 8.0, \"settled_at\": \"2026-09-07T16:00:00Z\", \"notional_usd\": 0.001977}, {\"usd\": 153.641912, \"rate\": 0.00000802, \"asset\": \"ETH\", \"venue\": \"Bybit\", \"halted\": false, \"interval_h\": 8.0, \"settled_at\": \"2026-09-07T16:00:00Z\", \"notional_usd\": 19157345.670967}, {\"usd\": 0.0, \"rate\": 0.0, \"asset\": \"BTC\", \"venue\": \"Deribit\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-07T16:00:00Z\", \"notional_usd\": 13761065.247077}, {\"usd\": 10.703992, \"rate\": 0.000002681560167706201, \"asset\": \"ETH\", \"venue\": \"Deribit\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-07T16:00:00Z\", \"notional_usd\": 3991703.133603}, {\"usd\": 0.0, \"rate\": -0.000002523, \"asset\": \"BTC\", \"venue\": \"Hyperliquid\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-07T16:00:00Z\", \"notional_usd\": 0.001984}, {\"usd\": 48.258091, \"rate\": 0.0000125, \"asset\": \"ETH\", \"venue\": \"Hyperliquid\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-07T16:00:00Z\", \"notional_usd\": 3860647.24065}, {\"usd\": 585.620352, \"rate\": 0.0000305689714203, \"asset\": \"BTC\", \"venue\": \"OKX\", \"halted\": false, \"interval_h\": 8.0, \"settled_at\": \"2026-09-07T16:00:00Z\", \"notional_usd\": 19157345.667883}, {\"usd\": 108.075384, \"rate\": 0.000002532941943900848, \"asset\": \"ETH\", \"venue\": \"pool\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-07T16:00:00Z\", \"notional_usd\": 42667927.972235}, {\"usd\": 0.0, \"rate\": 0.0, \"asset\": \"BTC\", \"venue\": \"Deribit\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-07T17:00:00Z\", \"notional_usd\": 13761065.247077}, {\"usd\": 16.281795, \"rate\": 0.0000040789093725225, \"asset\": \"ETH\", \"venue\": \"Deribit\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-07T17:00:00Z\", \"notional_usd\": 3991703.133603}, {\"usd\": 0.0, \"rate\": -0.0000039077, \"asset\": \"BTC\", \"venue\": \"Hyperliquid\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-07T17:00:00Z\", \"notional_usd\": 0.001984}, {\"usd\": 48.258091, \"rate\": 0.0000125, \"asset\": \"ETH\", \"venue\": \"Hyperliquid\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-07T17:00:00Z\", \"notional_usd\": 3860647.24065}, {\"usd\": 108.075384, \"rate\": 0.000002532941943900848, \"asset\": \"ETH\", \"venue\": \"pool\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-07T17:00:00Z\", \"notional_usd\": 42667927.972235}, {\"usd\": 0.0, \"rate\": 0.0, \"asset\": \"BTC\", \"venue\": \"Deribit\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-07T18:00:00Z\", \"notional_usd\": 13761065.247077}, {\"usd\": 0.0, \"rate\": 0.0, \"asset\": \"ETH\", \"venue\": \"Deribit\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-07T18:00:00Z\", \"notional_usd\": 3991703.133603}, {\"usd\": 0.0, \"rate\": -0.0000037952, \"asset\": \"BTC\", \"venue\": \"Hyperliquid\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-07T18:00:00Z\", \"notional_usd\": 0.001984}, {\"usd\": 48.258091, \"rate\": 0.0000125, \"asset\": \"ETH\", \"venue\": \"Hyperliquid\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-07T18:00:00Z\", \"notional_usd\": 3860647.24065}, {\"usd\": 108.075384, \"rate\": 0.000002532941943900848, \"asset\": \"ETH\", \"venue\": \"pool\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-07T18:00:00Z\", \"notional_usd\": 42667927.972235}, {\"usd\": 0.0, \"rate\": 0.0, \"asset\": \"BTC\", \"venue\": \"Deribit\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-07T19:00:00Z\", \"notional_usd\": 13761065.247077}, {\"usd\": 0.050197, \"rate\": 0.000000012575277960954734, \"asset\": \"ETH\", \"venue\": \"Deribit\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-07T19:00:00Z\", \"notional_usd\": 3991703.133603}, {\"usd\": 0.0, \"rate\": -0.0000113921, \"asset\": \"BTC\", \"venue\": \"Hyperliquid\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-07T19:00:00Z\", \"notional_usd\": 0.001984}, {\"usd\": 48.258091, \"rate\": 0.0000125, \"asset\": \"ETH\", \"venue\": \"Hyperliquid\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-07T19:00:00Z\", \"notional_usd\": 3860647.24065}, {\"usd\": 108.075384, \"rate\": 0.000002532941943900848, \"asset\": \"ETH\", \"venue\": \"pool\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-07T19:00:00Z\", \"notional_usd\": 42667927.972235}, {\"usd\": 0.0, \"rate\": 0.0, \"asset\": \"BTC\", \"venue\": \"Deribit\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-07T20:00:00Z\", \"notional_usd\": 13761065.247077}, {\"usd\": 0.0, \"rate\": 0.0, \"asset\": \"ETH\", \"venue\": \"Deribit\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-07T20:00:00Z\", \"notional_usd\": 3991703.133603}, {\"usd\": 0.0, \"rate\": -0.0000010796, \"asset\": \"BTC\", \"venue\": \"Hyperliquid\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-07T20:00:00Z\", \"notional_usd\": 0.001984}, {\"usd\": 48.258091, \"rate\": 0.0000125, \"asset\": \"ETH\", \"venue\": \"Hyperliquid\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-07T20:00:00Z\", \"notional_usd\": 3860647.24065}, {\"usd\": 108.075384, \"rate\": 0.000002532941943900848, \"asset\": \"ETH\", \"venue\": \"pool\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-07T20:00:00Z\", \"notional_usd\": 42667927.972235}, {\"usd\": 0.0, \"rate\": 0.0, \"asset\": \"BTC\", \"venue\": \"Deribit\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-07T21:00:00Z\", \"notional_usd\": 13761065.247077}, {\"usd\": 3.085967, \"rate\": 0.0000007730953763151448, \"asset\": \"ETH\", \"venue\": \"Deribit\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-07T21:00:00Z\", \"notional_usd\": 3991703.133603}, {\"usd\": 0.0, \"rate\": -0.0000080253, \"asset\": \"BTC\", \"venue\": \"Hyperliquid\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-07T21:00:00Z\", \"notional_usd\": 0.001984}, {\"usd\": 48.258091, \"rate\": 0.0000125, \"asset\": \"ETH\", \"venue\": \"Hyperliquid\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-07T21:00:00Z\", \"notional_usd\": 3860647.24065}, {\"usd\": 108.075384, \"rate\": 0.000002532941943900848, \"asset\": \"ETH\", \"venue\": \"pool\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-07T21:00:00Z\", \"notional_usd\": 42667927.972235}, {\"usd\": 0.012963, \"rate\": 0.0000000009420048152028922, \"asset\": \"BTC\", \"venue\": \"Deribit\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-07T22:00:00Z\", \"notional_usd\": 13761065.247077}, {\"usd\": 0.0, \"rate\": 0.0, \"asset\": \"ETH\", \"venue\": \"Deribit\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-07T22:00:00Z\", \"notional_usd\": 3991703.133603}, {\"usd\": 0.0, \"rate\": -0.0000111157, \"asset\": \"BTC\", \"venue\": \"Hyperliquid\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-07T22:00:00Z\", \"notional_usd\": 0.001984}, {\"usd\": 48.258091, \"rate\": 0.0000125, \"asset\": \"ETH\", \"venue\": \"Hyperliquid\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-07T22:00:00Z\", \"notional_usd\": 3860647.24065}, {\"usd\": 108.075384, \"rate\": 0.000002532941943900848, \"asset\": \"ETH\", \"venue\": \"pool\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-07T22:00:00Z\", \"notional_usd\": 42667927.972235}, {\"usd\": 0.0, \"rate\": 0.0, \"asset\": \"BTC\", \"venue\": \"Deribit\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-07T23:00:00Z\", \"notional_usd\": 13761065.247077}, {\"usd\": 6.047635, \"rate\": 0.000001515051396598096, \"asset\": \"ETH\", \"venue\": \"Deribit\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-07T23:00:00Z\", \"notional_usd\": 3991703.133603}, {\"usd\": 0.0, \"rate\": -0.0000124539, \"asset\": \"BTC\", \"venue\": \"Hyperliquid\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-07T23:00:00Z\", \"notional_usd\": 0.001984}, {\"usd\": 48.258091, \"rate\": 0.0000125, \"asset\": \"ETH\", \"venue\": \"Hyperliquid\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-07T23:00:00Z\", \"notional_usd\": 3860647.24065}, {\"usd\": 108.075384, \"rate\": 0.000002532941943900848, \"asset\": \"ETH\", \"venue\": \"pool\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-07T23:00:00Z\", \"notional_usd\": 42667927.972235}, {\"usd\": 870.126641, \"rate\": 0.00004542, \"asset\": \"BTC\", \"venue\": \"Binance\", \"halted\": false, \"interval_h\": 8.0, \"settled_at\": \"2026-09-08T00:00:00Z\", \"notional_usd\": 19157345.674599}, {\"usd\": 0.0, \"rate\": 0.00004234, \"asset\": \"ETH\", \"venue\": \"Binance\", \"halted\": false, \"interval_h\": 8.0, \"settled_at\": \"2026-09-08T00:00:00Z\", \"notional_usd\": 0.000004}, {\"usd\": 101.474299, \"rate\": 0.000029, \"asset\": \"BTC\", \"venue\": \"Bitget\", \"halted\": false, \"interval_h\": 8.0, \"settled_at\": \"2026-09-08T00:00:00Z\", \"notional_usd\": 3499113.74304}, {\"usd\": 1033.443307, \"rate\": 0.000066, \"asset\": \"ETH\", \"venue\": \"Bitget\", \"halted\": false, \"interval_h\": 8.0, \"settled_at\": \"2026-09-08T00:00:00Z\", \"notional_usd\": 15658231.927011}, {\"usd\": 0.0, \"rate\": 0.00003603, \"asset\": \"BTC\", \"venue\": \"Bybit\", \"halted\": false, \"interval_h\": 8.0, \"settled_at\": \"2026-09-08T00:00:00Z\", \"notional_usd\": 0.001977}, {\"usd\": 356.90135, \"rate\": 0.00001863, \"asset\": \"ETH\", \"venue\": \"Bybit\", \"halted\": false, \"interval_h\": 8.0, \"settled_at\": \"2026-09-08T00:00:00Z\", \"notional_usd\": 19157345.670967}, {\"usd\": 0.0, \"rate\": 0.0, \"asset\": \"BTC\", \"venue\": \"Deribit\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-08T00:00:00Z\", \"notional_usd\": 13761065.247077}, {\"usd\": 0.137875, \"rate\": 0.000000034540395921770284, \"asset\": \"ETH\", \"venue\": \"Deribit\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-08T00:00:00Z\", \"notional_usd\": 3991703.133603}, {\"usd\": 0.0, \"rate\": -0.0000090535, \"asset\": \"BTC\", \"venue\": \"Hyperliquid\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-08T00:00:00Z\", \"notional_usd\": 0.001984}, {\"usd\": 48.258091, \"rate\": 0.0000125, \"asset\": \"ETH\", \"venue\": \"Hyperliquid\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-08T00:00:00Z\", \"notional_usd\": 3860647.24065}, {\"usd\": 565.673752, \"rate\": 0.0000295277728935, \"asset\": \"BTC\", \"venue\": \"OKX\", \"halted\": false, \"interval_h\": 8.0, \"settled_at\": \"2026-09-08T00:00:00Z\", \"notional_usd\": 19157345.667883}, {\"usd\": 108.075384, \"rate\": 0.000002532941943900848, \"asset\": \"ETH\", \"venue\": \"pool\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-08T00:00:00Z\", \"notional_usd\": 42667927.972235}, {\"usd\": 0.0, \"rate\": 0.0, \"asset\": \"BTC\", \"venue\": \"Deribit\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-08T01:00:00Z\", \"notional_usd\": 13761065.247077}, {\"usd\": 3.263877, \"rate\": 0.0000008176651500090344, \"asset\": \"ETH\", \"venue\": \"Deribit\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-08T01:00:00Z\", \"notional_usd\": 3991703.133603}, {\"usd\": 0.0, \"rate\": -0.0000062706, \"asset\": \"BTC\", \"venue\": \"Hyperliquid\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-08T01:00:00Z\", \"notional_usd\": 0.001984}, {\"usd\": 48.258091, \"rate\": 0.0000125, \"asset\": \"ETH\", \"venue\": \"Hyperliquid\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-08T01:00:00Z\", \"notional_usd\": 3860647.24065}, {\"usd\": 108.075384, \"rate\": 0.000002532941943900848, \"asset\": \"ETH\", \"venue\": \"pool\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-08T01:00:00Z\", \"notional_usd\": 42667927.972235}, {\"usd\": 0.995498, \"rate\": 0.00000007234161984419406, \"asset\": \"BTC\", \"venue\": \"Deribit\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-08T02:00:00Z\", \"notional_usd\": 13761065.247077}, {\"usd\": 1.858128, \"rate\": 0.0000004654974380089015, \"asset\": \"ETH\", \"venue\": \"Deribit\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-08T02:00:00Z\", \"notional_usd\": 3991703.133603}, {\"usd\": 0.0, \"rate\": -0.0000045839, \"asset\": \"BTC\", \"venue\": \"Hyperliquid\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-08T02:00:00Z\", \"notional_usd\": 0.001984}, {\"usd\": 48.258091, \"rate\": 0.0000125, \"asset\": \"ETH\", \"venue\": \"Hyperliquid\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-08T02:00:00Z\", \"notional_usd\": 3860647.24065}, {\"usd\": 108.075384, \"rate\": 0.000002532941943900848, \"asset\": \"ETH\", \"venue\": \"pool\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-08T02:00:00Z\", \"notional_usd\": 42667927.972235}, {\"usd\": 6.923574, \"rate\": 0.0000005031277925379692, \"asset\": \"BTC\", \"venue\": \"Deribit\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-08T03:00:00Z\", \"notional_usd\": 13761065.247077}, {\"usd\": 9.857373, \"rate\": 0.000002469465469848203, \"asset\": \"ETH\", \"venue\": \"Deribit\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-08T03:00:00Z\", \"notional_usd\": 3991703.133603}, {\"usd\": 0.0, \"rate\": -0.0000039132, \"asset\": \"BTC\", \"venue\": \"Hyperliquid\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-08T03:00:00Z\", \"notional_usd\": 0.001984}, {\"usd\": 48.258091, \"rate\": 0.0000125, \"asset\": \"ETH\", \"venue\": \"Hyperliquid\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-08T03:00:00Z\", \"notional_usd\": 3860647.24065}, {\"usd\": 108.075384, \"rate\": 0.000002532941943900848, \"asset\": \"ETH\", \"venue\": \"pool\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-08T03:00:00Z\", \"notional_usd\": 42667927.972235}, {\"usd\": 0.359778, \"rate\": 0.00000002614461177311173, \"asset\": \"BTC\", \"venue\": \"Deribit\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-08T04:00:00Z\", \"notional_usd\": 13761065.247077}, {\"usd\": 34.290868, \"rate\": 0.000008590535617252395, \"asset\": \"ETH\", \"venue\": \"Deribit\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-08T04:00:00Z\", \"notional_usd\": 3991703.133603}, {\"usd\": 0.0, \"rate\": 0.0000051997, \"asset\": \"BTC\", \"venue\": \"Hyperliquid\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-08T04:00:00Z\", \"notional_usd\": 0.001984}, {\"usd\": 48.258091, \"rate\": 0.0000125, \"asset\": \"ETH\", \"venue\": \"Hyperliquid\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-08T04:00:00Z\", \"notional_usd\": 3860647.24065}, {\"usd\": 108.075384, \"rate\": 0.000002532941943900848, \"asset\": \"ETH\", \"venue\": \"pool\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-08T04:00:00Z\", \"notional_usd\": 42667927.972235}, {\"usd\": 0.11338, \"rate\": 0.000000008239173879861525, \"asset\": \"BTC\", \"venue\": \"Deribit\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-08T05:00:00Z\", \"notional_usd\": 13761065.247077}, {\"usd\": 9.222315, \"rate\": 0.000002310370901421485, \"asset\": \"ETH\", \"venue\": \"Deribit\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-08T05:00:00Z\", \"notional_usd\": 3991703.133603}, {\"usd\": 0.0, \"rate\": -0.0000032788, \"asset\": \"BTC\", \"venue\": \"Hyperliquid\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-08T05:00:00Z\", \"notional_usd\": 0.001984}, {\"usd\": 48.258091, \"rate\": 0.0000125, \"asset\": \"ETH\", \"venue\": \"Hyperliquid\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-08T05:00:00Z\", \"notional_usd\": 3860647.24065}, {\"usd\": 108.075384, \"rate\": 0.000002532941943900848, \"asset\": \"ETH\", \"venue\": \"pool\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-08T05:00:00Z\", \"notional_usd\": 42667927.972235}, {\"usd\": 0.0, \"rate\": 0.0, \"asset\": \"BTC\", \"venue\": \"Deribit\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-08T06:00:00Z\", \"notional_usd\": 13761065.247077}, {\"usd\": 33.836057, \"rate\": 0.000008476596527916136, \"asset\": \"ETH\", \"venue\": \"Deribit\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-08T06:00:00Z\", \"notional_usd\": 3991703.133603}, {\"usd\": 0.0, \"rate\": -0.0000096218, \"asset\": \"BTC\", \"venue\": \"Hyperliquid\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-08T06:00:00Z\", \"notional_usd\": 0.001984}, {\"usd\": 36.825942, \"rate\": 0.0000095388, \"asset\": \"ETH\", \"venue\": \"Hyperliquid\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-08T06:00:00Z\", \"notional_usd\": 3860647.24065}, {\"usd\": 108.075384, \"rate\": 0.000002532941943900848, \"asset\": \"ETH\", \"venue\": \"pool\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-08T06:00:00Z\", \"notional_usd\": 42667927.972235}, {\"usd\": 0.0, \"rate\": 0.0, \"asset\": \"BTC\", \"venue\": \"Deribit\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-08T07:00:00Z\", \"notional_usd\": 13761065.247077}, {\"usd\": 20.603389, \"rate\": 0.0000051615534551692305, \"asset\": \"ETH\", \"venue\": \"Deribit\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-08T07:00:00Z\", \"notional_usd\": 3991703.133603}, {\"usd\": 0.0, \"rate\": -0.0000082712, \"asset\": \"BTC\", \"venue\": \"Hyperliquid\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-08T07:00:00Z\", \"notional_usd\": 0.001984}, {\"usd\": 48.258091, \"rate\": 0.0000125, \"asset\": \"ETH\", \"venue\": \"Hyperliquid\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-08T07:00:00Z\", \"notional_usd\": 3860647.24065}, {\"usd\": 108.075384, \"rate\": 0.000002532941943900848, \"asset\": \"ETH\", \"venue\": \"pool\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-08T07:00:00Z\", \"notional_usd\": 42667927.972235}, {\"usd\": 1567.070876, \"rate\": 0.0000818, \"asset\": \"BTC\", \"venue\": \"Binance\", \"halted\": false, \"interval_h\": 8.0, \"settled_at\": \"2026-09-08T08:00:00Z\", \"notional_usd\": 19157345.674599}, {\"usd\": 0.0, \"rate\": -0.00000489, \"asset\": \"ETH\", \"venue\": \"Binance\", \"halted\": false, \"interval_h\": 8.0, \"settled_at\": \"2026-09-08T08:00:00Z\", \"notional_usd\": 0.000004}, {\"usd\": 349.911374, \"rate\": 0.0001, \"asset\": \"BTC\", \"venue\": \"Bitget\", \"halted\": false, \"interval_h\": 8.0, \"settled_at\": \"2026-09-08T08:00:00Z\", \"notional_usd\": 3499113.74304}, {\"usd\": 1565.823193, \"rate\": 0.0001, \"asset\": \"ETH\", \"venue\": \"Bitget\", \"halted\": false, \"interval_h\": 8.0, \"settled_at\": \"2026-09-08T08:00:00Z\", \"notional_usd\": 15658231.927011}, {\"usd\": 0.0, \"rate\": 0.00002994, \"asset\": \"BTC\", \"venue\": \"Bybit\", \"halted\": false, \"interval_h\": 8.0, \"settled_at\": \"2026-09-08T08:00:00Z\", \"notional_usd\": 0.001977}, {\"usd\": 641.579507, \"rate\": 0.00003349, \"asset\": \"ETH\", \"venue\": \"Bybit\", \"halted\": false, \"interval_h\": 8.0, \"settled_at\": \"2026-09-08T08:00:00Z\", \"notional_usd\": 19157345.670967}, {\"usd\": 0.0, \"rate\": 0.0, \"asset\": \"BTC\", \"venue\": \"Deribit\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-08T08:00:00Z\", \"notional_usd\": 13761065.247077}, {\"usd\": 2.288515, \"rate\": 0.0000005733178703521528, \"asset\": \"ETH\", \"venue\": \"Deribit\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-08T08:00:00Z\", \"notional_usd\": 3991703.133603}, {\"usd\": 0.0, \"rate\": -0.0000049481, \"asset\": \"BTC\", \"venue\": \"Hyperliquid\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-08T08:00:00Z\", \"notional_usd\": 0.001984}, {\"usd\": 48.258091, \"rate\": 0.0000125, \"asset\": \"ETH\", \"venue\": \"Hyperliquid\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-08T08:00:00Z\", \"notional_usd\": 3860647.24065}, {\"usd\": 1092.217319, \"rate\": 0.0000570129775745, \"asset\": \"BTC\", \"venue\": \"OKX\", \"halted\": false, \"interval_h\": 8.0, \"settled_at\": \"2026-09-08T08:00:00Z\", \"notional_usd\": 19157345.667883}, {\"usd\": 108.075384, \"rate\": 0.000002532941943900848, \"asset\": \"ETH\", \"venue\": \"pool\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-08T08:00:00Z\", \"notional_usd\": 42667927.972235}, {\"usd\": 4.692135, \"rate\": 0.00000034097178228733096, \"asset\": \"BTC\", \"venue\": \"Deribit\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-08T09:00:00Z\", \"notional_usd\": 13761065.247077}, {\"usd\": 0.000261, \"rate\": 0.00000000006528579625721474, \"asset\": \"ETH\", \"venue\": \"Deribit\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-08T09:00:00Z\", \"notional_usd\": 3991703.133603}, {\"usd\": 0.0, \"rate\": -0.0000054604, \"asset\": \"BTC\", \"venue\": \"Hyperliquid\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-08T09:00:00Z\", \"notional_usd\": 0.001984}, {\"usd\": 47.234247, \"rate\": 0.0000122348, \"asset\": \"ETH\", \"venue\": \"Hyperliquid\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-08T09:00:00Z\", \"notional_usd\": 3860647.24065}, {\"usd\": 108.075384, \"rate\": 0.000002532941943900848, \"asset\": \"ETH\", \"venue\": \"pool\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-08T09:00:00Z\", \"notional_usd\": 42667927.972235}, {\"usd\": 15.150234, \"rate\": 0.0000011009492132418972, \"asset\": \"BTC\", \"venue\": \"Deribit\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-08T10:00:00Z\", \"notional_usd\": 13761065.247077}, {\"usd\": 2.170625, \"rate\": 0.0000005437842790011166, \"asset\": \"ETH\", \"venue\": \"Deribit\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-08T10:00:00Z\", \"notional_usd\": 3991703.133603}, {\"usd\": 0.0, \"rate\": 0.000005987, \"asset\": \"BTC\", \"venue\": \"Hyperliquid\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-08T10:00:00Z\", \"notional_usd\": 0.001984}, {\"usd\": 48.258091, \"rate\": 0.0000125, \"asset\": \"ETH\", \"venue\": \"Hyperliquid\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-08T10:00:00Z\", \"notional_usd\": 3860647.24065}, {\"usd\": 108.075384, \"rate\": 0.000002532941943900848, \"asset\": \"ETH\", \"venue\": \"pool\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-08T10:00:00Z\", \"notional_usd\": 42667927.972235}, {\"usd\": 136.104738, \"rate\": 0.000009890567044927254, \"asset\": \"BTC\", \"venue\": \"Deribit\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-08T11:00:00Z\", \"notional_usd\": 13761065.247077}, {\"usd\": 6.92107, \"rate\": 0.0000017338638283685789, \"asset\": \"ETH\", \"venue\": \"Deribit\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-08T11:00:00Z\", \"notional_usd\": 3991703.133603}, {\"usd\": 0.0, \"rate\": 0.0000125, \"asset\": \"BTC\", \"venue\": \"Hyperliquid\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-08T11:00:00Z\", \"notional_usd\": 0.001984}, {\"usd\": 48.258091, \"rate\": 0.0000125, \"asset\": \"ETH\", \"venue\": \"Hyperliquid\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-08T11:00:00Z\", \"notional_usd\": 3860647.24065}, {\"usd\": 108.075384, \"rate\": 0.000002532941943900848, \"asset\": \"ETH\", \"venue\": \"pool\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-08T11:00:00Z\", \"notional_usd\": 42667927.972235}, {\"usd\": 108.075384, \"rate\": 0.000002532941943900848, \"asset\": \"ETH\", \"venue\": \"pool\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-08T12:00:00Z\", \"notional_usd\": 42667927.972235}], \"order\": \"canonical\", \"funding_usd\": 12174.011232, \"staking_usd\": 2593.955349}, \"methodology_version\": \"v1.2\"}"
+ },
+ {
+  "fix_date": "2026-09-09",
+  "headline": {
+   "ret_1d": 0.0002127569894279091,
+   "shares": {
+    "OKX/BTC": 0.3447,
+    "Bybit/BTC": 0.0,
+    "Bybit/ETH": 0.449,
+    "Bitget/BTC": 0.063,
+    "Bitget/ETH": 0.367,
+    "Binance/BTC": 0.3447,
+    "Binance/ETH": 0.0,
+    "Deribit/BTC": 0.2476,
+    "Deribit/ETH": 0.0936,
+    "Hyperliquid/BTC": 0.0,
+    "Hyperliquid/ETH": 0.0905
+   },
+   "derated": [],
+   "mix_btc": 0.565689,
+   "nav_usd": 100427323.15,
+   "fix_date": "2026-09-09",
+   "basis_usd": -9485.14,
+   "capital_usd": 98242798.31,
+   "cost_usd_cum": 256173.6,
+   "full_nav_usd": 100417838.01,
+   "carry_usd_cum": 683496.75,
+   "naive_nav_usd": 100667643.46,
+   "naive_capital_usd": 98051159.08,
+   "stable_margin_usd": 1757201.69,
+   "stable_reserve_usd": 1757201.69,
+   "methodology_version": "v1.2",
+   "naive_carry_usd_cum": 669739.51
+  },
+  "positions": {
+   "legs": [
+    {
+     "asset": "BTC",
+     "share": 0.344712,
+     "venue": "Binance",
+     "notional_usd": 19157345.674599
+    },
+    {
+     "asset": "ETH",
+     "share": 0.0,
+     "venue": "Binance",
+     "notional_usd": 0.000004
+    },
+    {
+     "asset": "BTC",
+     "share": 0.062962,
+     "venue": "Bitget",
+     "notional_usd": 3499113.74304
+    },
+    {
+     "asset": "ETH",
+     "share": 0.366979,
+     "venue": "Bitget",
+     "notional_usd": 15658231.927011
+    },
+    {
+     "asset": "BTC",
+     "share": 0.0,
+     "venue": "Bybit",
+     "notional_usd": 0.001977
+    },
+    {
+     "asset": "ETH",
+     "share": 0.448987,
+     "venue": "Bybit",
+     "notional_usd": 19157345.670967
+    },
+    {
+     "asset": "BTC",
+     "share": 0.247613,
+     "venue": "Deribit",
+     "notional_usd": 13761065.247077
+    },
+    {
+     "asset": "ETH",
+     "share": 0.093553,
+     "venue": "Deribit",
+     "notional_usd": 3991703.133603
+    },
+    {
+     "asset": "BTC",
+     "share": 0.0,
+     "venue": "Hyperliquid",
+     "notional_usd": 0.001984
+    },
+    {
+     "asset": "ETH",
+     "share": 0.090481,
+     "venue": "Hyperliquid",
+     "notional_usd": 3860647.24065
+    },
+    {
+     "asset": "BTC",
+     "share": 0.344712,
+     "venue": "OKX",
+     "notional_usd": 19157345.667883
+    }
+   ],
+   "hedge": {
+    "BTC": 55574870.336559,
+    "ETH": 42667927.972235
+   },
+   "ref_px": {
+    "BTC": 78958.64333333334,
+    "ETH": 2490.6441666666665
+   },
+   "spot_lots": {
+    "BTC": {
+     "qty": 856.0500186203471,
+     "entry": 63420.5820687296
+    },
+    "ETH": {
+     "qty": 21242.182150136985,
+     "entry": 1859.5298809017452
+    }
+   },
+   "unallocated_usd": {
+    "BTC": 0.0,
+    "ETH": 0.0
+   }
+  },
+  "workings": {
+   "legs": [
+    {
+     "g": 0.06092826,
+     "imf": 0.02,
+     "asset": "BTC",
+     "venue": "Binance",
+     "draw_f": 0.20371303,
+     "binding": "clock",
+     "clock_h": 4.0,
+     "mm_of_im": 0.5,
+     "notional_usd": 19157345.67459888
+    },
+    {
+     "g": 0.06094515,
+     "imf": 0.02,
+     "asset": "ETH",
+     "venue": "Binance",
+     "draw_f": 0.20378059,
+     "binding": "clock",
+     "clock_h": 4.0,
+     "mm_of_im": 0.5,
+     "notional_usd": 0.00000444
+    },
+    {
+     "g": 0.02273206,
+     "imf": 0.02,
+     "asset": "BTC",
+     "venue": "Bitget",
+     "draw_f": 0.20371303,
+     "binding": "clock",
+     "clock_h": 1.0,
+     "mm_of_im": 0.5,
+     "notional_usd": 3499113.7430399
+    },
+    {
+     "g": 0.02273629,
+     "imf": 0.02,
+     "asset": "ETH",
+     "venue": "Bitget",
+     "draw_f": 0.20378059,
+     "binding": "clock",
+     "clock_h": 1.0,
+     "mm_of_im": 0.5,
+     "notional_usd": 15658231.92701097
+    },
+    {
+     "g": 0.0160654,
+     "imf": 0.00666667,
+     "asset": "BTC",
+     "venue": "Bybit",
+     "draw_f": 0.20371303,
+     "binding": "clock",
+     "clock_h": 1.0,
+     "mm_of_im": 0.5,
+     "notional_usd": 0.00197685
+    },
+    {
+     "g": 0.01606962,
+     "imf": 0.00666667,
+     "asset": "ETH",
+     "venue": "Bybit",
+     "draw_f": 0.20378059,
+     "binding": "clock",
+     "clock_h": 1.0,
+     "mm_of_im": 0.5,
+     "notional_usd": 19157345.67096745
+    },
+    {
+     "g": 0.03956069,
+     "imf": 0.03956069,
+     "asset": "BTC",
+     "venue": "Deribit",
+     "draw_f": 0.20371303,
+     "binding": "im",
+     "clock_h": 1.0,
+     "mm_of_im": 0.66666667,
+     "notional_usd": 13761065.24707678
+    },
+    {
+     "g": 0.03002468,
+     "imf": 0.02593258,
+     "asset": "ETH",
+     "venue": "Deribit",
+     "draw_f": 0.20378059,
+     "binding": "clock",
+     "clock_h": 1.0,
+     "mm_of_im": 0.66666667,
+     "notional_usd": 3991703.13360283
+    },
+    {
+     "g": 0.02523206,
+     "imf": 0.025,
+     "asset": "BTC",
+     "venue": "Hyperliquid",
+     "draw_f": 0.20371303,
+     "binding": "clock",
+     "clock_h": 1.0,
+     "mm_of_im": 0.5,
+     "notional_usd": 0.00198354
+    },
+    {
+     "g": 0.04,
+     "imf": 0.04,
+     "asset": "ETH",
+     "venue": "Hyperliquid",
+     "draw_f": 0.20378059,
+     "binding": "im",
+     "clock_h": 1.0,
+     "mm_of_im": 0.5,
+     "notional_usd": 3860647.24064968
+    },
+    {
+     "g": 0.05592826,
+     "imf": 0.01,
+     "asset": "BTC",
+     "venue": "OKX",
+     "draw_f": 0.20371303,
+     "binding": "clock",
+     "clock_h": 4.0,
+     "mm_of_im": 0.5,
+     "notional_usd": 19157345.66788268
+    }
+   ],
+   "sleeves": [
+    {
+     "k": 1.5,
+     "kind": "stable",
+     "ttb_h": 6.0,
+     "venue": "Binance",
+     "im_usd": 383146.913492,
+     "mm_usd": 191573.456746,
+     "binding": "clock",
+     "clock_h": 4.0,
+     "im_frac": 0.02,
+     "posting": "USDT",
+     "draw_usd": 3902600.846402,
+     "provider": "Sygnum",
+     "sleeve_usd": 1167223.668347,
+     "notional_usd": 19157345.674603
+    },
+    {
+     "k": 1.5,
+     "kind": "stable",
+     "ttb_h": 1.5,
+     "venue": "Bitget",
+     "im_usd": 383146.913401,
+     "mm_usd": 191573.456701,
+     "binding": "clock",
+     "clock_h": 1.0,
+     "im_frac": 0.02,
+     "posting": "USDT",
+     "draw_usd": 3903658.823727,
+     "provider": "Copper",
+     "sleeve_usd": 435552.133183,
+     "notional_usd": 19157345.670051
+    },
+    {
+     "k": 1.5,
+     "kind": "lst",
+     "ttb_h": 1.5,
+     "venue": "Bybit",
+     "im_usd": 127715.63782,
+     "mm_usd": 63857.81891,
+     "binding": "clock",
+     "clock_h": 1.0,
+     "im_frac": 0.006667,
+     "posting": "stETH",
+     "draw_usd": 3903895.248598,
+     "provider": "Copper",
+     "sleeve_usd": 307851.271947,
+     "notional_usd": 19157345.672944
+    },
+    {
+     "k": 1.5,
+     "kind": "lst",
+     "ttb_h": 1.541533,
+     "venue": "Deribit",
+     "im_usd": 647912.401204,
+     "mm_usd": 431941.600803,
+     "binding": "clock",
+     "clock_h": 1.0,
+     "im_frac": 0.036496,
+     "posting": "stETH",
+     "draw_usd": 3616739.863442,
+     "provider": "Fireblocks",
+     "sleeve_usd": 664246.818097,
+     "notional_usd": 17752768.38068
+    },
+    {
+     "k": 1.5,
+     "kind": "stable",
+     "ttb_h": 2.355475,
+     "venue": "Hyperliquid",
+     "im_usd": 154425.889676,
+     "mm_usd": 77212.944838,
+     "binding": "im",
+     "clock_h": 1.0,
+     "im_frac": 0.04,
+     "posting": "USDC",
+     "draw_usd": 786724.98186,
+     "provider": null,
+     "sleeve_usd": 154425.889676,
+     "notional_usd": 3860647.242633
+    },
+    {
+     "k": 1.5,
+     "kind": "lst",
+     "ttb_h": 6.0,
+     "venue": "OKX",
+     "im_usd": 191573.456679,
+     "mm_usd": 95786.728339,
+     "binding": "clock",
+     "clock_h": 4.0,
+     "im_frac": 0.01,
+     "posting": "stETH",
+     "draw_usd": 3902600.845033,
+     "provider": "Komainu",
+     "sleeve_usd": 1071436.939598,
+     "notional_usd": 19157345.667883
+    }
+   ]
+  },
+  "settlements": {
+   "rows": [
+    {
+     "usd": 81.222017,
+     "rate": 0.0000059023058970981185,
+     "asset": "BTC",
+     "venue": "Deribit",
+     "halted": false,
+     "interval_h": 1.0,
+     "settled_at": "2026-09-08T12:00:00Z",
+     "notional_usd": 13761065.247077
+    },
+    {
+     "usd": 2.802378,
+     "rate": 0.0000007020507983621005,
+     "asset": "ETH",
+     "venue": "Deribit",
+     "halted": false,
+     "interval_h": 1.0,
+     "settled_at": "2026-09-08T12:00:00Z",
+     "notional_usd": 3991703.133603
+    },
+    {
+     "usd": 0.0,
+     "rate": 0.0000054036,
+     "asset": "BTC",
+     "venue": "Hyperliquid",
+     "halted": false,
+     "interval_h": 1.0,
+     "settled_at": "2026-09-08T12:00:00Z",
+     "notional_usd": 0.001984
+    },
+    {
+     "usd": 48.258091,
+     "rate": 0.0000125,
+     "asset": "ETH",
+     "venue": "Hyperliquid",
+     "halted": false,
+     "interval_h": 1.0,
+     "settled_at": "2026-09-08T12:00:00Z",
+     "notional_usd": 3860647.24065
+    },
+    {
+     "usd": 43.397552,
+     "rate": 0.0000031536477493122757,
+     "asset": "BTC",
+     "venue": "Deribit",
+     "halted": false,
+     "interval_h": 1.0,
+     "settled_at": "2026-09-08T13:00:00Z",
+     "notional_usd": 13761065.247077
+    },
+    {
+     "usd": 1.583254,
+     "rate": 0.0000003966362816557024,
+     "asset": "ETH",
+     "venue": "Deribit",
+     "halted": false,
+     "interval_h": 1.0,
+     "settled_at": "2026-09-08T13:00:00Z",
+     "notional_usd": 3991703.133603
+    },
+    {
+     "usd": 0.0,
+     "rate": 0.0000074786,
+     "asset": "BTC",
+     "venue": "Hyperliquid",
+     "halted": false,
+     "interval_h": 1.0,
+     "settled_at": "2026-09-08T13:00:00Z",
+     "notional_usd": 0.001984
+    },
+    {
+     "usd": 48.258091,
+     "rate": 0.0000125,
+     "asset": "ETH",
+     "venue": "Hyperliquid",
+     "halted": false,
+     "interval_h": 1.0,
+     "settled_at": "2026-09-08T13:00:00Z",
+     "notional_usd": 3860647.24065
+    },
+    {
+     "usd": 108.075384,
+     "rate": 0.000002532941943900848,
+     "asset": "ETH",
+     "venue": "pool",
+     "halted": false,
+     "interval_h": 1.0,
+     "settled_at": "2026-09-08T13:00:00Z",
+     "notional_usd": 42667927.972235
+    },
+    {
+     "usd": 77.319865,
+     "rate": 0.000005618741254650468,
+     "asset": "BTC",
+     "venue": "Deribit",
+     "halted": false,
+     "interval_h": 1.0,
+     "settled_at": "2026-09-08T14:00:00Z",
+     "notional_usd": 13761065.247077
+    },
+    {
+     "usd": 20.947847,
+     "rate": 0.000005247846909741736,
+     "asset": "ETH",
+     "venue": "Deribit",
+     "halted": false,
+     "interval_h": 1.0,
+     "settled_at": "2026-09-08T14:00:00Z",
+     "notional_usd": 3991703.133603
+    },
+    {
+     "usd": 0.0,
+     "rate": 0.0000125,
+     "asset": "BTC",
+     "venue": "Hyperliquid",
+     "halted": false,
+     "interval_h": 1.0,
+     "settled_at": "2026-09-08T14:00:00Z",
+     "notional_usd": 0.001984
+    },
+    {
+     "usd": 46.609208,
+     "rate": 0.0000120729,
+     "asset": "ETH",
+     "venue": "Hyperliquid",
+     "halted": false,
+     "interval_h": 1.0,
+     "settled_at": "2026-09-08T14:00:00Z",
+     "notional_usd": 3860647.24065
+    },
+    {
+     "usd": 108.256299,
+     "rate": 0.0000025371819960861055,
+     "asset": "ETH",
+     "venue": "pool",
+     "halted": false,
+     "interval_h": 1.0,
+     "settled_at": "2026-09-08T14:00:00Z",
+     "notional_usd": 42667927.972235
+    },
+    {
+     "usd": 64.008182,
+     "rate": 0.000004651397349497286,
+     "asset": "BTC",
+     "venue": "Deribit",
+     "halted": false,
+     "interval_h": 1.0,
+     "settled_at": "2026-09-08T15:00:00Z",
+     "notional_usd": 13761065.247077
+    },
+    {
+     "usd": 6.400172,
+     "rate": 0.0000016033688529539984,
+     "asset": "ETH",
+     "venue": "Deribit",
+     "halted": false,
+     "interval_h": 1.0,
+     "settled_at": "2026-09-08T15:00:00Z",
+     "notional_usd": 3991703.133603
+    },
+    {
+     "usd": 0.0,
+     "rate": 0.0000125,
+     "asset": "BTC",
+     "venue": "Hyperliquid",
+     "halted": false,
+     "interval_h": 1.0,
+     "settled_at": "2026-09-08T15:00:00Z",
+     "notional_usd": 0.001984
+    },
+    {
+     "usd": 48.258091,
+     "rate": 0.0000125,
+     "asset": "ETH",
+     "venue": "Hyperliquid",
+     "halted": false,
+     "interval_h": 1.0,
+     "settled_at": "2026-09-08T15:00:00Z",
+     "notional_usd": 3860647.24065
+    },
+    {
+     "usd": 108.256299,
+     "rate": 0.0000025371819960861055,
+     "asset": "ETH",
+     "venue": "pool",
+     "halted": false,
+     "interval_h": 1.0,
+     "settled_at": "2026-09-08T15:00:00Z",
+     "notional_usd": 42667927.972235
+    },
+    {
+     "usd": 1729.716741,
+     "rate": 0.00009029,
+     "asset": "BTC",
+     "venue": "Binance",
+     "halted": false,
+     "interval_h": 8.0,
+     "settled_at": "2026-09-08T16:00:00Z",
+     "notional_usd": 19157345.674599
+    },
+    {
+     "usd": 0.0,
+     "rate": 0.00005222,
+     "asset": "ETH",
+     "venue": "Binance",
+     "halted": false,
+     "interval_h": 8.0,
+     "settled_at": "2026-09-08T16:00:00Z",
+     "notional_usd": 0.000004
+    },
+    {
+     "usd": 349.911374,
+     "rate": 0.0001,
+     "asset": "BTC",
+     "venue": "Bitget",
+     "halted": false,
+     "interval_h": 8.0,
+     "settled_at": "2026-09-08T16:00:00Z",
+     "notional_usd": 3499113.74304
+    },
+    {
+     "usd": 1174.367395,
+     "rate": 0.000075,
+     "asset": "ETH",
+     "venue": "Bitget",
+     "halted": false,
+     "interval_h": 8.0,
+     "settled_at": "2026-09-08T16:00:00Z",
+     "notional_usd": 15658231.927011
+    },
+    {
+     "usd": 0.0,
+     "rate": 0.00005769,
+     "asset": "BTC",
+     "venue": "Bybit",
+     "halted": false,
+     "interval_h": 8.0,
+     "settled_at": "2026-09-08T16:00:00Z",
+     "notional_usd": 0.001977
+    },
+    {
+     "usd": 933.920601,
+     "rate": 0.00004875,
+     "asset": "ETH",
+     "venue": "Bybit",
+     "halted": false,
+     "interval_h": 8.0,
+     "settled_at": "2026-09-08T16:00:00Z",
+     "notional_usd": 19157345.670967
+    },
+    {
+     "usd": 55.264656,
+     "rate": 0.000004016015839736129,
+     "asset": "BTC",
+     "venue": "Deribit",
+     "halted": false,
+     "interval_h": 1.0,
+     "settled_at": "2026-09-08T16:00:00Z",
+     "notional_usd": 13761065.247077
+    },
+    {
+     "usd": 6.793901,
+     "rate": 0.0000017020054888806824,
+     "asset": "ETH",
+     "venue": "Deribit",
+     "halted": false,
+     "interval_h": 1.0,
+     "settled_at": "2026-09-08T16:00:00Z",
+     "notional_usd": 3991703.133603
+    },
+    {
+     "usd": 0.0,
+     "rate": 0.0000125,
+     "asset": "BTC",
+     "venue": "Hyperliquid",
+     "halted": false,
+     "interval_h": 1.0,
+     "settled_at": "2026-09-08T16:00:00Z",
+     "notional_usd": 0.001984
+    },
+    {
+     "usd": 48.258091,
+     "rate": 0.0000125,
+     "asset": "ETH",
+     "venue": "Hyperliquid",
+     "halted": false,
+     "interval_h": 1.0,
+     "settled_at": "2026-09-08T16:00:00Z",
+     "notional_usd": 3860647.24065
+    },
+    {
+     "usd": 1226.230539,
+     "rate": 0.0000640083735919,
+     "asset": "BTC",
+     "venue": "OKX",
+     "halted": false,
+     "interval_h": 8.0,
+     "settled_at": "2026-09-08T16:00:00Z",
+     "notional_usd": 19157345.667883
+    },
+    {
+     "usd": 108.256299,
+     "rate": 0.0000025371819960861055,
+     "asset": "ETH",
+     "venue": "pool",
+     "halted": false,
+     "interval_h": 1.0,
+     "settled_at": "2026-09-08T16:00:00Z",
+     "notional_usd": 42667927.972235
+    },
+    {
+     "usd": 85.166372,
+     "rate": 0.000006188937409387769,
+     "asset": "BTC",
+     "venue": "Deribit",
+     "halted": false,
+     "interval_h": 1.0,
+     "settled_at": "2026-09-08T17:00:00Z",
+     "notional_usd": 13761065.247077
+    },
+    {
+     "usd": 0.0,
+     "rate": 0.0,
+     "asset": "ETH",
+     "venue": "Deribit",
+     "halted": false,
+     "interval_h": 1.0,
+     "settled_at": "2026-09-08T17:00:00Z",
+     "notional_usd": 3991703.133603
+    },
+    {
+     "usd": 0.0,
+     "rate": 0.0000125,
+     "asset": "BTC",
+     "venue": "Hyperliquid",
+     "halted": false,
+     "interval_h": 1.0,
+     "settled_at": "2026-09-08T17:00:00Z",
+     "notional_usd": 0.001984
+    },
+    {
+     "usd": 48.258091,
+     "rate": 0.0000125,
+     "asset": "ETH",
+     "venue": "Hyperliquid",
+     "halted": false,
+     "interval_h": 1.0,
+     "settled_at": "2026-09-08T17:00:00Z",
+     "notional_usd": 3860647.24065
+    },
+    {
+     "usd": 108.256299,
+     "rate": 0.0000025371819960861055,
+     "asset": "ETH",
+     "venue": "pool",
+     "halted": false,
+     "interval_h": 1.0,
+     "settled_at": "2026-09-08T17:00:00Z",
+     "notional_usd": 42667927.972235
+    },
+    {
+     "usd": 40.875688,
+     "rate": 0.0000029703868938759445,
+     "asset": "BTC",
+     "venue": "Deribit",
+     "halted": false,
+     "interval_h": 1.0,
+     "settled_at": "2026-09-08T18:00:00Z",
+     "notional_usd": 13761065.247077
+    },
+    {
+     "usd": 0.050462,
+     "rate": 0.000000012641652707281645,
+     "asset": "ETH",
+     "venue": "Deribit",
+     "halted": false,
+     "interval_h": 1.0,
+     "settled_at": "2026-09-08T18:00:00Z",
+     "notional_usd": 3991703.133603
+    },
+    {
+     "usd": 0.0,
+     "rate": 0.0000117931,
+     "asset": "BTC",
+     "venue": "Hyperliquid",
+     "halted": false,
+     "interval_h": 1.0,
+     "settled_at": "2026-09-08T18:00:00Z",
+     "notional_usd": 0.001984
+    },
+    {
+     "usd": 48.258091,
+     "rate": 0.0000125,
+     "asset": "ETH",
+     "venue": "Hyperliquid",
+     "halted": false,
+     "interval_h": 1.0,
+     "settled_at": "2026-09-08T18:00:00Z",
+     "notional_usd": 3860647.24065
+    },
+    {
+     "usd": 108.256299,
+     "rate": 0.0000025371819960861055,
+     "asset": "ETH",
+     "venue": "pool",
+     "halted": false,
+     "interval_h": 1.0,
+     "settled_at": "2026-09-08T18:00:00Z",
+     "notional_usd": 42667927.972235
+    },
+    {
+     "usd": 45.355891,
+     "rate": 0.0000032959578822988677,
+     "asset": "BTC",
+     "venue": "Deribit",
+     "halted": false,
+     "interval_h": 1.0,
+     "settled_at": "2026-09-08T19:00:00Z",
+     "notional_usd": 13761065.247077
+    },
+    {
+     "usd": 0.277413,
+     "rate": 0.0000000694974282149369,
+     "asset": "ETH",
+     "venue": "Deribit",
+     "halted": false,
+     "interval_h": 1.0,
+     "settled_at": "2026-09-08T19:00:00Z",
+     "notional_usd": 3991703.133603
+    },
+    {
+     "usd": 0.0,
+     "rate": 0.0000125,
+     "asset": "BTC",
+     "venue": "Hyperliquid",
+     "halted": false,
+     "interval_h": 1.0,
+     "settled_at": "2026-09-08T19:00:00Z",
+     "notional_usd": 0.001984
+    },
+    {
+     "usd": 48.258091,
+     "rate": 0.0000125,
+     "asset": "ETH",
+     "venue": "Hyperliquid",
+     "halted": false,
+     "interval_h": 1.0,
+     "settled_at": "2026-09-08T19:00:00Z",
+     "notional_usd": 3860647.24065
+    },
+    {
+     "usd": 108.256299,
+     "rate": 0.0000025371819960861055,
+     "asset": "ETH",
+     "venue": "pool",
+     "halted": false,
+     "interval_h": 1.0,
+     "settled_at": "2026-09-08T19:00:00Z",
+     "notional_usd": 42667927.972235
+    },
+    {
+     "usd": 80.293276,
+     "rate": 0.00000583481547282273,
+     "asset": "BTC",
+     "venue": "Deribit",
+     "halted": false,
+     "interval_h": 1.0,
+     "settled_at": "2026-09-08T20:00:00Z",
+     "notional_usd": 13761065.247077
+    },
+    {
+     "usd": 1.132506,
+     "rate": 0.00000028371499319357503,
+     "asset": "ETH",
+     "venue": "Deribit",
+     "halted": false,
+     "interval_h": 1.0,
+     "settled_at": "2026-09-08T20:00:00Z",
+     "notional_usd": 3991703.133603
+    },
+    {
+     "usd": 0.0,
+     "rate": 0.0000058715,
+     "asset": "BTC",
+     "venue": "Hyperliquid",
+     "halted": false,
+     "interval_h": 1.0,
+     "settled_at": "2026-09-08T20:00:00Z",
+     "notional_usd": 0.001984
+    },
+    {
+     "usd": 48.258091,
+     "rate": 0.0000125,
+     "asset": "ETH",
+     "venue": "Hyperliquid",
+     "halted": false,
+     "interval_h": 1.0,
+     "settled_at": "2026-09-08T20:00:00Z",
+     "notional_usd": 3860647.24065
+    },
+    {
+     "usd": 108.256299,
+     "rate": 0.0000025371819960861055,
+     "asset": "ETH",
+     "venue": "pool",
+     "halted": false,
+     "interval_h": 1.0,
+     "settled_at": "2026-09-08T20:00:00Z",
+     "notional_usd": 42667927.972235
+    },
+    {
+     "usd": 71.007606,
+     "rate": 0.000005160036986091782,
+     "asset": "BTC",
+     "venue": "Deribit",
+     "halted": false,
+     "interval_h": 1.0,
+     "settled_at": "2026-09-08T21:00:00Z",
+     "notional_usd": 13761065.247077
+    },
+    {
+     "usd": 0.92963,
+     "rate": 0.0000002328906012706172,
+     "asset": "ETH",
+     "venue": "Deribit",
+     "halted": false,
+     "interval_h": 1.0,
+     "settled_at": "2026-09-08T21:00:00Z",
+     "notional_usd": 3991703.133603
+    },
+    {
+     "usd": 0.0,
+     "rate": 0.000001845,
+     "asset": "BTC",
+     "venue": "Hyperliquid",
+     "halted": false,
+     "interval_h": 1.0,
+     "settled_at": "2026-09-08T21:00:00Z",
+     "notional_usd": 0.001984
+    },
+    {
+     "usd": 48.258091,
+     "rate": 0.0000125,
+     "asset": "ETH",
+     "venue": "Hyperliquid",
+     "halted": false,
+     "interval_h": 1.0,
+     "settled_at": "2026-09-08T21:00:00Z",
+     "notional_usd": 3860647.24065
+    },
+    {
+     "usd": 108.256299,
+     "rate": 0.0000025371819960861055,
+     "asset": "ETH",
+     "venue": "pool",
+     "halted": false,
+     "interval_h": 1.0,
+     "settled_at": "2026-09-08T21:00:00Z",
+     "notional_usd": 42667927.972235
+    },
+    {
+     "usd": 134.226473,
+     "rate": 0.000009754075789833185,
+     "asset": "BTC",
+     "venue": "Deribit",
+     "halted": false,
+     "interval_h": 1.0,
+     "settled_at": "2026-09-08T22:00:00Z",
+     "notional_usd": 13761065.247077
+    },
+    {
+     "usd": 13.692904,
+     "rate": 0.0000034303413278495665,
+     "asset": "ETH",
+     "venue": "Deribit",
+     "halted": false,
+     "interval_h": 1.0,
+     "settled_at": "2026-09-08T22:00:00Z",
+     "notional_usd": 3991703.133603
+    },
+    {
+     "usd": 0.0,
+     "rate": 0.0000045582,
+     "asset": "BTC",
+     "venue": "Hyperliquid",
+     "halted": false,
+     "interval_h": 1.0,
+     "settled_at": "2026-09-08T22:00:00Z",
+     "notional_usd": 0.001984
+    },
+    {
+     "usd": 48.258091,
+     "rate": 0.0000125,
+     "asset": "ETH",
+     "venue": "Hyperliquid",
+     "halted": false,
+     "interval_h": 1.0,
+     "settled_at": "2026-09-08T22:00:00Z",
+     "notional_usd": 3860647.24065
+    },
+    {
+     "usd": 108.256299,
+     "rate": 0.0000025371819960861055,
+     "asset": "ETH",
+     "venue": "pool",
+     "halted": false,
+     "interval_h": 1.0,
+     "settled_at": "2026-09-08T22:00:00Z",
+     "notional_usd": 42667927.972235
+    },
+    {
+     "usd": 150.396867,
+     "rate": 0.00001092915879056618,
+     "asset": "BTC",
+     "venue": "Deribit",
+     "halted": false,
+     "interval_h": 1.0,
+     "settled_at": "2026-09-08T23:00:00Z",
+     "notional_usd": 13761065.247077
+    },
+    {
+     "usd": 7.631158,
+     "rate": 0.000001911754836871088,
+     "asset": "ETH",
+     "venue": "Deribit",
+     "halted": false,
+     "interval_h": 1.0,
+     "settled_at": "2026-09-08T23:00:00Z",
+     "notional_usd": 3991703.133603
+    },
+    {
+     "usd": 0.0,
+     "rate": 0.0000098287,
+     "asset": "BTC",
+     "venue": "Hyperliquid",
+     "halted": false,
+     "interval_h": 1.0,
+     "settled_at": "2026-09-08T23:00:00Z",
+     "notional_usd": 0.001984
+    },
+    {
+     "usd": 48.258091,
+     "rate": 0.0000125,
+     "asset": "ETH",
+     "venue": "Hyperliquid",
+     "halted": false,
+     "interval_h": 1.0,
+     "settled_at": "2026-09-08T23:00:00Z",
+     "notional_usd": 3860647.24065
+    },
+    {
+     "usd": 108.256299,
+     "rate": 0.0000025371819960861055,
+     "asset": "ETH",
+     "venue": "pool",
+     "halted": false,
+     "interval_h": 1.0,
+     "settled_at": "2026-09-08T23:00:00Z",
+     "notional_usd": 42667927.972235
+    },
+    {
+     "usd": 934.112175,
+     "rate": 0.00004876,
+     "asset": "BTC",
+     "venue": "Binance",
+     "halted": false,
+     "interval_h": 8.0,
+     "settled_at": "2026-09-09T00:00:00Z",
+     "notional_usd": 19157345.674599
+    },
+    {
+     "usd": 0.0,
+     "rate": 0.00005214,
+     "asset": "ETH",
+     "venue": "Binance",
+     "halted": false,
+     "interval_h": 8.0,
+     "settled_at": "2026-09-09T00:00:00Z",
+     "notional_usd": 0.000004
+    },
+    {
+     "usd": 223.94328,
+     "rate": 0.000064,
+     "asset": "BTC",
+     "venue": "Bitget",
+     "halted": false,
+     "interval_h": 8.0,
+     "settled_at": "2026-09-09T00:00:00Z",
+     "notional_usd": 3499113.74304
+    },
+    {
+     "usd": 1111.734467,
+     "rate": 0.000071,
+     "asset": "ETH",
+     "venue": "Bitget",
+     "halted": false,
+     "interval_h": 8.0,
+     "settled_at": "2026-09-09T00:00:00Z",
+     "notional_usd": 15658231.927011
+    },
+    {
+     "usd": 0.0,
+     "rate": 0.00005357,
+     "asset": "BTC",
+     "venue": "Bybit",
+     "halted": false,
+     "interval_h": 8.0,
+     "settled_at": "2026-09-09T00:00:00Z",
+     "notional_usd": 0.001977
+    },
+    {
+     "usd": 652.690767,
+     "rate": 0.00003407,
+     "asset": "ETH",
+     "venue": "Bybit",
+     "halted": false,
+     "interval_h": 8.0,
+     "settled_at": "2026-09-09T00:00:00Z",
+     "notional_usd": 19157345.670967
+    },
+    {
+     "usd": 142.320656,
+     "rate": 0.00001034227028149605,
+     "asset": "BTC",
+     "venue": "Deribit",
+     "halted": false,
+     "interval_h": 1.0,
+     "settled_at": "2026-09-09T00:00:00Z",
+     "notional_usd": 13761065.247077
+    },
+    {
+     "usd": 5.836537,
+     "rate": 0.0000014621670656352334,
+     "asset": "ETH",
+     "venue": "Deribit",
+     "halted": false,
+     "interval_h": 1.0,
+     "settled_at": "2026-09-09T00:00:00Z",
+     "notional_usd": 3991703.133603
+    },
+    {
+     "usd": 0.0,
+     "rate": 0.0000098551,
+     "asset": "BTC",
+     "venue": "Hyperliquid",
+     "halted": false,
+     "interval_h": 1.0,
+     "settled_at": "2026-09-09T00:00:00Z",
+     "notional_usd": 0.001984
+    },
+    {
+     "usd": 48.258091,
+     "rate": 0.0000125,
+     "asset": "ETH",
+     "venue": "Hyperliquid",
+     "halted": false,
+     "interval_h": 1.0,
+     "settled_at": "2026-09-09T00:00:00Z",
+     "notional_usd": 3860647.24065
+    },
+    {
+     "usd": 920.043902,
+     "rate": 0.0000480256460149,
+     "asset": "BTC",
+     "venue": "OKX",
+     "halted": false,
+     "interval_h": 8.0,
+     "settled_at": "2026-09-09T00:00:00Z",
+     "notional_usd": 19157345.667883
+    },
+    {
+     "usd": 108.256299,
+     "rate": 0.0000025371819960861055,
+     "asset": "ETH",
+     "venue": "pool",
+     "halted": false,
+     "interval_h": 1.0,
+     "settled_at": "2026-09-09T00:00:00Z",
+     "notional_usd": 42667927.972235
+    },
+    {
+     "usd": 151.317088,
+     "rate": 0.00001099603013869849,
+     "asset": "BTC",
+     "venue": "Deribit",
+     "halted": false,
+     "interval_h": 1.0,
+     "settled_at": "2026-09-09T01:00:00Z",
+     "notional_usd": 13761065.247077
+    },
+    {
+     "usd": 1.279565,
+     "rate": 0.0000003205561911248869,
+     "asset": "ETH",
+     "venue": "Deribit",
+     "halted": false,
+     "interval_h": 1.0,
+     "settled_at": "2026-09-09T01:00:00Z",
+     "notional_usd": 3991703.133603
+    },
+    {
+     "usd": 0.0,
+     "rate": 0.0000105909,
+     "asset": "BTC",
+     "venue": "Hyperliquid",
+     "halted": false,
+     "interval_h": 1.0,
+     "settled_at": "2026-09-09T01:00:00Z",
+     "notional_usd": 0.001984
+    },
+    {
+     "usd": 48.258091,
+     "rate": 0.0000125,
+     "asset": "ETH",
+     "venue": "Hyperliquid",
+     "halted": false,
+     "interval_h": 1.0,
+     "settled_at": "2026-09-09T01:00:00Z",
+     "notional_usd": 3860647.24065
+    },
+    {
+     "usd": 108.256299,
+     "rate": 0.0000025371819960861055,
+     "asset": "ETH",
+     "venue": "pool",
+     "halted": false,
+     "interval_h": 1.0,
+     "settled_at": "2026-09-09T01:00:00Z",
+     "notional_usd": 42667927.972235
+    },
+    {
+     "usd": 27.835543,
+     "rate": 0.0000020227752943351314,
+     "asset": "BTC",
+     "venue": "Deribit",
+     "halted": false,
+     "interval_h": 1.0,
+     "settled_at": "2026-09-09T02:00:00Z",
+     "notional_usd": 13761065.247077
+    },
+    {
+     "usd": 0.0,
+     "rate": 0.0,
+     "asset": "ETH",
+     "venue": "Deribit",
+     "halted": false,
+     "interval_h": 1.0,
+     "settled_at": "2026-09-09T02:00:00Z",
+     "notional_usd": 3991703.133603
+    },
+    {
+     "usd": 0.0,
+     "rate": 0.0000125,
+     "asset": "BTC",
+     "venue": "Hyperliquid",
+     "halted": false,
+     "interval_h": 1.0,
+     "settled_at": "2026-09-09T02:00:00Z",
+     "notional_usd": 0.001984
+    },
+    {
+     "usd": 48.258091,
+     "rate": 0.0000125,
+     "asset": "ETH",
+     "venue": "Hyperliquid",
+     "halted": false,
+     "interval_h": 1.0,
+     "settled_at": "2026-09-09T02:00:00Z",
+     "notional_usd": 3860647.24065
+    },
+    {
+     "usd": 108.256299,
+     "rate": 0.0000025371819960861055,
+     "asset": "ETH",
+     "venue": "pool",
+     "halted": false,
+     "interval_h": 1.0,
+     "settled_at": "2026-09-09T02:00:00Z",
+     "notional_usd": 42667927.972235
+    },
+    {
+     "usd": 70.808035,
+     "rate": 0.00000514553440461029,
+     "asset": "BTC",
+     "venue": "Deribit",
+     "halted": false,
+     "interval_h": 1.0,
+     "settled_at": "2026-09-09T03:00:00Z",
+     "notional_usd": 13761065.247077
+    },
+    {
+     "usd": 2.951103,
+     "rate": 0.0000007393092987664755,
+     "asset": "ETH",
+     "venue": "Deribit",
+     "halted": false,
+     "interval_h": 1.0,
+     "settled_at": "2026-09-09T03:00:00Z",
+     "notional_usd": 3991703.133603
+    },
+    {
+     "usd": 0.0,
+     "rate": 0.0000125,
+     "asset": "BTC",
+     "venue": "Hyperliquid",
+     "halted": false,
+     "interval_h": 1.0,
+     "settled_at": "2026-09-09T03:00:00Z",
+     "notional_usd": 0.001984
+    },
+    {
+     "usd": 48.258091,
+     "rate": 0.0000125,
+     "asset": "ETH",
+     "venue": "Hyperliquid",
+     "halted": false,
+     "interval_h": 1.0,
+     "settled_at": "2026-09-09T03:00:00Z",
+     "notional_usd": 3860647.24065
+    },
+    {
+     "usd": 108.256299,
+     "rate": 0.0000025371819960861055,
+     "asset": "ETH",
+     "venue": "pool",
+     "halted": false,
+     "interval_h": 1.0,
+     "settled_at": "2026-09-09T03:00:00Z",
+     "notional_usd": 42667927.972235
+    },
+    {
+     "usd": 96.767852,
+     "rate": 0.000007032002967257513,
+     "asset": "BTC",
+     "venue": "Deribit",
+     "halted": false,
+     "interval_h": 1.0,
+     "settled_at": "2026-09-09T04:00:00Z",
+     "notional_usd": 13761065.247077
+    },
+    {
+     "usd": 3.317329,
+     "rate": 0.000000831056124334229,
+     "asset": "ETH",
+     "venue": "Deribit",
+     "halted": false,
+     "interval_h": 1.0,
+     "settled_at": "2026-09-09T04:00:00Z",
+     "notional_usd": 3991703.133603
+    },
+    {
+     "usd": 0.0,
+     "rate": 0.0000125,
+     "asset": "BTC",
+     "venue": "Hyperliquid",
+     "halted": false,
+     "interval_h": 1.0,
+     "settled_at": "2026-09-09T04:00:00Z",
+     "notional_usd": 0.001984
+    },
+    {
+     "usd": 48.258091,
+     "rate": 0.0000125,
+     "asset": "ETH",
+     "venue": "Hyperliquid",
+     "halted": false,
+     "interval_h": 1.0,
+     "settled_at": "2026-09-09T04:00:00Z",
+     "notional_usd": 3860647.24065
+    },
+    {
+     "usd": 108.256299,
+     "rate": 0.0000025371819960861055,
+     "asset": "ETH",
+     "venue": "pool",
+     "halted": false,
+     "interval_h": 1.0,
+     "settled_at": "2026-09-09T04:00:00Z",
+     "notional_usd": 42667927.972235
+    },
+    {
+     "usd": 87.828722,
+     "rate": 0.000006382407187514993,
+     "asset": "BTC",
+     "venue": "Deribit",
+     "halted": false,
+     "interval_h": 1.0,
+     "settled_at": "2026-09-09T05:00:00Z",
+     "notional_usd": 13761065.247077
+    },
+    {
+     "usd": 2.03746,
+     "rate": 0.0000005104236312445775,
+     "asset": "ETH",
+     "venue": "Deribit",
+     "halted": false,
+     "interval_h": 1.0,
+     "settled_at": "2026-09-09T05:00:00Z",
+     "notional_usd": 3991703.133603
+    },
+    {
+     "usd": 0.0,
+     "rate": 0.0000125,
+     "asset": "BTC",
+     "venue": "Hyperliquid",
+     "halted": false,
+     "interval_h": 1.0,
+     "settled_at": "2026-09-09T05:00:00Z",
+     "notional_usd": 0.001984
+    },
+    {
+     "usd": 48.258091,
+     "rate": 0.0000125,
+     "asset": "ETH",
+     "venue": "Hyperliquid",
+     "halted": false,
+     "interval_h": 1.0,
+     "settled_at": "2026-09-09T05:00:00Z",
+     "notional_usd": 3860647.24065
+    },
+    {
+     "usd": 108.256299,
+     "rate": 0.0000025371819960861055,
+     "asset": "ETH",
+     "venue": "pool",
+     "halted": false,
+     "interval_h": 1.0,
+     "settled_at": "2026-09-09T05:00:00Z",
+     "notional_usd": 42667927.972235
+    },
+    {
+     "usd": 237.40693,
+     "rate": 0.000017252074991081687,
+     "asset": "BTC",
+     "venue": "Deribit",
+     "halted": false,
+     "interval_h": 1.0,
+     "settled_at": "2026-09-09T06:00:00Z",
+     "notional_usd": 13761065.247077
+    },
+    {
+     "usd": 0.039545,
+     "rate": 0.000000009906838321366438,
+     "asset": "ETH",
+     "venue": "Deribit",
+     "halted": false,
+     "interval_h": 1.0,
+     "settled_at": "2026-09-09T06:00:00Z",
+     "notional_usd": 3991703.133603
+    },
+    {
+     "usd": 0.0,
+     "rate": 0.0000125,
+     "asset": "BTC",
+     "venue": "Hyperliquid",
+     "halted": false,
+     "interval_h": 1.0,
+     "settled_at": "2026-09-09T06:00:00Z",
+     "notional_usd": 0.001984
+    },
+    {
+     "usd": 48.258091,
+     "rate": 0.0000125,
+     "asset": "ETH",
+     "venue": "Hyperliquid",
+     "halted": false,
+     "interval_h": 1.0,
+     "settled_at": "2026-09-09T06:00:00Z",
+     "notional_usd": 3860647.24065
+    },
+    {
+     "usd": 108.256299,
+     "rate": 0.0000025371819960861055,
+     "asset": "ETH",
+     "venue": "pool",
+     "halted": false,
+     "interval_h": 1.0,
+     "settled_at": "2026-09-09T06:00:00Z",
+     "notional_usd": 42667927.972235
+    },
+    {
+     "usd": 224.819515,
+     "rate": 0.000016337362800484523,
+     "asset": "BTC",
+     "venue": "Deribit",
+     "halted": false,
+     "interval_h": 1.0,
+     "settled_at": "2026-09-09T07:00:00Z",
+     "notional_usd": 13761065.247077
+    },
+    {
+     "usd": 3.723327,
+     "rate": 0.0000009327665419074725,
+     "asset": "ETH",
+     "venue": "Deribit",
+     "halted": false,
+     "interval_h": 1.0,
+     "settled_at": "2026-09-09T07:00:00Z",
+     "notional_usd": 3991703.133603
+    },
+    {
+     "usd": 0.0,
+     "rate": 0.0000125,
+     "asset": "BTC",
+     "venue": "Hyperliquid",
+     "halted": false,
+     "interval_h": 1.0,
+     "settled_at": "2026-09-09T07:00:00Z",
+     "notional_usd": 0.001984
+    },
+    {
+     "usd": 48.258091,
+     "rate": 0.0000125,
+     "asset": "ETH",
+     "venue": "Hyperliquid",
+     "halted": false,
+     "interval_h": 1.0,
+     "settled_at": "2026-09-09T07:00:00Z",
+     "notional_usd": 3860647.24065
+    },
+    {
+     "usd": 108.256299,
+     "rate": 0.0000025371819960861055,
+     "asset": "ETH",
+     "venue": "pool",
+     "halted": false,
+     "interval_h": 1.0,
+     "settled_at": "2026-09-09T07:00:00Z",
+     "notional_usd": 42667927.972235
+    },
+    {
+     "usd": 1726.459992,
+     "rate": 0.00009012,
+     "asset": "BTC",
+     "venue": "Binance",
+     "halted": false,
+     "interval_h": 8.0,
+     "settled_at": "2026-09-09T08:00:00Z",
+     "notional_usd": 19157345.674599
+    },
+    {
+     "usd": 0.0,
+     "rate": 0.00008538,
+     "asset": "ETH",
+     "venue": "Binance",
+     "halted": false,
+     "interval_h": 8.0,
+     "settled_at": "2026-09-09T08:00:00Z",
+     "notional_usd": 0.000004
+    },
+    {
+     "usd": 276.429986,
+     "rate": 0.000079,
+     "asset": "BTC",
+     "venue": "Bitget",
+     "halted": false,
+     "interval_h": 8.0,
+     "settled_at": "2026-09-09T08:00:00Z",
+     "notional_usd": 3499113.74304
+    },
+    {
+     "usd": 876.860988,
+     "rate": 0.000056,
+     "asset": "ETH",
+     "venue": "Bitget",
+     "halted": false,
+     "interval_h": 8.0,
+     "settled_at": "2026-09-09T08:00:00Z",
+     "notional_usd": 15658231.927011
+    },
+    {
+     "usd": 0.0,
+     "rate": 0.00006898,
+     "asset": "BTC",
+     "venue": "Bybit",
+     "halted": false,
+     "interval_h": 8.0,
+     "settled_at": "2026-09-09T08:00:00Z",
+     "notional_usd": 0.001977
+    },
+    {
+     "usd": 1125.494058,
+     "rate": 0.00005875,
+     "asset": "ETH",
+     "venue": "Bybit",
+     "halted": false,
+     "interval_h": 8.0,
+     "settled_at": "2026-09-09T08:00:00Z",
+     "notional_usd": 19157345.670967
+    },
+    {
+     "usd": 297.820176,
+     "rate": 0.000021642232670201862,
+     "asset": "BTC",
+     "venue": "Deribit",
+     "halted": false,
+     "interval_h": 1.0,
+     "settled_at": "2026-09-09T08:00:00Z",
+     "notional_usd": 13761065.247077
+    },
+    {
+     "usd": 9.079654,
+     "rate": 0.0000022746315650520797,
+     "asset": "ETH",
+     "venue": "Deribit",
+     "halted": false,
+     "interval_h": 1.0,
+     "settled_at": "2026-09-09T08:00:00Z",
+     "notional_usd": 3991703.133603
+    },
+    {
+     "usd": 0.0,
+     "rate": 0.0000125,
+     "asset": "BTC",
+     "venue": "Hyperliquid",
+     "halted": false,
+     "interval_h": 1.0,
+     "settled_at": "2026-09-09T08:00:00Z",
+     "notional_usd": 0.001984
+    },
+    {
+     "usd": 48.258091,
+     "rate": 0.0000125,
+     "asset": "ETH",
+     "venue": "Hyperliquid",
+     "halted": false,
+     "interval_h": 1.0,
+     "settled_at": "2026-09-09T08:00:00Z",
+     "notional_usd": 3860647.24065
+    },
+    {
+     "usd": 1298.226435,
+     "rate": 0.0000677665088416,
+     "asset": "BTC",
+     "venue": "OKX",
+     "halted": false,
+     "interval_h": 8.0,
+     "settled_at": "2026-09-09T08:00:00Z",
+     "notional_usd": 19157345.667883
+    },
+    {
+     "usd": 108.256299,
+     "rate": 0.0000025371819960861055,
+     "asset": "ETH",
+     "venue": "pool",
+     "halted": false,
+     "interval_h": 1.0,
+     "settled_at": "2026-09-09T08:00:00Z",
+     "notional_usd": 42667927.972235
+    },
+    {
+     "usd": 333.548162,
+     "rate": 0.000024238542291759763,
+     "asset": "BTC",
+     "venue": "Deribit",
+     "halted": false,
+     "interval_h": 1.0,
+     "settled_at": "2026-09-09T09:00:00Z",
+     "notional_usd": 13761065.247077
+    },
+    {
+     "usd": 26.529226,
+     "rate": 0.0000066460919989814086,
+     "asset": "ETH",
+     "venue": "Deribit",
+     "halted": false,
+     "interval_h": 1.0,
+     "settled_at": "2026-09-09T09:00:00Z",
+     "notional_usd": 3991703.133603
+    },
+    {
+     "usd": 0.0,
+     "rate": 0.0000125,
+     "asset": "BTC",
+     "venue": "Hyperliquid",
+     "halted": false,
+     "interval_h": 1.0,
+     "settled_at": "2026-09-09T09:00:00Z",
+     "notional_usd": 0.001984
+    },
+    {
+     "usd": 48.258091,
+     "rate": 0.0000125,
+     "asset": "ETH",
+     "venue": "Hyperliquid",
+     "halted": false,
+     "interval_h": 1.0,
+     "settled_at": "2026-09-09T09:00:00Z",
+     "notional_usd": 3860647.24065
+    },
+    {
+     "usd": 108.256299,
+     "rate": 0.0000025371819960861055,
+     "asset": "ETH",
+     "venue": "pool",
+     "halted": false,
+     "interval_h": 1.0,
+     "settled_at": "2026-09-09T09:00:00Z",
+     "notional_usd": 42667927.972235
+    },
+    {
+     "usd": 197.705959,
+     "rate": 0.000014367053362997225,
+     "asset": "BTC",
+     "venue": "Deribit",
+     "halted": false,
+     "interval_h": 1.0,
+     "settled_at": "2026-09-09T10:00:00Z",
+     "notional_usd": 13761065.247077
+    },
+    {
+     "usd": 33.37377,
+     "rate": 0.000008360784504338593,
+     "asset": "ETH",
+     "venue": "Deribit",
+     "halted": false,
+     "interval_h": 1.0,
+     "settled_at": "2026-09-09T10:00:00Z",
+     "notional_usd": 3991703.133603
+    },
+    {
+     "usd": 0.0,
+     "rate": 0.0000125,
+     "asset": "BTC",
+     "venue": "Hyperliquid",
+     "halted": false,
+     "interval_h": 1.0,
+     "settled_at": "2026-09-09T10:00:00Z",
+     "notional_usd": 0.001984
+    },
+    {
+     "usd": 48.258091,
+     "rate": 0.0000125,
+     "asset": "ETH",
+     "venue": "Hyperliquid",
+     "halted": false,
+     "interval_h": 1.0,
+     "settled_at": "2026-09-09T10:00:00Z",
+     "notional_usd": 3860647.24065
+    },
+    {
+     "usd": 108.256299,
+     "rate": 0.0000025371819960861055,
+     "asset": "ETH",
+     "venue": "pool",
+     "halted": false,
+     "interval_h": 1.0,
+     "settled_at": "2026-09-09T10:00:00Z",
+     "notional_usd": 42667927.972235
+    },
+    {
+     "usd": 61.594338,
+     "rate": 0.0000044759861833132755,
+     "asset": "BTC",
+     "venue": "Deribit",
+     "halted": false,
+     "interval_h": 1.0,
+     "settled_at": "2026-09-09T11:00:00Z",
+     "notional_usd": 13761065.247077
+    },
+    {
+     "usd": 38.699937,
+     "rate": 0.000009695093941208329,
+     "asset": "ETH",
+     "venue": "Deribit",
+     "halted": false,
+     "interval_h": 1.0,
+     "settled_at": "2026-09-09T11:00:00Z",
+     "notional_usd": 3991703.133603
+    },
+    {
+     "usd": 0.0,
+     "rate": 0.0000125,
+     "asset": "BTC",
+     "venue": "Hyperliquid",
+     "halted": false,
+     "interval_h": 1.0,
+     "settled_at": "2026-09-09T11:00:00Z",
+     "notional_usd": 0.001984
+    },
+    {
+     "usd": 48.258091,
+     "rate": 0.0000125,
+     "asset": "ETH",
+     "venue": "Hyperliquid",
+     "halted": false,
+     "interval_h": 1.0,
+     "settled_at": "2026-09-09T11:00:00Z",
+     "notional_usd": 3860647.24065
+    },
+    {
+     "usd": 108.256299,
+     "rate": 0.0000025371819960861055,
+     "asset": "ETH",
+     "venue": "pool",
+     "halted": false,
+     "interval_h": 1.0,
+     "settled_at": "2026-09-09T11:00:00Z",
+     "notional_usd": 42667927.972235
+    },
+    {
+     "usd": 108.256299,
+     "rate": 0.0000025371819960861055,
+     "asset": "ETH",
+     "venue": "pool",
+     "halted": false,
+     "interval_h": 1.0,
+     "settled_at": "2026-09-09T12:00:00Z",
+     "notional_usd": 42667927.972235
+    }
+   ],
+   "order": "canonical",
+   "funding_usd": 18764.104489,
+   "staking_usd": 2597.970254
+  },
+  "execution": {
+   "events": [],
+   "admissions": [
+    {
+     "t": "2026-09-08T14:00:00+00:00",
+     "origin": "within-asset-walk",
+     "outcome": "cost-rejected",
+     "admitted": [],
+     "deferred": [],
+     "mandated": false,
+     "proposed": [
+      {
+       "side": "bid",
+       "asset": "BTC",
+       "venue": "Deribit"
+      },
+      {
+       "side": "ask",
+       "asset": "BTC",
+       "venue": "OKX"
+      },
+      {
+       "side": "ask",
+       "asset": "ETH",
+       "venue": "Deribit"
+      },
+      {
+       "side": "bid",
+       "asset": "ETH",
+       "venue": "OKX"
+      }
+     ]
+    },
+    {
+     "t": "2026-09-09T05:00:00+00:00",
+     "origin": "within-asset-walk",
+     "outcome": "cost-rejected",
+     "admitted": [],
+     "deferred": [],
+     "mandated": false,
+     "proposed": [
+      {
+       "side": "ask",
+       "asset": "ETH",
+       "venue": "Bybit"
+      },
+      {
+       "side": "bid",
+       "asset": "ETH",
+       "venue": "Deribit"
+      }
+     ]
+    }
+   ],
+   "open_at_strike": []
+  },
+  "premises": {
+   "clock_h": {
+    "kind": "assumed",
+    "note": {
+     "none": "weekday mobilisation clock without a provider",
+     "Copper": "weekday mobilisation clock",
+     "Sygnum": "Sygnum's weekday clock",
+     "Komainu": "weekday mobilisation clock",
+     "Fireblocks": "weekday mobilisation clock"
+    },
+    "unit": "h",
+    "value": {
+     "none": 1.0,
+     "Copper": 1.0,
+     "Sygnum": null,
+     "Komainu": 4.0,
+     "Fireblocks": 1.0
+    },
+    "source": {
+     "none": "no OES: on-chain USDC top-up",
+     "Copper": "ops clock on a documented-continuous network (deferred-asks register)",
+     "Sygnum": "Sygnum Protect ops clock, weekday (deferred-asks register; a written provider confirmation still requested)",
+     "Komainu": "cadence premise, unpublished (deferred-asks register)",
+     "Fireblocks": "threshold-triggered on-chain, documented (deferred-asks register)"
+    },
+    "observed_on": {
+     "none": "2026-08-02",
+     "Copper": "2026-08-02",
+     "Sygnum": "2026-08-02",
+     "Komainu": "2026-08-02",
+     "Fireblocks": "2026-08-02"
+    }
+   },
+   "capital0": {
+    "kind": "assumed",
+    "note": "the $100M book every surface derives from",
+    "unit": "USD",
+    "value": 100000000.0,
+    "source": "authored \u2014 the reference portfolio's capital (DECISIONS 2026-08-11)",
+    "observed_on": "2026-08-11"
+   },
+   "mm_of_im": {
+    "kind": "assumed",
+    "note": "maintenance margin as a ratio of IM",
+    "unit": "fraction of IM",
+    "value": 0.5,
+    "source": "documented for Hyperliquid ('MM = half of initial at max leverage'); premise elsewhere",
+    "observed_on": "2026-08-02"
+   },
+   "basis_addon": {
+    "kind": "sourced",
+    "note": "read as-of the strike; the record refuses without the tape (F-123)",
+    "unit": "fraction",
+    "value": {
+     "BTC": 0.003713025420611693,
+     "ETH": 0.0037805923245406436
+    },
+    "source": "measured: the expanding full-history maximum of perp basis (mark vs venue index) per asset (v1.7, promoted 2026-08-22)",
+    "observed_on": null
+   },
+   "parked_share": {
+    "kind": "assumed",
+    "note": "the pre-funding drag's parked share",
+    "unit": "fraction of week",
+    "value": 0.3392857142857143,
+    "source": "authored \u2014 Friday 22:00 UTC \u2192 Monday ~07:00 = 57/168 of the week (deployment-drag premise, Reference Policy \u00a77)",
+    "observed_on": "2026-08-02"
+   },
+   "price_stress": {
+    "kind": "assumed",
+    "note": "the linear 24h stress draw on price",
+    "unit": "fraction",
+    "value": 0.2,
+    "source": "authored \u2014 P1's 20%/24h crash primitive reused symmetrically for the boom draw (Reference Policy \u00a77 signed 2026-08-02; own 24-day window maxes at +4.6%/+6.8% per 24h, too short to author a measured boom)",
+    "observed_on": "2026-08-02"
+   },
+   "deribit_ladder": {
+    "kind": "sourced",
+    "note": "IM = 1/L(N); products.max_leverage serves C1",
+    "unit": "ladder",
+    "value": {
+     "C1": 50.0,
+     "C2": 4.0,
+     "C3": 0.05,
+     "C4": 0.4,
+     "nmax_usd": {
+      "BTC": 160000000.0,
+      "ETH": 75000000.0
+     }
+    },
+    "source": "Deribit support article 25944811528477 (re-edited 2026-08-11 09:22Z) and announcement 1785922800243, verified live 2026-08-11: L(N) = C1\u00b7(C1/C2)^(\u2212max(0,(N/NMax\u2212C3)/(1\u2212C3))^C4), Tier 1 perps",
+    "observed_on": "2026-08-11"
+   },
+   "margin_clock_k": {
+    "kind": "assumed",
+    "note": "the sleeve's slack",
+    "unit": "x",
+    "value": 1.5,
+    "source": "authored \u2014 half a clock of slack (DECISIONS D8 closed 2026-08-29): sleeve = max(IM, MM + draw \u00d7 k \u00d7 clock/24)",
+    "observed_on": "2026-08-29"
+   },
+   "mm_of_im_venue": {
+    "kind": "sourced",
+    "note": {
+     "Deribit": "Deribit's documented ratio"
+    },
+    "unit": "fraction of IM",
+    "value": {
+     "Deribit": 0.6666666666666666
+    },
+    "source": {
+     "Deribit": "Deribit notice #281 (announced 2026-08-05, effective 2026-08-11 09:00 UTC, Coinbase-integration margin model): MM = 2/3 of IM; adopted immediately per the worst-case phase policy"
+    },
+    "observed_on": {
+     "Deribit": "2026-08-11"
+    }
+   },
+   "sygnum_intra_h": {
+    "kind": "assumed",
+    "note": "Sygnum's weekday clock",
+    "unit": "h",
+    "value": 4.0,
+    "source": "Sygnum Protect ops clock, weekday (deferred-asks register; a written provider confirmation still requested)",
+    "observed_on": "2026-08-02"
+   },
+   "im_fallback_frac": {
+    "kind": "fallback",
+    "note": "IM where max_leverage is unserved",
+    "unit": "fraction",
+    "value": 0.02,
+    "source": "authored \u2014 DRAFT 2% where products.max_leverage is unserved (conservative-high vs the 125x venues)",
+    "observed_on": "2026-08-02"
+   },
+   "spot_leg_cost_bp": {
+    "kind": "assumed",
+    "note": "the coin mirror's round trip",
+    "unit": "bp",
+    "value": 10.0,
+    "source": "authored \u2014 unknown-venue taker fee 6.0bp + the 4bp half-spread fallback; no spot depth is measured (v1.8, 2026-08-23)",
+    "observed_on": "2026-08-23"
+   },
+   "sygnum_weekend_h": {
+    "kind": "assumed",
+    "note": "Sygnum's weekend clock (the pre-funding line)",
+    "unit": "h",
+    "value": 4.0,
+    "source": "v1.12 (2026-08-29): equals the ops clock \u2014 Protect 'instantly mirrored', 'P&L settled automatically every eight hours' (Bybit/Sygnum release 2025-09-09; sygnum.com/sygnum-protect); banking hours govern brokerage conversions only; residual: no explicit weekend statement",
+    "observed_on": "2026-08-29"
+   }
+  },
+  "rules": {
+   "ruleset_sha256": "7303a0ae9cf2bdc13407634ebf9d4cc47744cc92a9b1fc487623414d0de259a8",
+   "methodology_version": "v1.2"
+  },
+  "provenance": {
+   "window_to": "2026-09-09T12:00:00+00:00",
+   "window_from": "2026-09-08T12:00:00+00:00",
+   "funding_prints": 408,
+   "funding_sha256": "db4072edf239445a5dedf5fed637c54b5db7d3dcf494352097023bff1d7e0f24",
+   "marks_at_strike": {
+    "OKX/BTC": 78958.78166666666,
+    "Bybit/BTC": 78956.165,
+    "Bybit/ETH": 2490.4546666666665,
+    "Bitget/BTC": 78963.59333333334,
+    "Bitget/ETH": 2490.726833333333,
+    "Binance/BTC": 78957.81837858583,
+    "Binance/ETH": 2490.3200522318334,
+    "Deribit/BTC": 78997.40933333333,
+    "Deribit/ETH": 2491.8771666666667,
+    "Hyperliquid/BTC": 78958.505,
+    "Hyperliquid/ETH": 2491.1761666666666
+   }
+  },
+  "methodology_version": "v1.2",
+  "row_sha256": "h2:4dd9870ea53ef3b346cf166ecbace935137797c977939b13ef50bb25dfb3a24e",
+  "published_at": "2026-09-09T12:05:40Z",
+  "h2_preimage": "{\"rules\": {\"ruleset_sha256\": \"7303a0ae9cf2bdc13407634ebf9d4cc47744cc92a9b1fc487623414d0de259a8\", \"methodology_version\": \"v1.2\"}, \"schema\": \"argus-fix-envelope-h1\", \"fix_date\": \"2026-09-09\", \"headline\": {\"ret_1d\": 0.0002127569894279091, \"shares\": {\"OKX/BTC\": 0.3447, \"Bybit/BTC\": 0.0, \"Bybit/ETH\": 0.449, \"Bitget/BTC\": 0.063, \"Bitget/ETH\": 0.367, \"Binance/BTC\": 0.3447, \"Binance/ETH\": 0.0, \"Deribit/BTC\": 0.2476, \"Deribit/ETH\": 0.0936, \"Hyperliquid/BTC\": 0.0, \"Hyperliquid/ETH\": 0.0905}, \"derated\": [], \"mix_btc\": 0.565689, \"nav_usd\": 100427323.15, \"fix_date\": \"2026-09-09\", \"basis_usd\": -9485.14, \"capital_usd\": 98242798.31, \"cost_usd_cum\": 256173.6, \"full_nav_usd\": 100417838.01, \"carry_usd_cum\": 683496.75, \"naive_nav_usd\": 100667643.46, \"naive_capital_usd\": 98051159.08, \"stable_margin_usd\": 1757201.69, \"stable_reserve_usd\": 1757201.69, \"methodology_version\": \"v1.2\", \"naive_carry_usd_cum\": 669739.51}, \"premises\": {\"clock_h\": {\"kind\": \"assumed\", \"note\": {\"none\": \"weekday mobilisation clock without a provider\", \"Copper\": \"weekday mobilisation clock\", \"Sygnum\": \"Sygnum's weekday clock\", \"Komainu\": \"weekday mobilisation clock\", \"Fireblocks\": \"weekday mobilisation clock\"}, \"unit\": \"h\", \"value\": {\"none\": 1.0, \"Copper\": 1.0, \"Sygnum\": null, \"Komainu\": 4.0, \"Fireblocks\": 1.0}, \"source\": {\"none\": \"no OES: on-chain USDC top-up\", \"Copper\": \"ops clock on a documented-continuous network (deferred-asks register)\", \"Sygnum\": \"Sygnum Protect ops clock, weekday (deferred-asks register; a written provider confirmation still requested)\", \"Komainu\": \"cadence premise, unpublished (deferred-asks register)\", \"Fireblocks\": \"threshold-triggered on-chain, documented (deferred-asks register)\"}, \"observed_on\": {\"none\": \"2026-08-02\", \"Copper\": \"2026-08-02\", \"Sygnum\": \"2026-08-02\", \"Komainu\": \"2026-08-02\", \"Fireblocks\": \"2026-08-02\"}}, \"capital0\": {\"kind\": \"assumed\", \"note\": \"the $100M book every surface derives from\", \"unit\": \"USD\", \"value\": 100000000.0, \"source\": \"authored \u2014 the reference portfolio's capital (DECISIONS 2026-08-11)\", \"observed_on\": \"2026-08-11\"}, \"mm_of_im\": {\"kind\": \"assumed\", \"note\": \"maintenance margin as a ratio of IM\", \"unit\": \"fraction of IM\", \"value\": 0.5, \"source\": \"documented for Hyperliquid ('MM = half of initial at max leverage'); premise elsewhere\", \"observed_on\": \"2026-08-02\"}, \"basis_addon\": {\"kind\": \"sourced\", \"note\": \"read as-of the strike; the record refuses without the tape (F-123)\", \"unit\": \"fraction\", \"value\": {\"BTC\": 0.003713025420611693, \"ETH\": 0.0037805923245406436}, \"source\": \"measured: the expanding full-history maximum of perp basis (mark vs venue index) per asset (v1.7, promoted 2026-08-22)\", \"observed_on\": null}, \"parked_share\": {\"kind\": \"assumed\", \"note\": \"the pre-funding drag's parked share\", \"unit\": \"fraction of week\", \"value\": 0.3392857142857143, \"source\": \"authored \u2014 Friday 22:00 UTC \u2192 Monday ~07:00 = 57/168 of the week (deployment-drag premise, Reference Policy \u00a77)\", \"observed_on\": \"2026-08-02\"}, \"price_stress\": {\"kind\": \"assumed\", \"note\": \"the linear 24h stress draw on price\", \"unit\": \"fraction\", \"value\": 0.2, \"source\": \"authored \u2014 P1's 20%/24h crash primitive reused symmetrically for the boom draw (Reference Policy \u00a77 signed 2026-08-02; own 24-day window maxes at +4.6%/+6.8% per 24h, too short to author a measured boom)\", \"observed_on\": \"2026-08-02\"}, \"deribit_ladder\": {\"kind\": \"sourced\", \"note\": \"IM = 1/L(N); products.max_leverage serves C1\", \"unit\": \"ladder\", \"value\": {\"C1\": 50.0, \"C2\": 4.0, \"C3\": 0.05, \"C4\": 0.4, \"nmax_usd\": {\"BTC\": 160000000.0, \"ETH\": 75000000.0}}, \"source\": \"Deribit support article 25944811528477 (re-edited 2026-08-11 09:22Z) and announcement 1785922800243, verified live 2026-08-11: L(N) = C1\u00b7(C1/C2)^(\u2212max(0,(N/NMax\u2212C3)/(1\u2212C3))^C4), Tier 1 perps\", \"observed_on\": \"2026-08-11\"}, \"margin_clock_k\": {\"kind\": \"assumed\", \"note\": \"the sleeve's slack\", \"unit\": \"x\", \"value\": 1.5, \"source\": \"authored \u2014 half a clock of slack (DECISIONS D8 closed 2026-08-29): sleeve = max(IM, MM + draw \u00d7 k \u00d7 clock/24)\", \"observed_on\": \"2026-08-29\"}, \"mm_of_im_venue\": {\"kind\": \"sourced\", \"note\": {\"Deribit\": \"Deribit's documented ratio\"}, \"unit\": \"fraction of IM\", \"value\": {\"Deribit\": 0.6666666666666666}, \"source\": {\"Deribit\": \"Deribit notice #281 (announced 2026-08-05, effective 2026-08-11 09:00 UTC, Coinbase-integration margin model): MM = 2/3 of IM; adopted immediately per the worst-case phase policy\"}, \"observed_on\": {\"Deribit\": \"2026-08-11\"}}, \"sygnum_intra_h\": {\"kind\": \"assumed\", \"note\": \"Sygnum's weekday clock\", \"unit\": \"h\", \"value\": 4.0, \"source\": \"Sygnum Protect ops clock, weekday (deferred-asks register; a written provider confirmation still requested)\", \"observed_on\": \"2026-08-02\"}, \"im_fallback_frac\": {\"kind\": \"fallback\", \"note\": \"IM where max_leverage is unserved\", \"unit\": \"fraction\", \"value\": 0.02, \"source\": \"authored \u2014 DRAFT 2% where products.max_leverage is unserved (conservative-high vs the 125x venues)\", \"observed_on\": \"2026-08-02\"}, \"spot_leg_cost_bp\": {\"kind\": \"assumed\", \"note\": \"the coin mirror's round trip\", \"unit\": \"bp\", \"value\": 10.0, \"source\": \"authored \u2014 unknown-venue taker fee 6.0bp + the 4bp half-spread fallback; no spot depth is measured (v1.8, 2026-08-23)\", \"observed_on\": \"2026-08-23\"}, \"sygnum_weekend_h\": {\"kind\": \"assumed\", \"note\": \"Sygnum's weekend clock (the pre-funding line)\", \"unit\": \"h\", \"value\": 4.0, \"source\": \"v1.12 (2026-08-29): equals the ops clock \u2014 Protect 'instantly mirrored', 'P&L settled automatically every eight hours' (Bybit/Sygnum release 2025-09-09; sygnum.com/sygnum-protect); banking hours govern brokerage conversions only; residual: no explicit weekend statement\", \"observed_on\": \"2026-08-29\"}}, \"workings\": {\"legs\": [{\"g\": 0.06092826, \"imf\": 0.02, \"asset\": \"BTC\", \"venue\": \"Binance\", \"draw_f\": 0.20371303, \"binding\": \"clock\", \"clock_h\": 4.0, \"mm_of_im\": 0.5, \"notional_usd\": 19157345.67459888}, {\"g\": 0.06094515, \"imf\": 0.02, \"asset\": \"ETH\", \"venue\": \"Binance\", \"draw_f\": 0.20378059, \"binding\": \"clock\", \"clock_h\": 4.0, \"mm_of_im\": 0.5, \"notional_usd\": 0.00000444}, {\"g\": 0.02273206, \"imf\": 0.02, \"asset\": \"BTC\", \"venue\": \"Bitget\", \"draw_f\": 0.20371303, \"binding\": \"clock\", \"clock_h\": 1.0, \"mm_of_im\": 0.5, \"notional_usd\": 3499113.7430399}, {\"g\": 0.02273629, \"imf\": 0.02, \"asset\": \"ETH\", \"venue\": \"Bitget\", \"draw_f\": 0.20378059, \"binding\": \"clock\", \"clock_h\": 1.0, \"mm_of_im\": 0.5, \"notional_usd\": 15658231.92701097}, {\"g\": 0.0160654, \"imf\": 0.00666667, \"asset\": \"BTC\", \"venue\": \"Bybit\", \"draw_f\": 0.20371303, \"binding\": \"clock\", \"clock_h\": 1.0, \"mm_of_im\": 0.5, \"notional_usd\": 0.00197685}, {\"g\": 0.01606962, \"imf\": 0.00666667, \"asset\": \"ETH\", \"venue\": \"Bybit\", \"draw_f\": 0.20378059, \"binding\": \"clock\", \"clock_h\": 1.0, \"mm_of_im\": 0.5, \"notional_usd\": 19157345.67096745}, {\"g\": 0.03956069, \"imf\": 0.03956069, \"asset\": \"BTC\", \"venue\": \"Deribit\", \"draw_f\": 0.20371303, \"binding\": \"im\", \"clock_h\": 1.0, \"mm_of_im\": 0.66666667, \"notional_usd\": 13761065.24707678}, {\"g\": 0.03002468, \"imf\": 0.02593258, \"asset\": \"ETH\", \"venue\": \"Deribit\", \"draw_f\": 0.20378059, \"binding\": \"clock\", \"clock_h\": 1.0, \"mm_of_im\": 0.66666667, \"notional_usd\": 3991703.13360283}, {\"g\": 0.02523206, \"imf\": 0.025, \"asset\": \"BTC\", \"venue\": \"Hyperliquid\", \"draw_f\": 0.20371303, \"binding\": \"clock\", \"clock_h\": 1.0, \"mm_of_im\": 0.5, \"notional_usd\": 0.00198354}, {\"g\": 0.04, \"imf\": 0.04, \"asset\": \"ETH\", \"venue\": \"Hyperliquid\", \"draw_f\": 0.20378059, \"binding\": \"im\", \"clock_h\": 1.0, \"mm_of_im\": 0.5, \"notional_usd\": 3860647.24064968}, {\"g\": 0.05592826, \"imf\": 0.01, \"asset\": \"BTC\", \"venue\": \"OKX\", \"draw_f\": 0.20371303, \"binding\": \"clock\", \"clock_h\": 4.0, \"mm_of_im\": 0.5, \"notional_usd\": 19157345.66788268}], \"sleeves\": [{\"k\": 1.5, \"kind\": \"stable\", \"ttb_h\": 6.0, \"venue\": \"Binance\", \"im_usd\": 383146.913492, \"mm_usd\": 191573.456746, \"binding\": \"clock\", \"clock_h\": 4.0, \"im_frac\": 0.02, \"posting\": \"USDT\", \"draw_usd\": 3902600.846402, \"provider\": \"Sygnum\", \"sleeve_usd\": 1167223.668347, \"notional_usd\": 19157345.674603}, {\"k\": 1.5, \"kind\": \"stable\", \"ttb_h\": 1.5, \"venue\": \"Bitget\", \"im_usd\": 383146.913401, \"mm_usd\": 191573.456701, \"binding\": \"clock\", \"clock_h\": 1.0, \"im_frac\": 0.02, \"posting\": \"USDT\", \"draw_usd\": 3903658.823727, \"provider\": \"Copper\", \"sleeve_usd\": 435552.133183, \"notional_usd\": 19157345.670051}, {\"k\": 1.5, \"kind\": \"lst\", \"ttb_h\": 1.5, \"venue\": \"Bybit\", \"im_usd\": 127715.63782, \"mm_usd\": 63857.81891, \"binding\": \"clock\", \"clock_h\": 1.0, \"im_frac\": 0.006667, \"posting\": \"stETH\", \"draw_usd\": 3903895.248598, \"provider\": \"Copper\", \"sleeve_usd\": 307851.271947, \"notional_usd\": 19157345.672944}, {\"k\": 1.5, \"kind\": \"lst\", \"ttb_h\": 1.541533, \"venue\": \"Deribit\", \"im_usd\": 647912.401204, \"mm_usd\": 431941.600803, \"binding\": \"clock\", \"clock_h\": 1.0, \"im_frac\": 0.036496, \"posting\": \"stETH\", \"draw_usd\": 3616739.863442, \"provider\": \"Fireblocks\", \"sleeve_usd\": 664246.818097, \"notional_usd\": 17752768.38068}, {\"k\": 1.5, \"kind\": \"stable\", \"ttb_h\": 2.355475, \"venue\": \"Hyperliquid\", \"im_usd\": 154425.889676, \"mm_usd\": 77212.944838, \"binding\": \"im\", \"clock_h\": 1.0, \"im_frac\": 0.04, \"posting\": \"USDC\", \"draw_usd\": 786724.98186, \"provider\": null, \"sleeve_usd\": 154425.889676, \"notional_usd\": 3860647.242633}, {\"k\": 1.5, \"kind\": \"lst\", \"ttb_h\": 6.0, \"venue\": \"OKX\", \"im_usd\": 191573.456679, \"mm_usd\": 95786.728339, \"binding\": \"clock\", \"clock_h\": 4.0, \"im_frac\": 0.01, \"posting\": \"stETH\", \"draw_usd\": 3902600.845033, \"provider\": \"Komainu\", \"sleeve_usd\": 1071436.939598, \"notional_usd\": 19157345.667883}]}, \"execution\": {\"events\": [], \"admissions\": [{\"t\": \"2026-09-08T14:00:00+00:00\", \"origin\": \"within-asset-walk\", \"outcome\": \"cost-rejected\", \"admitted\": [], \"deferred\": [], \"mandated\": false, \"proposed\": [{\"side\": \"bid\", \"asset\": \"BTC\", \"venue\": \"Deribit\"}, {\"side\": \"ask\", \"asset\": \"BTC\", \"venue\": \"OKX\"}, {\"side\": \"ask\", \"asset\": \"ETH\", \"venue\": \"Deribit\"}, {\"side\": \"bid\", \"asset\": \"ETH\", \"venue\": \"OKX\"}]}, {\"t\": \"2026-09-09T05:00:00+00:00\", \"origin\": \"within-asset-walk\", \"outcome\": \"cost-rejected\", \"admitted\": [], \"deferred\": [], \"mandated\": false, \"proposed\": [{\"side\": \"ask\", \"asset\": \"ETH\", \"venue\": \"Bybit\"}, {\"side\": \"bid\", \"asset\": \"ETH\", \"venue\": \"Deribit\"}]}], \"open_at_strike\": []}, \"positions\": {\"legs\": [{\"asset\": \"BTC\", \"share\": 0.344712, \"venue\": \"Binance\", \"notional_usd\": 19157345.674599}, {\"asset\": \"ETH\", \"share\": 0.0, \"venue\": \"Binance\", \"notional_usd\": 0.000004}, {\"asset\": \"BTC\", \"share\": 0.062962, \"venue\": \"Bitget\", \"notional_usd\": 3499113.74304}, {\"asset\": \"ETH\", \"share\": 0.366979, \"venue\": \"Bitget\", \"notional_usd\": 15658231.927011}, {\"asset\": \"BTC\", \"share\": 0.0, \"venue\": \"Bybit\", \"notional_usd\": 0.001977}, {\"asset\": \"ETH\", \"share\": 0.448987, \"venue\": \"Bybit\", \"notional_usd\": 19157345.670967}, {\"asset\": \"BTC\", \"share\": 0.247613, \"venue\": \"Deribit\", \"notional_usd\": 13761065.247077}, {\"asset\": \"ETH\", \"share\": 0.093553, \"venue\": \"Deribit\", \"notional_usd\": 3991703.133603}, {\"asset\": \"BTC\", \"share\": 0.0, \"venue\": \"Hyperliquid\", \"notional_usd\": 0.001984}, {\"asset\": \"ETH\", \"share\": 0.090481, \"venue\": \"Hyperliquid\", \"notional_usd\": 3860647.24065}, {\"asset\": \"BTC\", \"share\": 0.344712, \"venue\": \"OKX\", \"notional_usd\": 19157345.667883}], \"hedge\": {\"BTC\": 55574870.336559, \"ETH\": 42667927.972235}, \"ref_px\": {\"BTC\": 78958.64333333334, \"ETH\": 2490.6441666666665}, \"spot_lots\": {\"BTC\": {\"qty\": 856.0500186203471, \"entry\": 63420.5820687296}, \"ETH\": {\"qty\": 21242.182150136985, \"entry\": 1859.5298809017452}}, \"unallocated_usd\": {\"BTC\": 0.0, \"ETH\": 0.0}}, \"provenance\": {\"window_to\": \"2026-09-09T12:00:00+00:00\", \"window_from\": \"2026-09-08T12:00:00+00:00\", \"funding_prints\": 408, \"funding_sha256\": \"db4072edf239445a5dedf5fed637c54b5db7d3dcf494352097023bff1d7e0f24\", \"marks_at_strike\": {\"OKX/BTC\": 78958.78166666666, \"Bybit/BTC\": 78956.165, \"Bybit/ETH\": 2490.4546666666665, \"Bitget/BTC\": 78963.59333333334, \"Bitget/ETH\": 2490.726833333333, \"Binance/BTC\": 78957.81837858583, \"Binance/ETH\": 2490.3200522318334, \"Deribit/BTC\": 78997.40933333333, \"Deribit/ETH\": 2491.8771666666667, \"Hyperliquid/BTC\": 78958.505, \"Hyperliquid/ETH\": 2491.1761666666666}}, \"settlements\": {\"rows\": [{\"usd\": 81.222017, \"rate\": 0.0000059023058970981185, \"asset\": \"BTC\", \"venue\": \"Deribit\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-08T12:00:00Z\", \"notional_usd\": 13761065.247077}, {\"usd\": 2.802378, \"rate\": 0.0000007020507983621005, \"asset\": \"ETH\", \"venue\": \"Deribit\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-08T12:00:00Z\", \"notional_usd\": 3991703.133603}, {\"usd\": 0.0, \"rate\": 0.0000054036, \"asset\": \"BTC\", \"venue\": \"Hyperliquid\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-08T12:00:00Z\", \"notional_usd\": 0.001984}, {\"usd\": 48.258091, \"rate\": 0.0000125, \"asset\": \"ETH\", \"venue\": \"Hyperliquid\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-08T12:00:00Z\", \"notional_usd\": 3860647.24065}, {\"usd\": 43.397552, \"rate\": 0.0000031536477493122757, \"asset\": \"BTC\", \"venue\": \"Deribit\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-08T13:00:00Z\", \"notional_usd\": 13761065.247077}, {\"usd\": 1.583254, \"rate\": 0.0000003966362816557024, \"asset\": \"ETH\", \"venue\": \"Deribit\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-08T13:00:00Z\", \"notional_usd\": 3991703.133603}, {\"usd\": 0.0, \"rate\": 0.0000074786, \"asset\": \"BTC\", \"venue\": \"Hyperliquid\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-08T13:00:00Z\", \"notional_usd\": 0.001984}, {\"usd\": 48.258091, \"rate\": 0.0000125, \"asset\": \"ETH\", \"venue\": \"Hyperliquid\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-08T13:00:00Z\", \"notional_usd\": 3860647.24065}, {\"usd\": 108.075384, \"rate\": 0.000002532941943900848, \"asset\": \"ETH\", \"venue\": \"pool\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-08T13:00:00Z\", \"notional_usd\": 42667927.972235}, {\"usd\": 77.319865, \"rate\": 0.000005618741254650468, \"asset\": \"BTC\", \"venue\": \"Deribit\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-08T14:00:00Z\", \"notional_usd\": 13761065.247077}, {\"usd\": 20.947847, \"rate\": 0.000005247846909741736, \"asset\": \"ETH\", \"venue\": \"Deribit\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-08T14:00:00Z\", \"notional_usd\": 3991703.133603}, {\"usd\": 0.0, \"rate\": 0.0000125, \"asset\": \"BTC\", \"venue\": \"Hyperliquid\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-08T14:00:00Z\", \"notional_usd\": 0.001984}, {\"usd\": 46.609208, \"rate\": 0.0000120729, \"asset\": \"ETH\", \"venue\": \"Hyperliquid\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-08T14:00:00Z\", \"notional_usd\": 3860647.24065}, {\"usd\": 108.256299, \"rate\": 0.0000025371819960861055, \"asset\": \"ETH\", \"venue\": \"pool\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-08T14:00:00Z\", \"notional_usd\": 42667927.972235}, {\"usd\": 64.008182, \"rate\": 0.000004651397349497286, \"asset\": \"BTC\", \"venue\": \"Deribit\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-08T15:00:00Z\", \"notional_usd\": 13761065.247077}, {\"usd\": 6.400172, \"rate\": 0.0000016033688529539984, \"asset\": \"ETH\", \"venue\": \"Deribit\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-08T15:00:00Z\", \"notional_usd\": 3991703.133603}, {\"usd\": 0.0, \"rate\": 0.0000125, \"asset\": \"BTC\", \"venue\": \"Hyperliquid\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-08T15:00:00Z\", \"notional_usd\": 0.001984}, {\"usd\": 48.258091, \"rate\": 0.0000125, \"asset\": \"ETH\", \"venue\": \"Hyperliquid\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-08T15:00:00Z\", \"notional_usd\": 3860647.24065}, {\"usd\": 108.256299, \"rate\": 0.0000025371819960861055, \"asset\": \"ETH\", \"venue\": \"pool\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-08T15:00:00Z\", \"notional_usd\": 42667927.972235}, {\"usd\": 1729.716741, \"rate\": 0.00009029, \"asset\": \"BTC\", \"venue\": \"Binance\", \"halted\": false, \"interval_h\": 8.0, \"settled_at\": \"2026-09-08T16:00:00Z\", \"notional_usd\": 19157345.674599}, {\"usd\": 0.0, \"rate\": 0.00005222, \"asset\": \"ETH\", \"venue\": \"Binance\", \"halted\": false, \"interval_h\": 8.0, \"settled_at\": \"2026-09-08T16:00:00Z\", \"notional_usd\": 0.000004}, {\"usd\": 349.911374, \"rate\": 0.0001, \"asset\": \"BTC\", \"venue\": \"Bitget\", \"halted\": false, \"interval_h\": 8.0, \"settled_at\": \"2026-09-08T16:00:00Z\", \"notional_usd\": 3499113.74304}, {\"usd\": 1174.367395, \"rate\": 0.000075, \"asset\": \"ETH\", \"venue\": \"Bitget\", \"halted\": false, \"interval_h\": 8.0, \"settled_at\": \"2026-09-08T16:00:00Z\", \"notional_usd\": 15658231.927011}, {\"usd\": 0.0, \"rate\": 0.00005769, \"asset\": \"BTC\", \"venue\": \"Bybit\", \"halted\": false, \"interval_h\": 8.0, \"settled_at\": \"2026-09-08T16:00:00Z\", \"notional_usd\": 0.001977}, {\"usd\": 933.920601, \"rate\": 0.00004875, \"asset\": \"ETH\", \"venue\": \"Bybit\", \"halted\": false, \"interval_h\": 8.0, \"settled_at\": \"2026-09-08T16:00:00Z\", \"notional_usd\": 19157345.670967}, {\"usd\": 55.264656, \"rate\": 0.000004016015839736129, \"asset\": \"BTC\", \"venue\": \"Deribit\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-08T16:00:00Z\", \"notional_usd\": 13761065.247077}, {\"usd\": 6.793901, \"rate\": 0.0000017020054888806824, \"asset\": \"ETH\", \"venue\": \"Deribit\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-08T16:00:00Z\", \"notional_usd\": 3991703.133603}, {\"usd\": 0.0, \"rate\": 0.0000125, \"asset\": \"BTC\", \"venue\": \"Hyperliquid\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-08T16:00:00Z\", \"notional_usd\": 0.001984}, {\"usd\": 48.258091, \"rate\": 0.0000125, \"asset\": \"ETH\", \"venue\": \"Hyperliquid\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-08T16:00:00Z\", \"notional_usd\": 3860647.24065}, {\"usd\": 1226.230539, \"rate\": 0.0000640083735919, \"asset\": \"BTC\", \"venue\": \"OKX\", \"halted\": false, \"interval_h\": 8.0, \"settled_at\": \"2026-09-08T16:00:00Z\", \"notional_usd\": 19157345.667883}, {\"usd\": 108.256299, \"rate\": 0.0000025371819960861055, \"asset\": \"ETH\", \"venue\": \"pool\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-08T16:00:00Z\", \"notional_usd\": 42667927.972235}, {\"usd\": 85.166372, \"rate\": 0.000006188937409387769, \"asset\": \"BTC\", \"venue\": \"Deribit\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-08T17:00:00Z\", \"notional_usd\": 13761065.247077}, {\"usd\": 0.0, \"rate\": 0.0, \"asset\": \"ETH\", \"venue\": \"Deribit\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-08T17:00:00Z\", \"notional_usd\": 3991703.133603}, {\"usd\": 0.0, \"rate\": 0.0000125, \"asset\": \"BTC\", \"venue\": \"Hyperliquid\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-08T17:00:00Z\", \"notional_usd\": 0.001984}, {\"usd\": 48.258091, \"rate\": 0.0000125, \"asset\": \"ETH\", \"venue\": \"Hyperliquid\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-08T17:00:00Z\", \"notional_usd\": 3860647.24065}, {\"usd\": 108.256299, \"rate\": 0.0000025371819960861055, \"asset\": \"ETH\", \"venue\": \"pool\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-08T17:00:00Z\", \"notional_usd\": 42667927.972235}, {\"usd\": 40.875688, \"rate\": 0.0000029703868938759445, \"asset\": \"BTC\", \"venue\": \"Deribit\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-08T18:00:00Z\", \"notional_usd\": 13761065.247077}, {\"usd\": 0.050462, \"rate\": 0.000000012641652707281645, \"asset\": \"ETH\", \"venue\": \"Deribit\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-08T18:00:00Z\", \"notional_usd\": 3991703.133603}, {\"usd\": 0.0, \"rate\": 0.0000117931, \"asset\": \"BTC\", \"venue\": \"Hyperliquid\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-08T18:00:00Z\", \"notional_usd\": 0.001984}, {\"usd\": 48.258091, \"rate\": 0.0000125, \"asset\": \"ETH\", \"venue\": \"Hyperliquid\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-08T18:00:00Z\", \"notional_usd\": 3860647.24065}, {\"usd\": 108.256299, \"rate\": 0.0000025371819960861055, \"asset\": \"ETH\", \"venue\": \"pool\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-08T18:00:00Z\", \"notional_usd\": 42667927.972235}, {\"usd\": 45.355891, \"rate\": 0.0000032959578822988677, \"asset\": \"BTC\", \"venue\": \"Deribit\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-08T19:00:00Z\", \"notional_usd\": 13761065.247077}, {\"usd\": 0.277413, \"rate\": 0.0000000694974282149369, \"asset\": \"ETH\", \"venue\": \"Deribit\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-08T19:00:00Z\", \"notional_usd\": 3991703.133603}, {\"usd\": 0.0, \"rate\": 0.0000125, \"asset\": \"BTC\", \"venue\": \"Hyperliquid\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-08T19:00:00Z\", \"notional_usd\": 0.001984}, {\"usd\": 48.258091, \"rate\": 0.0000125, \"asset\": \"ETH\", \"venue\": \"Hyperliquid\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-08T19:00:00Z\", \"notional_usd\": 3860647.24065}, {\"usd\": 108.256299, \"rate\": 0.0000025371819960861055, \"asset\": \"ETH\", \"venue\": \"pool\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-08T19:00:00Z\", \"notional_usd\": 42667927.972235}, {\"usd\": 80.293276, \"rate\": 0.00000583481547282273, \"asset\": \"BTC\", \"venue\": \"Deribit\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-08T20:00:00Z\", \"notional_usd\": 13761065.247077}, {\"usd\": 1.132506, \"rate\": 0.00000028371499319357503, \"asset\": \"ETH\", \"venue\": \"Deribit\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-08T20:00:00Z\", \"notional_usd\": 3991703.133603}, {\"usd\": 0.0, \"rate\": 0.0000058715, \"asset\": \"BTC\", \"venue\": \"Hyperliquid\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-08T20:00:00Z\", \"notional_usd\": 0.001984}, {\"usd\": 48.258091, \"rate\": 0.0000125, \"asset\": \"ETH\", \"venue\": \"Hyperliquid\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-08T20:00:00Z\", \"notional_usd\": 3860647.24065}, {\"usd\": 108.256299, \"rate\": 0.0000025371819960861055, \"asset\": \"ETH\", \"venue\": \"pool\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-08T20:00:00Z\", \"notional_usd\": 42667927.972235}, {\"usd\": 71.007606, \"rate\": 0.000005160036986091782, \"asset\": \"BTC\", \"venue\": \"Deribit\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-08T21:00:00Z\", \"notional_usd\": 13761065.247077}, {\"usd\": 0.92963, \"rate\": 0.0000002328906012706172, \"asset\": \"ETH\", \"venue\": \"Deribit\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-08T21:00:00Z\", \"notional_usd\": 3991703.133603}, {\"usd\": 0.0, \"rate\": 0.000001845, \"asset\": \"BTC\", \"venue\": \"Hyperliquid\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-08T21:00:00Z\", \"notional_usd\": 0.001984}, {\"usd\": 48.258091, \"rate\": 0.0000125, \"asset\": \"ETH\", \"venue\": \"Hyperliquid\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-08T21:00:00Z\", \"notional_usd\": 3860647.24065}, {\"usd\": 108.256299, \"rate\": 0.0000025371819960861055, \"asset\": \"ETH\", \"venue\": \"pool\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-08T21:00:00Z\", \"notional_usd\": 42667927.972235}, {\"usd\": 134.226473, \"rate\": 0.000009754075789833185, \"asset\": \"BTC\", \"venue\": \"Deribit\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-08T22:00:00Z\", \"notional_usd\": 13761065.247077}, {\"usd\": 13.692904, \"rate\": 0.0000034303413278495665, \"asset\": \"ETH\", \"venue\": \"Deribit\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-08T22:00:00Z\", \"notional_usd\": 3991703.133603}, {\"usd\": 0.0, \"rate\": 0.0000045582, \"asset\": \"BTC\", \"venue\": \"Hyperliquid\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-08T22:00:00Z\", \"notional_usd\": 0.001984}, {\"usd\": 48.258091, \"rate\": 0.0000125, \"asset\": \"ETH\", \"venue\": \"Hyperliquid\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-08T22:00:00Z\", \"notional_usd\": 3860647.24065}, {\"usd\": 108.256299, \"rate\": 0.0000025371819960861055, \"asset\": \"ETH\", \"venue\": \"pool\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-08T22:00:00Z\", \"notional_usd\": 42667927.972235}, {\"usd\": 150.396867, \"rate\": 0.00001092915879056618, \"asset\": \"BTC\", \"venue\": \"Deribit\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-08T23:00:00Z\", \"notional_usd\": 13761065.247077}, {\"usd\": 7.631158, \"rate\": 0.000001911754836871088, \"asset\": \"ETH\", \"venue\": \"Deribit\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-08T23:00:00Z\", \"notional_usd\": 3991703.133603}, {\"usd\": 0.0, \"rate\": 0.0000098287, \"asset\": \"BTC\", \"venue\": \"Hyperliquid\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-08T23:00:00Z\", \"notional_usd\": 0.001984}, {\"usd\": 48.258091, \"rate\": 0.0000125, \"asset\": \"ETH\", \"venue\": \"Hyperliquid\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-08T23:00:00Z\", \"notional_usd\": 3860647.24065}, {\"usd\": 108.256299, \"rate\": 0.0000025371819960861055, \"asset\": \"ETH\", \"venue\": \"pool\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-08T23:00:00Z\", \"notional_usd\": 42667927.972235}, {\"usd\": 934.112175, \"rate\": 0.00004876, \"asset\": \"BTC\", \"venue\": \"Binance\", \"halted\": false, \"interval_h\": 8.0, \"settled_at\": \"2026-09-09T00:00:00Z\", \"notional_usd\": 19157345.674599}, {\"usd\": 0.0, \"rate\": 0.00005214, \"asset\": \"ETH\", \"venue\": \"Binance\", \"halted\": false, \"interval_h\": 8.0, \"settled_at\": \"2026-09-09T00:00:00Z\", \"notional_usd\": 0.000004}, {\"usd\": 223.94328, \"rate\": 0.000064, \"asset\": \"BTC\", \"venue\": \"Bitget\", \"halted\": false, \"interval_h\": 8.0, \"settled_at\": \"2026-09-09T00:00:00Z\", \"notional_usd\": 3499113.74304}, {\"usd\": 1111.734467, \"rate\": 0.000071, \"asset\": \"ETH\", \"venue\": \"Bitget\", \"halted\": false, \"interval_h\": 8.0, \"settled_at\": \"2026-09-09T00:00:00Z\", \"notional_usd\": 15658231.927011}, {\"usd\": 0.0, \"rate\": 0.00005357, \"asset\": \"BTC\", \"venue\": \"Bybit\", \"halted\": false, \"interval_h\": 8.0, \"settled_at\": \"2026-09-09T00:00:00Z\", \"notional_usd\": 0.001977}, {\"usd\": 652.690767, \"rate\": 0.00003407, \"asset\": \"ETH\", \"venue\": \"Bybit\", \"halted\": false, \"interval_h\": 8.0, \"settled_at\": \"2026-09-09T00:00:00Z\", \"notional_usd\": 19157345.670967}, {\"usd\": 142.320656, \"rate\": 0.00001034227028149605, \"asset\": \"BTC\", \"venue\": \"Deribit\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-09T00:00:00Z\", \"notional_usd\": 13761065.247077}, {\"usd\": 5.836537, \"rate\": 0.0000014621670656352334, \"asset\": \"ETH\", \"venue\": \"Deribit\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-09T00:00:00Z\", \"notional_usd\": 3991703.133603}, {\"usd\": 0.0, \"rate\": 0.0000098551, \"asset\": \"BTC\", \"venue\": \"Hyperliquid\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-09T00:00:00Z\", \"notional_usd\": 0.001984}, {\"usd\": 48.258091, \"rate\": 0.0000125, \"asset\": \"ETH\", \"venue\": \"Hyperliquid\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-09T00:00:00Z\", \"notional_usd\": 3860647.24065}, {\"usd\": 920.043902, \"rate\": 0.0000480256460149, \"asset\": \"BTC\", \"venue\": \"OKX\", \"halted\": false, \"interval_h\": 8.0, \"settled_at\": \"2026-09-09T00:00:00Z\", \"notional_usd\": 19157345.667883}, {\"usd\": 108.256299, \"rate\": 0.0000025371819960861055, \"asset\": \"ETH\", \"venue\": \"pool\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-09T00:00:00Z\", \"notional_usd\": 42667927.972235}, {\"usd\": 151.317088, \"rate\": 0.00001099603013869849, \"asset\": \"BTC\", \"venue\": \"Deribit\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-09T01:00:00Z\", \"notional_usd\": 13761065.247077}, {\"usd\": 1.279565, \"rate\": 0.0000003205561911248869, \"asset\": \"ETH\", \"venue\": \"Deribit\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-09T01:00:00Z\", \"notional_usd\": 3991703.133603}, {\"usd\": 0.0, \"rate\": 0.0000105909, \"asset\": \"BTC\", \"venue\": \"Hyperliquid\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-09T01:00:00Z\", \"notional_usd\": 0.001984}, {\"usd\": 48.258091, \"rate\": 0.0000125, \"asset\": \"ETH\", \"venue\": \"Hyperliquid\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-09T01:00:00Z\", \"notional_usd\": 3860647.24065}, {\"usd\": 108.256299, \"rate\": 0.0000025371819960861055, \"asset\": \"ETH\", \"venue\": \"pool\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-09T01:00:00Z\", \"notional_usd\": 42667927.972235}, {\"usd\": 27.835543, \"rate\": 0.0000020227752943351314, \"asset\": \"BTC\", \"venue\": \"Deribit\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-09T02:00:00Z\", \"notional_usd\": 13761065.247077}, {\"usd\": 0.0, \"rate\": 0.0, \"asset\": \"ETH\", \"venue\": \"Deribit\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-09T02:00:00Z\", \"notional_usd\": 3991703.133603}, {\"usd\": 0.0, \"rate\": 0.0000125, \"asset\": \"BTC\", \"venue\": \"Hyperliquid\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-09T02:00:00Z\", \"notional_usd\": 0.001984}, {\"usd\": 48.258091, \"rate\": 0.0000125, \"asset\": \"ETH\", \"venue\": \"Hyperliquid\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-09T02:00:00Z\", \"notional_usd\": 3860647.24065}, {\"usd\": 108.256299, \"rate\": 0.0000025371819960861055, \"asset\": \"ETH\", \"venue\": \"pool\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-09T02:00:00Z\", \"notional_usd\": 42667927.972235}, {\"usd\": 70.808035, \"rate\": 0.00000514553440461029, \"asset\": \"BTC\", \"venue\": \"Deribit\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-09T03:00:00Z\", \"notional_usd\": 13761065.247077}, {\"usd\": 2.951103, \"rate\": 0.0000007393092987664755, \"asset\": \"ETH\", \"venue\": \"Deribit\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-09T03:00:00Z\", \"notional_usd\": 3991703.133603}, {\"usd\": 0.0, \"rate\": 0.0000125, \"asset\": \"BTC\", \"venue\": \"Hyperliquid\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-09T03:00:00Z\", \"notional_usd\": 0.001984}, {\"usd\": 48.258091, \"rate\": 0.0000125, \"asset\": \"ETH\", \"venue\": \"Hyperliquid\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-09T03:00:00Z\", \"notional_usd\": 3860647.24065}, {\"usd\": 108.256299, \"rate\": 0.0000025371819960861055, \"asset\": \"ETH\", \"venue\": \"pool\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-09T03:00:00Z\", \"notional_usd\": 42667927.972235}, {\"usd\": 96.767852, \"rate\": 0.000007032002967257513, \"asset\": \"BTC\", \"venue\": \"Deribit\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-09T04:00:00Z\", \"notional_usd\": 13761065.247077}, {\"usd\": 3.317329, \"rate\": 0.000000831056124334229, \"asset\": \"ETH\", \"venue\": \"Deribit\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-09T04:00:00Z\", \"notional_usd\": 3991703.133603}, {\"usd\": 0.0, \"rate\": 0.0000125, \"asset\": \"BTC\", \"venue\": \"Hyperliquid\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-09T04:00:00Z\", \"notional_usd\": 0.001984}, {\"usd\": 48.258091, \"rate\": 0.0000125, \"asset\": \"ETH\", \"venue\": \"Hyperliquid\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-09T04:00:00Z\", \"notional_usd\": 3860647.24065}, {\"usd\": 108.256299, \"rate\": 0.0000025371819960861055, \"asset\": \"ETH\", \"venue\": \"pool\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-09T04:00:00Z\", \"notional_usd\": 42667927.972235}, {\"usd\": 87.828722, \"rate\": 0.000006382407187514993, \"asset\": \"BTC\", \"venue\": \"Deribit\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-09T05:00:00Z\", \"notional_usd\": 13761065.247077}, {\"usd\": 2.03746, \"rate\": 0.0000005104236312445775, \"asset\": \"ETH\", \"venue\": \"Deribit\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-09T05:00:00Z\", \"notional_usd\": 3991703.133603}, {\"usd\": 0.0, \"rate\": 0.0000125, \"asset\": \"BTC\", \"venue\": \"Hyperliquid\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-09T05:00:00Z\", \"notional_usd\": 0.001984}, {\"usd\": 48.258091, \"rate\": 0.0000125, \"asset\": \"ETH\", \"venue\": \"Hyperliquid\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-09T05:00:00Z\", \"notional_usd\": 3860647.24065}, {\"usd\": 108.256299, \"rate\": 0.0000025371819960861055, \"asset\": \"ETH\", \"venue\": \"pool\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-09T05:00:00Z\", \"notional_usd\": 42667927.972235}, {\"usd\": 237.40693, \"rate\": 0.000017252074991081687, \"asset\": \"BTC\", \"venue\": \"Deribit\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-09T06:00:00Z\", \"notional_usd\": 13761065.247077}, {\"usd\": 0.039545, \"rate\": 0.000000009906838321366438, \"asset\": \"ETH\", \"venue\": \"Deribit\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-09T06:00:00Z\", \"notional_usd\": 3991703.133603}, {\"usd\": 0.0, \"rate\": 0.0000125, \"asset\": \"BTC\", \"venue\": \"Hyperliquid\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-09T06:00:00Z\", \"notional_usd\": 0.001984}, {\"usd\": 48.258091, \"rate\": 0.0000125, \"asset\": \"ETH\", \"venue\": \"Hyperliquid\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-09T06:00:00Z\", \"notional_usd\": 3860647.24065}, {\"usd\": 108.256299, \"rate\": 0.0000025371819960861055, \"asset\": \"ETH\", \"venue\": \"pool\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-09T06:00:00Z\", \"notional_usd\": 42667927.972235}, {\"usd\": 224.819515, \"rate\": 0.000016337362800484523, \"asset\": \"BTC\", \"venue\": \"Deribit\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-09T07:00:00Z\", \"notional_usd\": 13761065.247077}, {\"usd\": 3.723327, \"rate\": 0.0000009327665419074725, \"asset\": \"ETH\", \"venue\": \"Deribit\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-09T07:00:00Z\", \"notional_usd\": 3991703.133603}, {\"usd\": 0.0, \"rate\": 0.0000125, \"asset\": \"BTC\", \"venue\": \"Hyperliquid\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-09T07:00:00Z\", \"notional_usd\": 0.001984}, {\"usd\": 48.258091, \"rate\": 0.0000125, \"asset\": \"ETH\", \"venue\": \"Hyperliquid\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-09T07:00:00Z\", \"notional_usd\": 3860647.24065}, {\"usd\": 108.256299, \"rate\": 0.0000025371819960861055, \"asset\": \"ETH\", \"venue\": \"pool\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-09T07:00:00Z\", \"notional_usd\": 42667927.972235}, {\"usd\": 1726.459992, \"rate\": 0.00009012, \"asset\": \"BTC\", \"venue\": \"Binance\", \"halted\": false, \"interval_h\": 8.0, \"settled_at\": \"2026-09-09T08:00:00Z\", \"notional_usd\": 19157345.674599}, {\"usd\": 0.0, \"rate\": 0.00008538, \"asset\": \"ETH\", \"venue\": \"Binance\", \"halted\": false, \"interval_h\": 8.0, \"settled_at\": \"2026-09-09T08:00:00Z\", \"notional_usd\": 0.000004}, {\"usd\": 276.429986, \"rate\": 0.000079, \"asset\": \"BTC\", \"venue\": \"Bitget\", \"halted\": false, \"interval_h\": 8.0, \"settled_at\": \"2026-09-09T08:00:00Z\", \"notional_usd\": 3499113.74304}, {\"usd\": 876.860988, \"rate\": 0.000056, \"asset\": \"ETH\", \"venue\": \"Bitget\", \"halted\": false, \"interval_h\": 8.0, \"settled_at\": \"2026-09-09T08:00:00Z\", \"notional_usd\": 15658231.927011}, {\"usd\": 0.0, \"rate\": 0.00006898, \"asset\": \"BTC\", \"venue\": \"Bybit\", \"halted\": false, \"interval_h\": 8.0, \"settled_at\": \"2026-09-09T08:00:00Z\", \"notional_usd\": 0.001977}, {\"usd\": 1125.494058, \"rate\": 0.00005875, \"asset\": \"ETH\", \"venue\": \"Bybit\", \"halted\": false, \"interval_h\": 8.0, \"settled_at\": \"2026-09-09T08:00:00Z\", \"notional_usd\": 19157345.670967}, {\"usd\": 297.820176, \"rate\": 0.000021642232670201862, \"asset\": \"BTC\", \"venue\": \"Deribit\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-09T08:00:00Z\", \"notional_usd\": 13761065.247077}, {\"usd\": 9.079654, \"rate\": 0.0000022746315650520797, \"asset\": \"ETH\", \"venue\": \"Deribit\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-09T08:00:00Z\", \"notional_usd\": 3991703.133603}, {\"usd\": 0.0, \"rate\": 0.0000125, \"asset\": \"BTC\", \"venue\": \"Hyperliquid\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-09T08:00:00Z\", \"notional_usd\": 0.001984}, {\"usd\": 48.258091, \"rate\": 0.0000125, \"asset\": \"ETH\", \"venue\": \"Hyperliquid\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-09T08:00:00Z\", \"notional_usd\": 3860647.24065}, {\"usd\": 1298.226435, \"rate\": 0.0000677665088416, \"asset\": \"BTC\", \"venue\": \"OKX\", \"halted\": false, \"interval_h\": 8.0, \"settled_at\": \"2026-09-09T08:00:00Z\", \"notional_usd\": 19157345.667883}, {\"usd\": 108.256299, \"rate\": 0.0000025371819960861055, \"asset\": \"ETH\", \"venue\": \"pool\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-09T08:00:00Z\", \"notional_usd\": 42667927.972235}, {\"usd\": 333.548162, \"rate\": 0.000024238542291759763, \"asset\": \"BTC\", \"venue\": \"Deribit\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-09T09:00:00Z\", \"notional_usd\": 13761065.247077}, {\"usd\": 26.529226, \"rate\": 0.0000066460919989814086, \"asset\": \"ETH\", \"venue\": \"Deribit\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-09T09:00:00Z\", \"notional_usd\": 3991703.133603}, {\"usd\": 0.0, \"rate\": 0.0000125, \"asset\": \"BTC\", \"venue\": \"Hyperliquid\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-09T09:00:00Z\", \"notional_usd\": 0.001984}, {\"usd\": 48.258091, \"rate\": 0.0000125, \"asset\": \"ETH\", \"venue\": \"Hyperliquid\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-09T09:00:00Z\", \"notional_usd\": 3860647.24065}, {\"usd\": 108.256299, \"rate\": 0.0000025371819960861055, \"asset\": \"ETH\", \"venue\": \"pool\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-09T09:00:00Z\", \"notional_usd\": 42667927.972235}, {\"usd\": 197.705959, \"rate\": 0.000014367053362997225, \"asset\": \"BTC\", \"venue\": \"Deribit\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-09T10:00:00Z\", \"notional_usd\": 13761065.247077}, {\"usd\": 33.37377, \"rate\": 0.000008360784504338593, \"asset\": \"ETH\", \"venue\": \"Deribit\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-09T10:00:00Z\", \"notional_usd\": 3991703.133603}, {\"usd\": 0.0, \"rate\": 0.0000125, \"asset\": \"BTC\", \"venue\": \"Hyperliquid\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-09T10:00:00Z\", \"notional_usd\": 0.001984}, {\"usd\": 48.258091, \"rate\": 0.0000125, \"asset\": \"ETH\", \"venue\": \"Hyperliquid\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-09T10:00:00Z\", \"notional_usd\": 3860647.24065}, {\"usd\": 108.256299, \"rate\": 0.0000025371819960861055, \"asset\": \"ETH\", \"venue\": \"pool\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-09T10:00:00Z\", \"notional_usd\": 42667927.972235}, {\"usd\": 61.594338, \"rate\": 0.0000044759861833132755, \"asset\": \"BTC\", \"venue\": \"Deribit\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-09T11:00:00Z\", \"notional_usd\": 13761065.247077}, {\"usd\": 38.699937, \"rate\": 0.000009695093941208329, \"asset\": \"ETH\", \"venue\": \"Deribit\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-09T11:00:00Z\", \"notional_usd\": 3991703.133603}, {\"usd\": 0.0, \"rate\": 0.0000125, \"asset\": \"BTC\", \"venue\": \"Hyperliquid\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-09T11:00:00Z\", \"notional_usd\": 0.001984}, {\"usd\": 48.258091, \"rate\": 0.0000125, \"asset\": \"ETH\", \"venue\": \"Hyperliquid\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-09T11:00:00Z\", \"notional_usd\": 3860647.24065}, {\"usd\": 108.256299, \"rate\": 0.0000025371819960861055, \"asset\": \"ETH\", \"venue\": \"pool\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-09T11:00:00Z\", \"notional_usd\": 42667927.972235}, {\"usd\": 108.256299, \"rate\": 0.0000025371819960861055, \"asset\": \"ETH\", \"venue\": \"pool\", \"halted\": false, \"interval_h\": 1.0, \"settled_at\": \"2026-09-09T12:00:00Z\", \"notional_usd\": 42667927.972235}], \"order\": \"canonical\", \"funding_usd\": 18764.104489, \"staking_usd\": 2597.970254}, \"methodology_version\": \"v1.2\"}"
  }
 ]
